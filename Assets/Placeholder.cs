@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Placeholder : MonoBehaviour
 {
-    public int strength = 0;
+    [SerializeField] private float torchTime;
+
+    public float strength = 0.0f;
     public static Placeholder Instance;
 
     private void Awake()
@@ -12,12 +14,24 @@ public class Placeholder : MonoBehaviour
         Instance = this;
     }
 
-    public void Nice()
+    private void Update()
     {
-        if(strength > 0)
+        if (strength > 0.0f)
         {
-            Debug.Log("Placed!!!! + " + gameObject.GetInstanceID().ToString());
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(10, 204, 102);
+            float duration = (strength / 100) * torchTime;
+            StartCoroutine(startReduce(strength,0,duration));
         }
+    }
+
+    public IEnumerator startReduce(float startStrength, float endStrength, float duration)
+    {
+        float currentTime = 0;
+        while (strength != 0)
+        {
+            currentTime += Time.deltaTime;
+            strength = Mathf.Lerp(startStrength, endStrength, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 }

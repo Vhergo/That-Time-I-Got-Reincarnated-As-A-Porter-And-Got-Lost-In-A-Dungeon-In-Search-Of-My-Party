@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
+    [SerializeField] private float torchDistance;
     private Camera mainCamera;
 
     private void Awake()
@@ -20,12 +21,16 @@ public class InputHandler : MonoBehaviour
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
 
-        int instanceID = rayHit.collider.gameObject.GetInstanceID();
-        Debug.Log(instanceID.ToString());
+        GameObject torchPressed = rayHit.collider.gameObject;
+        int instanceID = torchPressed.GetInstanceID();
 
-        if (rayHit.collider.gameObject.tag.Equals("Placeholder"))
+        GameObject player = GameObject.Find("Player");
+        float distance = Vector3.Distance(player.transform.position,torchPressed.transform.position);
+        Debug.Log(distance.ToString());
+
+        if (rayHit.collider.gameObject.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength == 0.0f && distance <= torchDistance)
         {
-            PlaceholderManager.instance.setStrength(rayHit.collider.gameObject);
+            PlaceholderManager.instance.setTorch(torchPressed.gameObject);
         }
     }
 }
