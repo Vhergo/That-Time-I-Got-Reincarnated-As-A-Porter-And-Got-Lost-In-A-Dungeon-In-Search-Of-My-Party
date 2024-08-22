@@ -14,12 +14,12 @@ public class Placeholder : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
+    public void Update()
     {
         if (strength > 0.0f)
         {
             float duration = (strength / 100) * torchTime;
-            StartCoroutine(startReduce(strength,0,duration));
+            StartCoroutine(startReduce(strength, 0, duration));
         }
     }
 
@@ -30,8 +30,9 @@ public class Placeholder : MonoBehaviour
         {
             currentTime += Time.deltaTime;
             strength = Mathf.Lerp(startStrength, endStrength, currentTime / duration);
-            yield return null;
+            yield break;
         }
         yield break;
     }
+
 }

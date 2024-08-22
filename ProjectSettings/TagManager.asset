@@ -8,6 +8,11 @@ TagManager:
   - Sliders
   - Audio Toggles
   - Placeholder
+  - Gold
+  - Gem
+  - Weapon
+  - Armor
+  - MonsterDrop
   layers:
   - Default
   - TransparentFX

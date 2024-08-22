@@ -5,9 +5,19 @@ using UnityEngine;
 
 public class PlaceholderManager : MonoBehaviour
 {
+    [Header("Torch")]
     [SerializeField] private int torchNumber;
+    [SerializeField] private float torchDuration;
+
+    [Header("Item Strength")]
+    [SerializeField] private float goldStrength;
+    [SerializeField] private float gemStrength;
+    [SerializeField] private float weaponStrength;
+    [SerializeField] private float armorStrength;
+    [SerializeField] private float monsterDropStrength;
 
     public Dictionary<int, Tuple<GameObject, float>> torches = new Dictionary<int, Tuple<GameObject, float>>();
+    public Dictionary<String,float> item_book = new Dictionary<String,float>();
     public static PlaceholderManager instance;
     private int nextTorch;
 
@@ -19,6 +29,12 @@ public class PlaceholderManager : MonoBehaviour
 
     private void Start()
     {
+        item_book.Add("Gold", goldStrength);
+        item_book.Add("Gem", gemStrength);
+        item_book.Add("Weapon", weaponStrength);
+        item_book.Add("Armor", armorStrength);
+        item_book.Add("MonsterDrop", monsterDropStrength);
+
         setupTorches();
     }
 
@@ -45,6 +61,23 @@ public class PlaceholderManager : MonoBehaviour
         updateNextTorch();
     }
 
+    public void addTorchStrength(String itemTag)
+    {
+        
+        foreach (int keys in torches.Keys)
+        {
+            Debug.Log(item_book[itemTag].ToString());
+            if (torches[keys].Item1 != null)
+            {
+                float newStrength = torches[keys].Item1.GetComponent<Placeholder>().strength + item_book[itemTag];
+                if(newStrength > 100)
+                    newStrength = 100;
+                torches[keys].Item1.GetComponent<Placeholder>().strength = 0;
+                torches[keys].Item1.GetComponent<Placeholder>().strength = newStrength;
+            }
+        }
+    }
+
     //Helper function to reset torches when reaching checkpoint
     public void resetTorch()
     {
@@ -62,9 +95,6 @@ public class PlaceholderManager : MonoBehaviour
         nextTorch = 1;
 
         //Dictionary Key is the torch number, game object is reference to the placeholder that is currently being used, second int in tuple represents the strength of torch (currently at 100%)
-        /*torches.Add(1, new Tuple<GameObject, float>(null, 100));
-        torches.Add(2, new Tuple<GameObject, float>(null, 100));
-        torches.Add(3, new Tuple<GameObject, float>(null, 100));*/
         for (int i = 0; i < torchNumber; i++)
         {
             torches.Add(i + 1, new Tuple<GameObject, float>(null, 100));
@@ -117,7 +147,6 @@ public class PlaceholderManager : MonoBehaviour
         {
             return;
         }
-
     }
 
 

@@ -34,6 +34,7 @@ public class ItemGrabber : MonoBehaviour
             if (item != null) {
                 if (Inventory.Instance.InventoryHasSpace(item.ItemData)) {
                     item.Collect();
+                    PlaceholderManager.instance.addTorchStrength(hit.collider.gameObject.tag);
                 } else {
                     Debug.Log("Inventory is full!");
                 }
