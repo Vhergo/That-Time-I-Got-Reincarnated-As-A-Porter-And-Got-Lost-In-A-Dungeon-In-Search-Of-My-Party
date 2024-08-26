@@ -50,3 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Interacted
+    uniqueID: 512922617
+    locked: 0
+  - name: Foreground Decoration
+    uniqueID: 1563109825
+    locked: 0
