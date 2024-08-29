@@ -26,11 +26,17 @@ public class InputHandler : MonoBehaviour
 
         GameObject player = GameObject.Find("Player");
         float distance = Vector3.Distance(player.transform.position,torchPressed.transform.position);
-        Debug.Log(distance.ToString());
 
-        if (rayHit.collider.gameObject.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength == 0.0f && distance <= torchDistance)
+        if (torchPressed.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength == 0.0f && distance <= torchDistance)
         {
             PlaceholderManager.instance.setTorch(torchPressed.gameObject);
+        }else if(torchPressed.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength >= 0.0f && distance <= torchDistance )
+        {
+            PlaceholderManager.instance.removeTorch(torchPressed.gameObject);
+        }else if(torchPressed.tag.Equals("Checkpoint") && distance <= torchDistance)
+        {
+            CheckpointLight.instance.activateCheckpoint();
+            Checkpoint.instance.hasVisited = true;
         }
     }
 }

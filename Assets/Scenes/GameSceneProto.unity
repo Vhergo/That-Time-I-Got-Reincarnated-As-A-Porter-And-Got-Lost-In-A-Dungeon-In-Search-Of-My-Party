@@ -456,13 +456,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1210151443087482411, guid: feab817d819895c459bbf322613d258d, type: 3}
+      propertyPath: colliderRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2383522823975496517, guid: feab817d819895c459bbf322613d258d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.95
       objectReference: {fileID: 0}
     - target: {fileID: 2383522823975496517, guid: feab817d819895c459bbf322613d258d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.31
+      value: -5.18
       objectReference: {fileID: 0}
     - target: {fileID: 2383522823975496517, guid: feab817d819895c459bbf322613d258d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -502,7 +506,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183528241040175751, guid: feab817d819895c459bbf322613d258d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343347969703686854, guid: feab817d819895c459bbf322613d258d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649976629994187490, guid: feab817d819895c459bbf322613d258d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1115,6 +1127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1330091126}
     m_Modifications:
+    - target: {fileID: 476265103099678390, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
+      propertyPath: colliderRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4553771907618055373, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.8
@@ -1154,6 +1170,14 @@ PrefabInstance:
     - target: {fileID: 4553771907618055373, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384455824953323705, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384455824953323705, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7999292611093970684, guid: e999a2da3f4762b41a327fe1382fdbed, type: 3}
       propertyPath: m_Name
@@ -1667,6 +1691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
+  - component: {fileID: 619394803}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -1690,7 +1715,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5568628, b: 0, a: 1}
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1739,6 +1764,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &619394803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619394800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9daab5bd55c1944a948bddb3446a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimLightFloat: 0.005
 --- !u!1 &667711420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,7 +2391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchNumber: 1
-  torchDuration: 90
+  torchDuration: 30
   goldStrength: 15
   gemStrength: 15
   weaponStrength: 15
@@ -2782,11 +2820,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6068263853312239373, guid: 683ff731069f7fe4b87db54c238f22d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: -6.76
       objectReference: {fileID: 0}
     - target: {fileID: 6068263853312239373, guid: 683ff731069f7fe4b87db54c238f22d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 6068263853312239373, guid: 683ff731069f7fe4b87db54c238f22d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3761,7 +3799,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 5
+  m_PointLightOuterRadius: 4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -4029,9 +4067,10 @@ GameObject:
   - component: {fileID: 1936428094}
   - component: {fileID: 1936428093}
   - component: {fileID: 1936428099}
+  - component: {fileID: 1936428100}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4361,7 +4400,7 @@ Transform:
   m_GameObject: {fileID: 1936428092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.44, y: 0.7446001, z: 0}
+  m_LocalPosition: {x: -15.62, y: -5.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4382,6 +4421,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba04ff3213f12d41adce1c089149e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1936428100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936428092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3e429b9c3f4554582f9614e52de027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFearMeter: 0
+  lives: 3
+  fearLimit: 10
+  inLight: 0
 --- !u!1 &1954553078
 GameObject:
   m_ObjectHideFlags: 0

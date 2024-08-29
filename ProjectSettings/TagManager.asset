@@ -13,6 +13,7 @@ TagManager:
   - Weapon
   - Armor
   - MonsterDrop
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - 
+  - Torch
   - 
   - 
   - 

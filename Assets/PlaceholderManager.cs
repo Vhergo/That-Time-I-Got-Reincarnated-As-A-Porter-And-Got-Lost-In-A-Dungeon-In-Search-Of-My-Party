@@ -43,22 +43,21 @@ public class PlaceholderManager : MonoBehaviour
     // Function places a torch at any placeholder and changes the strength of torch
     public void setTorch(GameObject gameObject)
     {
-        if (torches[nextTorch].Item1 != null)
-        {
-            GameObject previousTorch = torches[nextTorch].Item1;
-            float previousTorchStrength = previousTorch.GetComponent<Placeholder>().strength;
-            torches[nextTorch] = new Tuple<GameObject, float>(gameObject, previousTorchStrength);
-            gameObject.GetComponent<Placeholder>().strength = previousTorchStrength;
-            previousTorch.GetComponent<Placeholder>().strength = 0;
-        }
-        else
+        if (torches[nextTorch].Item1 == null)
         {
             float nextTorchStrength = torches[nextTorch].Item2;
             torches[nextTorch] = new Tuple<GameObject, float>(gameObject, nextTorchStrength);
             gameObject.GetComponent<Placeholder>().strength = nextTorchStrength;
+            GlobalLight.instance.changeGlobalLight(true);
         }
-        checkTorch();
-        updateNextTorch();
+    }
+
+    public void removeTorch(GameObject gameObject)
+    {
+        float removedTorchStrength = gameObject.GetComponent<Placeholder>().strength;
+        torches[nextTorch] = new Tuple<GameObject, float>(null, removedTorchStrength);
+        gameObject.GetComponent<Placeholder>().strength = 0;
+        GlobalLight.instance.changeGlobalLight(false);
     }
 
     public void addTorchStrength(String itemTag)
@@ -100,54 +99,5 @@ public class PlaceholderManager : MonoBehaviour
             torches.Add(i + 1, new Tuple<GameObject, float>(null, 100));
         }
     }
-
-    // Helper function to check if all the torches are still lit
-    private void checkTorch()
-    {
-        int torchCount = 0;
-        foreach(KeyValuePair<int, Tuple<GameObject,float>> entry in torches)
-        {
-            if(entry.Value.Item2 == 0)
-                torchCount++;
-        }
-        if(torchCount == torches.Count)
-        {
-            Debug.Log("Game Over");
-        }
-    }
-
-    // Helper function to list the placeholder names and their strength
-    private void printDict()
-    {
-        foreach (KeyValuePair<int, Tuple<GameObject, float>> entry in torches)
-        {
-            if (entry.Value.Item1 != null)
-                Debug.Log(entry.Value.Item1.name + " is at strength " + entry.Value.Item2);
-        }
-    }
-
-    // Helper function to change to next torch and skip torches that have 0 strength
-    private void updateNextTorch()
-    {
-
-        if(nextTorch == torches.Count)
-        {
-            nextTorch = 1;
-        }
-        else
-        {
-            nextTorch++;
-        }
-
-        if(torches[nextTorch].Item2 == 0)
-        {
-            updateNextTorch();
-        }
-        else
-        {
-            return;
-        }
-    }
-
 
 }
