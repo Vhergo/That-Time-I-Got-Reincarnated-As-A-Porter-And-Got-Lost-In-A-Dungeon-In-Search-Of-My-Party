@@ -60,6 +60,11 @@ public class FearScript : MonoBehaviour
         checkPointPos = newCheckPointPos;
     }
 
+    public void addFear(int fearStrength)
+    {
+        playerFearMeter = Mathf.Clamp(playerFearMeter += fearStrength, 0, 100);
+    }
+
     private void endGame()
     {
         Debug.Log("GAME OVER! GAME OVER! GAME OVER! GAME OVER! GAME OVER!");
