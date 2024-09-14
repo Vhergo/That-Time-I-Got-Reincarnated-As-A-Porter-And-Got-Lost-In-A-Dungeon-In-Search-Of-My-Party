@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 
-public class GoblinAI : MonoBehaviour
+public class GoblinAI : Monster
 {
     [Header("Pathfinding")]
     [SerializeField] private Transform target;
@@ -24,12 +24,23 @@ public class GoblinAI : MonoBehaviour
     [SerializeField] private bool directionLookEnabled = true;
     [SerializeField] private int moveRange;
 
+    [Header("Attack")]
+    [SerializeField] private float attackDelay = 3.0f;
+    [SerializeField] private float passedTime = 3.0f;
+    [SerializeField] private float attackRange = 2.0f;
+
     private Path path;
     private int currentWaypoint = 0;
     [SerializeField] private bool isJumping, isInAir, onCooldown,walkCooldown;
     [SerializeField] private RaycastHit2D isGrounded;
     Seeker seeker;
     Rigidbody2D rb;
+
+    public GoblinAI()
+    {
+        this.monster_name = "Goblin";
+        this.monster_strength = 5;
+    }
 
     public void Start()
     {
@@ -47,12 +58,23 @@ public class GoblinAI : MonoBehaviour
     {
         if(TargetInDistance() && followEnabled)
         {
-            PathFollow();
+            float distance = Vector2.Distance(target.position, rb.position);
+            if (distance <= attackRange)
+            {
+                Attack();
+            }
+            else
+            {
+                PathFollow();
+            }
+            
         }
         else if(!walkCooldown)
         {
             IdleWalk();
         }
+        if (passedTime < attackDelay)
+            passedTime += Time.deltaTime;
     }
 
     private void UpdatePath()
@@ -104,7 +126,7 @@ public class GoblinAI : MonoBehaviour
                 isJumping = true;
                 // rb.AddForce(Vector2.up * jumpHeight);
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-                Debug.Log(direction.y.ToString());
+                //Debug.Log(direction.y.ToString());
                 StartCoroutine(JumpCoolDown());
             }
         }
@@ -151,6 +173,17 @@ public class GoblinAI : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0;
+        }
+    }
+
+    private void Attack()
+    {
+        rb.velocity = Vector2.zero;
+        if (passedTime >= attackDelay)
+        {
+            passedTime = 0;
+            monster_attack();
+            Inventory.Instance.StolenLoot();
         }
     }
 

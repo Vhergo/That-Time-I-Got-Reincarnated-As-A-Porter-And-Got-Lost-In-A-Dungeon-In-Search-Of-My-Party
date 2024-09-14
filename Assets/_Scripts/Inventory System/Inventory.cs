@@ -81,4 +81,11 @@ public class Inventory : MonoBehaviour
         }
         return inventory.Count < inventorySize;
     }
+
+    public void StolenLoot()
+    {
+        int inventorySize = inventory.Count;
+        if(inventorySize > 0) 
+            RemoveFromInventory(inventory[Random.Range(0, inventorySize + 1)].itemData);
+    }
 }

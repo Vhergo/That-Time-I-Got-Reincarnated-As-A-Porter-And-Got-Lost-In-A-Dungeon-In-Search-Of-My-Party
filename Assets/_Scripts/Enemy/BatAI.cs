@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class BatAI : MonoBehaviour
+public class BatAI : Monster
 {
     [Header("Pathfinding")]
     [SerializeField] private Transform target;
@@ -16,6 +16,11 @@ public class BatAI : MonoBehaviour
     [SerializeField] private float speed = 200f;
     [SerializeField] private float nextWaypoint = 3f;
 
+    [Header("Attack")]
+    [SerializeField] private float attackDelay = 2.0f;
+    [SerializeField] private float passedTime = 2.0f;
+    [SerializeField] private float attackRange = 2.0f;
+
 
     Path path;
     int currentWaypoint = 0;
@@ -23,6 +28,12 @@ public class BatAI : MonoBehaviour
     bool flyCooldown = false;
     Seeker seeker;
     Rigidbody2D rb;
+
+    public BatAI()
+    {
+        this.monster_name = "Bat";
+        this.monster_strength = 3;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +57,22 @@ public class BatAI : MonoBehaviour
     {
         if (TargetInDistance())
         {
-            MoveAlongPath();
+            float distance = Vector2.Distance(target.position, rb.position);
+            if (distance < attackRange)
+            {
+                Attack();
+            }
+            else
+            {
+                MoveAlongPath();
+            }
         }
         else if(!flyCooldown)
         {
             IdleFly();
         }
+        if (passedTime < attackDelay)
+            passedTime += Time.deltaTime;
     }
 
     private void MoveAlongPath()
@@ -113,6 +134,15 @@ public class BatAI : MonoBehaviour
         return Vector2.Distance(transform.position, target.transform.position) < activeDistance;
     }
 
+    private void Attack()
+    {
+        rb.velocity = Vector2.zero;
+        if (passedTime >= attackDelay)
+        {
+            passedTime = 0;
+            monster_attack();
+        }
+    }
 
     IEnumerator FlyCooldown()
     {
