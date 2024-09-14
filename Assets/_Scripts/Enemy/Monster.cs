@@ -18,12 +18,12 @@ public class Monster:MonoBehaviour
         this.monster_strength = monster_strength;
     }
 
-    public void monster_attack()
+    public virtual void monster_attack()
     {
         FearScript.instance.addFear(monster_strength);
     }
 
-    public void monster_die()
+    public virtual void monster_die()
     {
         Destroy(this);
     }
