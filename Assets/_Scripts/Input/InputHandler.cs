@@ -1,42 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private float torchDistance;
     private Camera mainCamera;
+    private Transform player;
+    private GameObject selectedObject;
+    private TorchHolder selectedHolder;
+    private TorchManager torchManager;
 
     private void Awake()
     {
         mainCamera = Camera.main;
     }
 
+    private void Start()
+    {
+        player = Player.Instance.transform;
+        torchManager = TorchManager.Instance;
+    }
+
     public void onClick(InputAction.CallbackContext context)
     {
+        Debug.Log("Click");
         if (!context.started) return;
 
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
 
-        GameObject torchPressed = rayHit.collider.gameObject;
-        int instanceID = torchPressed.GetInstanceID();
+        selectedObject = rayHit.collider.gameObject;
 
-        GameObject player = GameObject.Find("Player");
-        float distance = Vector3.Distance(player.transform.position,torchPressed.transform.position);
 
-        if (torchPressed.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength == 0.0f && distance <= torchDistance)
-        {
-            PlaceholderManager.instance.setTorch(torchPressed.gameObject);
-        }else if(torchPressed.tag.Equals("Placeholder") && torchPressed.GetComponent<Placeholder>().strength >= 0.0f && distance <= torchDistance )
-        {
-            PlaceholderManager.instance.removeTorch(torchPressed.gameObject);
-        }else if(torchPressed.tag.Equals("Checkpoint") && distance <= torchDistance)
-        {
-            CheckpointLight.instance.activateCheckpoint();
-            Checkpoint.instance.hasVisited = true;
+        if (!InTorchRange()) return;
+
+        if (selectedObject.TryGetComponent(out TorchHolder torchHolder)) {
+            selectedHolder = torchHolder;
+        } else {
+            return;
         }
+
+        torchManager.SetActiveTorch(selectedHolder);
+    }
+
+    private bool InTorchRange()
+    {
+        return Vector3.Distance(player.position, selectedObject.transform.position) < torchManager.GetTorchPlaceRange();
     }
 }

@@ -11,7 +11,7 @@ public class CheckpointLight : MonoBehaviour
     [SerializeField] private float highIntensity;
     [SerializeField] private float colliderRadius;
 
-    public static CheckpointLight instance;
+    public static CheckpointLight Instance;
 
     private float interval = 1;
     private float timer;
@@ -19,14 +19,15 @@ public class CheckpointLight : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        instance = this;
+        Instance = this;
+
         gameObject.GetComponent<Light2D>().pointLightOuterRadius = 0;
         gameObject.GetComponent<Light2D>().pointLightInnerRadius = 0;
         gameObject.GetComponent<CircleCollider2D>().radius = colliderRadius;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
     }
 
-    public void activateCheckpoint()
+    public void ActivateCheckpoint()
     {
         gameObject.GetComponent<Light2D>().pointLightOuterRadius = outerRadius;
         gameObject.GetComponent<Light2D>().pointLightInnerRadius = innerRadius;
@@ -48,12 +49,12 @@ public class CheckpointLight : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
-            FearScript.instance.inLight = true;
+            FearManager.Instance.isLit = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
-            FearScript.instance.inLight = false;
+            FearManager.Instance.isLit = false;
     }
 }

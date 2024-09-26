@@ -5,12 +5,12 @@ using UnityEngine.Rendering.Universal;
 
 public class Checkpoint : MonoBehaviour
 {
-    public static Checkpoint instance;
+    public static Checkpoint Instance;
     public bool hasVisited;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -22,7 +22,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (hasVisited & collision.gameObject.tag.Equals("Player"))
         {
-            FearScript.instance.setCheckPointPos(this.transform.position);
+            FearManager.Instance.SetCheckPointPos(this.transform.position);
         }
         
     }

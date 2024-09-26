@@ -12,8 +12,8 @@ public class SpiderMonster : Monster
     void Start()
     {
       
-        monster_name = "Spider";
-        monster_strength = 3; 
+        monsterName = "Spider";
+        monsterStrength = 3; 
         rb = GetComponent<Rigidbody2D>();
 
        
@@ -47,7 +47,7 @@ public class SpiderMonster : Monster
             float distanceToPlayer = Vector2.Distance(player.position, transform.position);
             if (distanceToPlayer <= detectionRadius)
             {
-                monster_attack();  
+                MonsterAttack();  
             }
         }
     }
@@ -60,18 +60,18 @@ public class SpiderMonster : Monster
     }
 
 
-    public override void monster_attack()
+    public override void MonsterAttack()
     {
        
-        FearScript.instance.addFear(monster_strength);
+        FearManager.Instance.AddFear(monsterStrength);
        
-        Debug.Log(monster_name + " is attacking the player!");
+        Debug.Log(monsterName + " is attacking the player!");
     }
 
     
-    public override void monster_die()
+    public override void MonsterDie()
     {
-        base.monster_die();
-        Debug.Log(monster_name + " has been destroyed!");
+        base.MonsterDie();
+        Debug.Log(monsterName + " has been destroyed!");
     }
 }

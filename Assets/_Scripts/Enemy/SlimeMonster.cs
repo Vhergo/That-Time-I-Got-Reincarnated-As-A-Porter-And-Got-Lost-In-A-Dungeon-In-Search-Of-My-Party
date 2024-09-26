@@ -12,8 +12,8 @@ public class SlimeMonster : Monster
 
     void Start()
     {
-        monster_name = "Slime";
-        monster_strength = 1;  
+        monsterName = "Slime";
+        monsterStrength = 1;  
         rb = GetComponent<Rigidbody2D>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -44,8 +44,8 @@ public class SlimeMonster : Monster
             if (distanceToPlayer <= detectionRadius)
             {
                
-                FearScript.instance.addFear((int)(monster_strength * Time.deltaTime));
-                Debug.Log(monster_name + " is attacking the player!");
+                FearManager.Instance.AddFear((int)(monsterStrength * Time.deltaTime));
+                Debug.Log(monsterName + " is attacking the player!");
             }
         }
     }
@@ -56,9 +56,9 @@ public class SlimeMonster : Monster
         transform.eulerAngles = new Vector3(0, movingRight ? 0 : 180, 0);
     }
 
-    public override void monster_die()
+    public override void MonsterDie()
     {
-        base.monster_die();
-        Debug.Log(monster_name + " has been destroyed!");
+        base.MonsterDie();
+        Debug.Log(monsterName + " has been destroyed!");
     }
 }

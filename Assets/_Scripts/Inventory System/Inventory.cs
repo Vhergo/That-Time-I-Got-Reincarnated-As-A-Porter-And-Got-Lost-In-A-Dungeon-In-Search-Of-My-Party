@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance { get; private set; }
 
-    [SerializeField] private int inventorySize = 10;
+    [SerializeField] private int inventorySize = 6;
     [SerializeField] private List<InventoryItem> inventory = new List<InventoryItem>();
     private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
 
@@ -16,61 +18,44 @@ public class Inventory : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void OnEnable() => Item.OnItemCollected += AddItemToInventory;
-    private void OnDisable() => Item.OnItemCollected -= AddItemToInventory;
-
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            if (inventory.Count > 0) {
-                RemoveFromInventory(inventory[0].itemData);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            if (inventory.Count > 1) {
-                RemoveFromInventory(inventory[1].itemData);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3)) {
-            if (inventory.Count > 2) {
-                RemoveFromInventory(inventory[2].itemData);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4)) {
-            if (inventory.Count > 3) {
-                RemoveFromInventory(inventory[3].itemData);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5)) {
-            if (inventory.Count > 4) {
-                RemoveFromInventory(inventory[4].itemData);
-            }
-        }
+        Item.OnItemCollected += AddItemToInventory;
+    }
+    
+    private void OnDisable()
+    {
+        Item.OnItemCollected -= AddItemToInventory;
     }
 
     public void AddItemToInventory(ItemData itemData)
     {
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item)) {
             item.AddToStack();
+            InventoryUI.Instance.AddItemToUI(item, inventory.IndexOf(item));
         } else {
             InventoryItem newItem = new InventoryItem(itemData);
             inventory.Add(newItem);
+            InventoryUI.Instance.AddItemToUI(newItem, inventory.IndexOf(newItem));
             itemDictionary.Add(itemData, newItem);
+            Debug.Log("ItemData: " + itemData.itemName + " added to inventory");
         }
     }
 
     public void RemoveFromInventory(ItemData itemData)
     {
+        int itemIndex;
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item)) {
+            itemIndex = inventory.IndexOf(item);
             if (item.stackSize > 1) {
                 item.RemoveFromStack();
-            }else {
+            } else {
+                Debug.Log("Removing");
                 inventory.Remove(item);
+                itemDictionary.Remove(itemData);
             }
+
+            InventoryUI.Instance.RemoveItemFromUI(itemIndex);
         }
     }
 
@@ -81,4 +66,6 @@ public class Inventory : MonoBehaviour
         }
         return inventory.Count < inventorySize;
     }
+
+    public int GetInventorySize() => inventorySize;
 }

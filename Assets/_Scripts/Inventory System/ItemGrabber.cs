@@ -13,7 +13,7 @@ public class ItemGrabber : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Mouse Clicked");
+            //Debug.Log("Mouse Clicked");
             GrabItem();
         }
     }
@@ -27,22 +27,21 @@ public class ItemGrabber : MonoBehaviour
 
         // Raycast can only detect object with colliders
         if (hit.collider != null) {
-            Debug.Log("Found an item!");
-            Debug.Log("Item name: " + hit.collider.name);
+            //Debug.Log("Found an item!");
+            //Debug.Log("Item name: " + hit.collider.name);
 
             Item item = hit.collider.GetComponent<Item>();
             if (item != null) {
                 if (Inventory.Instance.InventoryHasSpace(item.ItemData)) {
                     item.Collect();
-                    PlaceholderManager.instance.addTorchStrength(hit.collider.gameObject.tag);
                 } else {
                     Debug.Log("Inventory is full!");
                 }
             } else {
-                Debug.Log("Hit object is not an Item");
+                //Debug.Log("Hit object is not an Item");
             }
         } else {
-            Debug.Log("No item found!");
+            //Debug.Log("No item found!");
         }
     }
 }

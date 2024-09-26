@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster:MonoBehaviour
+public class Monster : MonoBehaviour
 {
-    protected string monster_name { get; set; }
-    protected int monster_strength { get; set; }
+    protected string monsterName { get; set; }
+    protected int monsterStrength { get; set; }
+
     public Monster()
     {
-        monster_name = "Monster";
-        monster_strength = 5;
+        monsterName = "Monster";
+        monsterStrength = 5;
     }
 
-    public Monster(string monster_name, int monster_strength)
+    public Monster(string monster_name, int monsterStrength)
     {
-        this.monster_name = monster_name;
-        this.monster_strength = monster_strength;
+        this.monsterName = monster_name;
+        this.monsterStrength = monsterStrength;
     }
 
-    public virtual void monster_attack()
+    public virtual void MonsterAttack()
     {
-        FearScript.instance.addFear(monster_strength);
+        FearManager.Instance.AddFear(monsterStrength);
     }
 
-    public virtual void monster_die()
+    public virtual void MonsterDie()
     {
         Destroy(this);
     }

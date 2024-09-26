@@ -7,13 +7,13 @@ public class GlobalLight : MonoBehaviour
 {
     [SerializeField] private float dimLightFloat;
 
-    public static GlobalLight instance;
+    public static GlobalLight Instance;
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
-    public void changeGlobalLight(bool torch)
+    public void ChangeGlobalLight(bool torch)
     {
         if (torch)
         {

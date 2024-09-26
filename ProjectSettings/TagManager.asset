@@ -7,13 +7,15 @@ TagManager:
   - Settings
   - Sliders
   - Audio Toggles
-  - Placeholder
   - Gold
   - Gem
   - Weapon
   - Armor
   - MonsterDrop
   - Checkpoint
+  - ItemUI
+  - FuelSlot
+  - TorchHolder
   layers:
   - Default
   - TransparentFX

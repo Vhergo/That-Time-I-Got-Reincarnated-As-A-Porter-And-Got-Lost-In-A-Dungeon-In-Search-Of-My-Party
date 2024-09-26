@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3
   itemName: Sandwich
-  itemDescription: 
-  itemSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  itemDescription: Yummy!
+  itemFuelValue: 50
+  itemSprite: {fileID: 21300000, guid: 56636a9d65e913e44bfa31d37087cbbd, type: 3}
   itemPrefab: {fileID: 4581486531693089478, guid: 09ebc8805680d714da599c07c6cb2495, type: 3}

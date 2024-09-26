@@ -8,6 +8,7 @@ public class ItemData : ScriptableObject
     public int itemID;
     public string itemName;
     public string itemDescription;
+    public float itemFuelValue;
     public Sprite itemSprite;
     public GameObject itemPrefab;
 }
