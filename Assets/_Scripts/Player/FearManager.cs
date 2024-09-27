@@ -17,6 +17,8 @@ public class FearManager : MonoBehaviour
     [SerializeField] private Image fearMeterFill;
     [SerializeField] ColorVector fearMeterColor;
 
+    private float monsterFear;
+
     private Vector3? lastCheckpoint; // Nullable Vector3
 
     private void Awake()
@@ -33,7 +35,7 @@ public class FearManager : MonoBehaviour
     private void AdjustFearMeter()
     {
         if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= Time.deltaTime, 0, 100);
-        else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime, 0, 100);
+        else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * monsterFear, 0, 100);
 
         float fearFillAmount = fearMeter / 100;
         fearMeterFill.fillAmount = fearFillAmount;
@@ -57,6 +59,9 @@ public class FearManager : MonoBehaviour
     {
         fearMeter = Mathf.Clamp(fearMeter += fearStrength, 0, 100);
     }
+
+    public void IncreaseFear(float fearFactor) => monsterFear = fearFactor;
+    public void DecreaseFear() => monsterFear = 1;
 
     private void Revive()
     {

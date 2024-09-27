@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    protected string monsterName { get; set; }
-    protected int monsterStrength { get; set; }
+    public string monsterName;
+    public float moveSpeed;
+    [Range(0, 1)] public int fearFactor;
+    private float attackRate;
 
     public Monster()
     {
         monsterName = "Monster";
-        monsterStrength = 5;
+        fearFactor = 1;
     }
 
     public Monster(string monster_name, int monsterStrength)
     {
         this.monsterName = monster_name;
-        this.monsterStrength = monsterStrength;
+        this.fearFactor = monsterStrength;
     }
 
     public virtual void MonsterAttack()
     {
-        FearManager.Instance.AddFear(monsterStrength);
+        FearManager.Instance.AddFear(fearFactor);
     }
 
     public virtual void MonsterDie()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

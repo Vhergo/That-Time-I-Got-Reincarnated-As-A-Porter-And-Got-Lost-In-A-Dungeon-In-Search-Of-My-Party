@@ -110,6 +110,6 @@ public class TorchManager : MonoBehaviour, IInteractable
     private void SetupTorches()
     {
         torches.Clear();
-        torches = FindObjectsOfType<TorchHolder>().ToList();
+        torches = FindObjectsOfType<TorchHolder>(false).ToList();
     }
 }

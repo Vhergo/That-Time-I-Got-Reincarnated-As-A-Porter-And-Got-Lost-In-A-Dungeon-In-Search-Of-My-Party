@@ -13,7 +13,7 @@ public class SpiderMonster : Monster
     {
       
         monsterName = "Spider";
-        monsterStrength = 3; 
+        fearFactor = 3; 
         rb = GetComponent<Rigidbody2D>();
 
        
@@ -63,7 +63,7 @@ public class SpiderMonster : Monster
     public override void MonsterAttack()
     {
        
-        FearManager.Instance.AddFear(monsterStrength);
+        FearManager.Instance.AddFear(fearFactor);
        
         Debug.Log(monsterName + " is attacking the player!");
     }

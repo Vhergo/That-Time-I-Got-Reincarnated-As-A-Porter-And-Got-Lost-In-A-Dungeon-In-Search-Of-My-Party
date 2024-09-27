@@ -4,61 +4,83 @@ using UnityEngine;
 
 public class SlimeMonster : Monster
 {
-    public float moveSpeed = 1f;
     public float detectionRadius = 5f;
-    private bool movingRight = true;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheck;
+
     private Rigidbody2D rb;
     private Transform player;
+    private bool movingRight;
 
-    void Start()
+    private void Start()
     {
         monsterName = "Slime";
-        monsterStrength = 1;  
         rb = GetComponent<Rigidbody2D>();
-
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Player.Instance.transform;
     }
 
-    void Update()
+    private void Update()
     {
         MoveSlime();
-        AttackIfNearPlayer();
+        // AttackIfNearPlayer();
     }
 
-    void MoveSlime()
+    private void MoveSlime()
     {
-        rb.velocity = new Vector2((movingRight ? 1 : -1) * moveSpeed, rb.velocity.y);
-
-        RaycastHit2D groundInfo = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-        if (groundInfo.collider == null)
-        {
+        if (!GroundAhead() || WallAhead()) {
             TurnAround();
         }
+
+        float moveDir = movingRight ? 1 : -1;
+        rb.velocity = new Vector2(moveDir * moveSpeed, rb.velocity.y);
     }
 
-    void AttackIfNearPlayer()
-    {
-        if (player != null)
-        {
-            float distanceToPlayer = Vector2.Distance(player.position, transform.position);
-            if (distanceToPlayer <= detectionRadius)
-            {
-               
-                FearManager.Instance.AddFear((int)(monsterStrength * Time.deltaTime));
-                Debug.Log(monsterName + " is attacking the player!");
-            }
-        }
-    }
+    private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
 
-    void TurnAround()
+    private void TurnAround()
     {
+        Debug.Log("Turn");
         movingRight = !movingRight;
-        transform.eulerAngles = new Vector3(0, movingRight ? 0 : 180, 0);
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
+    //private void AttackIfNearPlayer()
+    //{
+    //    if (player != null) {
+    //        float distanceToPlayer = Vector2.Distance(player.position, transform.position);
+    //        if (distanceToPlayer <= detectionRadius) {
+    //            FearManager.Instance.AddFear((int)(fearFactor * Time.deltaTime));
+    //            Debug.Log(monsterName + " is attacking the player!");
+    //        }
+    //    }
+    //}
+
+    [ContextMenu("Die")]
     public override void MonsterDie()
     {
         base.MonsterDie();
         Debug.Log(monsterName + " has been destroyed!");
+
+        GameObject droppedLoot = GetComponent<LootDrop>().GetLoot();
+        Instantiate(droppedLoot, transform.position, Quaternion.identity);
+    }
+
+    // Draw Gizmos to visualize groundCheck and wallCheck
+    private void OnDrawGizmos()
+    {
+        if (groundCheck != null) {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, 0.2f);  // Ground detection radius
+        }
+
+        if (wallCheck != null) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(wallCheck.position, 0.2f);    // Wall detection radius
+        }
     }
 }
