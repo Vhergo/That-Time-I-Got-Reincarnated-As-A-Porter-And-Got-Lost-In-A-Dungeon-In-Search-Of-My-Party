@@ -16,6 +16,7 @@ TagManager:
   - ItemUI
   - FuelSlot
   - TorchHolder
+  - Monster
   layers:
   - Default
   - TransparentFX
