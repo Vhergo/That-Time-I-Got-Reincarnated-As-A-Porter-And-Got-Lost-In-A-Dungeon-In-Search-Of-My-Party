@@ -35,7 +35,7 @@ public class FearManager : MonoBehaviour
     private void AdjustFearMeter()
     {
         if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= Time.deltaTime, 0, 100);
-        else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * monsterFear, 0, 100);
+        else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * (1 + monsterFear), 0, 100);
 
         float fearFillAmount = fearMeter / 100;
         fearMeterFill.fillAmount = fearFillAmount;
