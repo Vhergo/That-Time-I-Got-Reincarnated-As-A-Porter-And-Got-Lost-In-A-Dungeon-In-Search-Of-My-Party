@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public string monsterName;
+    public Archetype archetype;
     public float moveSpeed;
     [Range(0, 1)] public int fearFactor;
     private float attackRate;
+    protected bool movingRight;
 
     public Monster()
     {
-        monsterName = "Monster";
         fearFactor = 1;
     }
 
-    public Monster(string monster_name, int monsterStrength)
+    public Monster(Archetype archetype, int fear)
     {
-        this.monsterName = monster_name;
-        this.fearFactor = monsterStrength;
+        this.archetype = archetype;
+        this.fearFactor = fear;
+    }
+
+    public virtual void TurnAround()
+    {
+        movingRight = !movingRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     public virtual void MonsterAttack()
@@ -26,6 +35,7 @@ public class Monster : MonoBehaviour
         FearManager.Instance.AddFear(fearFactor);
     }
 
+    [ContextMenu("Die")]
     public virtual void MonsterDie()
     {
         Destroy(gameObject);

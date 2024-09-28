@@ -16,6 +16,8 @@ public class FearManager : MonoBehaviour
     [SerializeField] private int lives;
     [SerializeField] private Image fearMeterFill;
     [SerializeField] ColorVector fearMeterColor;
+    [SerializeField] private Image dangerIndicator;
+    private RectTransform dangerIndicatorRect;
 
     private float monsterFear;
 
@@ -27,10 +29,13 @@ public class FearManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void Update()
+    private void Start()
     {
-        AdjustFearMeter();
+        dangerIndicator.enabled = false;
+        dangerIndicatorRect = dangerIndicator.GetComponent<RectTransform>();
     }
+
+    private void Update() => AdjustFearMeter();
 
     private void AdjustFearMeter()
     {
@@ -41,7 +46,20 @@ public class FearManager : MonoBehaviour
         fearMeterFill.fillAmount = fearFillAmount;
         fearMeterFill.color = Color.Lerp(fearMeterColor.baseColor, fearMeterColor.fearColor, fearFillAmount);
 
+        UpdateDangerIndicatorPosition(fearFillAmount);
+
         if (fearMeter >= 100) ResetToCheckPoint();
+    }
+
+    private void UpdateDangerIndicatorPosition(float fillAmount)
+    {
+        RectTransform fearMeterRect = fearMeterFill.GetComponent<RectTransform>();
+
+        float indicatorX = fearMeterRect.rect.xMin - 150f + (fearMeterRect.rect.width * fillAmount);
+
+        Vector3 newPosition = dangerIndicatorRect.localPosition;
+        newPosition.x = indicatorX;
+        dangerIndicatorRect.localPosition = newPosition;
     }
 
     private void ResetToCheckPoint()
@@ -58,6 +76,14 @@ public class FearManager : MonoBehaviour
     public void AddFear(int fearStrength)
     {
         fearMeter = Mathf.Clamp(fearMeter += fearStrength, 0, 100);
+        StartCoroutine(DangerIndicator());
+    }
+
+    private IEnumerator DangerIndicator()
+    {
+        dangerIndicator.enabled = true;
+        yield return new WaitForSeconds(2f);
+        dangerIndicator.enabled = false;
     }
 
     public void IncreaseFear(float fearFactor) => monsterFear = fearFactor;

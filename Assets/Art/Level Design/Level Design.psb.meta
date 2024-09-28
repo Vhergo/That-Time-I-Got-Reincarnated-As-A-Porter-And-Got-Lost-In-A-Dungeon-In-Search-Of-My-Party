@@ -94,7 +94,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Layer 2
+  - name: After Freefall
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2375
+      y: 3945
+      width: 484
+      height: 325
+    spriteID: 5c9278afd8cf87849ba92b0e120b4d68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2375, y: 3945}
+    spritePosition: {x: 1965, y: 548}
+  - name: Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -114,7 +135,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3945}
-    spritePosition: {x: 118, y: 1027}
+    spritePosition: {x: 118, y: 859}
   - name: Layer 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -193,8 +214,18 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Layer 2
-    spriteName: Layer 2
+  - name: After Freefall
+    spriteName: After Freefall
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5c9278afd8cf87849ba92b0e120b4d68
+    layerID: 4
+    mosaicPosition: {x: 2375, y: 3945}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tutorial
+    spriteName: Tutorial
     isGroup: 0
     parentIndex: -1
     spriteID: 0711cf8ab25a70749b2c6c733b4259c8

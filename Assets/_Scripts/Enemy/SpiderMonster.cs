@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SpiderMonster : Monster
 {
-    public float moveSpeed = 2f;
     public float detectionRadius = 7f;  
     private bool movingRight = true;
     private Rigidbody2D rb;
     private Transform player;  
     void Start()
     {
-      
-        monsterName = "Spider";
+
+        archetype = Archetype.Archetype2;
         fearFactor = 3; 
         rb = GetComponent<Rigidbody2D>();
 
@@ -65,13 +64,13 @@ public class SpiderMonster : Monster
        
         FearManager.Instance.AddFear(fearFactor);
        
-        Debug.Log(monsterName + " is attacking the player!");
+        Debug.Log(archetype.ToString() + " is attacking the player!");
     }
 
     
     public override void MonsterDie()
     {
         base.MonsterDie();
-        Debug.Log(monsterName + " has been destroyed!");
+        Debug.Log(archetype.ToString() + " has been destroyed!");
     }
 }
