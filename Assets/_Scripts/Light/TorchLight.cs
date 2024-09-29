@@ -40,18 +40,16 @@ public class TorchLight : MonoBehaviour
 
         innerRadius = torchLight.pointLightInnerRadius;
         outerRadius = torchLight.pointLightOuterRadius;
-        colliderRadius = torchCollider.radius;
-    }
 
-    void Update()
-    {
-        
+        torchCollider.enabled = false;
+        colliderRadius = torchCollider.radius;
     }
 
     public void EnableLight()
     {
         FearManager.Instance.isLit = isLit = true;
         torchLight.enabled = true;
+        torchCollider.enabled = true;
         flickerCoroutine = StartCoroutine(Flicker());
     }
 
@@ -59,6 +57,7 @@ public class TorchLight : MonoBehaviour
     {
         FearManager.Instance.isLit = isLit = false;
         torchLight.enabled = false;
+        torchCollider.enabled = false;
     }
 
     public void UpdateTorchLightRadius(float torchFuelPercentage)
@@ -83,7 +82,15 @@ public class TorchLight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player")) FearManager.Instance.inRange = true;
+        if (col.CompareTag("Player")) {
+            FearManager.Instance.inRange = true;
+        }
+
+        if (col.CompareTag("Monster") && isLit) {
+            if (col.TryGetComponent(out Monster monster)) {
+                monster.MonsterDie();
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)

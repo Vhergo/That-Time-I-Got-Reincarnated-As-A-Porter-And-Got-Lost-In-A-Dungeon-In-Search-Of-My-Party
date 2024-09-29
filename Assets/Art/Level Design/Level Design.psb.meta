@@ -101,7 +101,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2375
+      x: 4
       y: 3945
       width: 484
       height: 325
@@ -113,8 +113,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2375, y: 3945}
-    spritePosition: {x: 1965, y: 548}
+    uvTransform: {x: 4, y: 3945}
+    spritePosition: {x: 0, y: 200}
   - name: Tutorial
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -123,7 +123,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3945
+      y: 5694
       width: 1948
       height: 561
     spriteID: 0711cf8ab25a70749b2c6c733b4259c8
@@ -134,7 +134,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3945}
+    uvTransform: {x: 4, y: 5694}
     spritePosition: {x: 118, y: 859}
   - name: Layer 1
     originalName: 
@@ -220,7 +220,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 5c9278afd8cf87849ba92b0e120b4d68
     layerID: 4
-    mosaicPosition: {x: 2375, y: 3945}
+    mosaicPosition: {x: 4, y: 3945}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -230,7 +230,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 0711cf8ab25a70749b2c6c733b4259c8
     layerID: 3
-    mosaicPosition: {x: 4, y: 3945}
+    mosaicPosition: {x: 4, y: 5694}
     flatten: 0
     isImported: 1
     isVisible: 1

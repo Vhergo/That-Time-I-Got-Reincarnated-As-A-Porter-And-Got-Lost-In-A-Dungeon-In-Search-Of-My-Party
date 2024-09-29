@@ -6,6 +6,7 @@ public class TorchHolder : MonoBehaviour
 {
     private Animator torchAnim;
     private TorchLight torchLight;
+    private bool interacted;
 
     private void Start()
     {
@@ -28,5 +29,15 @@ public class TorchHolder : MonoBehaviour
     public void UpdateTorchLightRadius(float torchFuelPercentage)
     {
         torchLight.UpdateTorchLightRadius(torchFuelPercentage);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) {
+            if (!interacted) {
+                Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
+                interacted = true;
+            }
+        }
     }
 }

@@ -442,8 +442,6 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        // Circle detection has a hard time detecting the ground if the player is standing on the edge of a platform
-        // return Physics2D.OverlapCircle(groundCheck.position, groundDetectionRadius, groundLayer);
         return Physics2D.OverlapBox(groundCheck.position, groundDetectionSize, 0f, groundLayer);
     }
 
@@ -452,13 +450,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, wallDetectionRadius, wallLayer);
     }
 
-    void CheckFacingDirection()
-    {
-        // isMovingRight is not updated when stationary (no '==' case); 
-        // shouldn't be true when stationary (NEED TO FIX)
-        // isMovingRight = moveDirection.x > 0 ? true : moveDirection.x < 0 ? false : isMovingRight;
-        isMovingRight = moveDirection.x > 0 ? true : false;
-    }
+    void CheckFacingDirection() => isMovingRight = moveDirection.x > 0 ? true : false;
 
     void Turn()
     {
@@ -472,13 +464,6 @@ public class Player2DPlatformerMovement : MonoBehaviour
             isFacingRight = false;
             Flip();
         }
-
-        // Needs player sprite to be the first child of this player object
-        //if (moveDirection.x > 0) {
-        //    gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-        //} else if (moveDirection.x < 0) {
-        //    gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-        //}
     }
 
     private void Flip()

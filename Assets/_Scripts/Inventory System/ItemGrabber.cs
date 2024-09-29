@@ -24,6 +24,7 @@ public class ItemGrabber : MonoBehaviour
     {
         if (lootWithinRange != null) {
             lootWithinRange.Collect();
+            Player.Instance.PlayGuide(GuideType.Inventory, KeyCode.Tab);
         }
     }
 

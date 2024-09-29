@@ -18,6 +18,9 @@ TagManager:
   - TorchHolder
   - Monster
   - Item
+  - Critter
+  - TwoWayPlatform
+  - Stairs
   layers:
   - Default
   - TransparentFX

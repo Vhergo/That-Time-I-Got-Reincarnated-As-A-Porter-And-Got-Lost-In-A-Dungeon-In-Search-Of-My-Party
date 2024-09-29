@@ -28,11 +28,6 @@ public class Archetype2 : Monster
     [SerializeField] private int moveRange;
     private bool canAttack = true;
 
-    [Header("Idle Movement")]
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private Transform wallCheck;
-
     [Header("Animation")]
     [SerializeField] private Animator anim;
 
@@ -42,12 +37,11 @@ public class Archetype2 : Monster
     [SerializeField] private bool isJumping, isInAir, onCooldown;
     [SerializeField] private RaycastHit2D isGrounded;
     Seeker seeker;
-    Rigidbody2D rb;
 
-    public void Start()
+    protected override void Start()
     {
+        base.Start();
         seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         isJumping = false;
@@ -132,9 +126,7 @@ public class Archetype2 : Monster
                     return;
 
                 isJumping = true;
-                // rb.AddForce(Vector2.up * jumpHeight);
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-                Debug.Log(direction.y.ToString());
                 StartCoroutine(JumpCoolDown());
             }
         }
@@ -188,18 +180,5 @@ public class Archetype2 : Monster
         onCooldown = true;
         yield return new WaitForSeconds(1f);
         onCooldown = false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (groundCheck != null) {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position, 0.2f);
-        }
-
-        if (wallCheck != null) {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(wallCheck.position, 0.2f);
-        }
     }
 }

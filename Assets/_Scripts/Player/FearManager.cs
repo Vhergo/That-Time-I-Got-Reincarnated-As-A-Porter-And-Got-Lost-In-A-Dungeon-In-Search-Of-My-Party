@@ -73,7 +73,7 @@ public class FearManager : MonoBehaviour
 
     public void SetCheckPointPos(Vector3 newCheckPointPos) => lastCheckpoint = newCheckPointPos;
 
-    public void AddFear(int fearStrength)
+    public void AddFear(float fearStrength)
     {
         fearMeter = Mathf.Clamp(fearMeter += fearStrength, 0, 100);
         StartCoroutine(DangerIndicator());

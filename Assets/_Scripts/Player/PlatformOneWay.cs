@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlatformOneWay : MonoBehaviour
 {
-    [SerializeField] private float dropDelayTimer;
+    [SerializeField] private float dropDelayTimer = 0.1f;
     [SerializeField] private float restoreDelay = 0.25f;
     private float dropDelayCounter;
 
-    private BoxCollider2D boxCol;
-    private BoxCollider2D platformCol;
+    private Collider2D boxCol;
+    private CompositeCollider2D platformCol;
     private bool isDropping = false;
 
-    void Start() {
-        boxCol = GetComponent<BoxCollider2D>();
+    private void Start() {
+        boxCol = GetComponent<Collider2D>();
         dropDelayCounter = dropDelayTimer;
     }
 
-    void Update() {
+    private void Update() {
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             if (!isDropping) DropThroughPlatform();
         }
@@ -27,10 +27,9 @@ public class PlatformOneWay : MonoBehaviour
         }
     }
 
-    void DropThroughPlatform() {
+    private void DropThroughPlatform() {
         if (dropDelayCounter <= 0) {
-            if (platformCol != null)
-                Physics2D.IgnoreCollision(boxCol, platformCol);
+            if (platformCol != null) Physics2D.IgnoreCollision(boxCol, platformCol);
             dropDelayCounter = dropDelayTimer;
             isDropping = true;
 
@@ -40,15 +39,14 @@ public class PlatformOneWay : MonoBehaviour
         }
     }
 
-    void RestoreCollision() {
-        if (platformCol != null)
-            Physics2D.IgnoreCollision(boxCol, platformCol, false);
+    private void RestoreCollision() {
+        if (platformCol != null) Physics2D.IgnoreCollision(boxCol, platformCol, false);
         isDropping = false;
     }
 
-    void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.tag == "Platform") {
-            if (!isDropping) platformCol = col.gameObject.GetComponent<BoxCollider2D>();
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "TwoWayPlatform") {
+            if (!isDropping) platformCol = col.gameObject.GetComponent<CompositeCollider2D>();
         }
     }
 }
