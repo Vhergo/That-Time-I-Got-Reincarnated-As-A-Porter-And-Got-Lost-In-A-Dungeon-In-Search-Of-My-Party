@@ -332,6 +332,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Background Walls_10
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635a22e8c7bf53746814aa6d8ef20dcf
+      internalID: 98437956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -345,6 +366,7 @@ TextureImporter:
     nameFileIdTable:
       Background Walls_0: 1312723049
       Background Walls_1: 958650667
+      Background Walls_10: 98437956
       Background Walls_2: 28987897
       Background Walls_3: 275323785
       Background Walls_4: -1879848587
