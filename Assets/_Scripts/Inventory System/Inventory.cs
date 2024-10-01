@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
@@ -65,6 +66,26 @@ public class Inventory : MonoBehaviour
             return inventory.Count < inventorySize;
         }
         return inventory.Count < inventorySize;
+    }
+
+    private ItemData GetRandomItemFromInventory()
+    {
+        if (inventory.Count == 0) return null;
+
+        System.Random random = new System.Random();
+        ItemData itemToDestroy = inventory
+            .Where(item => item.itemData != null) // Filter items that have a valid itemData field
+            .OrderBy(order => random.Next()) // Order the list randomly
+            .FirstOrDefault().itemData; // Get the first value
+
+        return itemToDestroy;
+
+    }
+
+    public void DestroyRandomItem()
+    {
+        ItemData itemToDestroy = GetRandomItemFromInventory();
+        if (itemToDestroy != null) RemoveFromInventory(itemToDestroy);
     }
 
     public int GetInventorySize() => inventorySize;

@@ -15,10 +15,6 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode guideKey;
     private Coroutine guideCoroutine;
 
-    [Space(10)]
-    [SerializeField] private float damageCooldown = 4f;
-    private bool canTakeDamage = true;
-
     public static Player Instance { get; private set; }
 
     private void Awake()
@@ -76,24 +72,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void StopGuide()
+    public void TakeDamage(float fearFactor)
     {
-
-    }
-
-    private IEnumerator TakeDamageCooldown()
-    {
-        canTakeDamage = false;
-        yield return new WaitForSeconds(damageCooldown);
-        canTakeDamage = true;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster") && canTakeDamage) {
-            Monster monster = collision.gameObject.GetComponent<Monster>();
-            monster.MonsterAttack();
-            StartCoroutine(TakeDamageCooldown());
-        }
+        FearManager.Instance.AddFear(fearFactor);
+        // Potential hit animation trigger
     }
 }

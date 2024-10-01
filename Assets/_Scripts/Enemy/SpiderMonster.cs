@@ -51,15 +51,7 @@ public class SpiderMonster : Monster
         }
     }
 
-   
-    void TurnAround()
-    {
-        movingRight = !movingRight;
-        transform.eulerAngles = new Vector3(0, movingRight ? 0 : 180, 0);
-    }
-
-
-    public override void MonsterAttack()
+    protected override void MonsterAttack()
     {
        
         FearManager.Instance.AddFear(fearFactor);

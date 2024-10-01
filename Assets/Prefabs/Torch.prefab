@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6690116657298219210}
   m_Layer: 0
   m_Name: TorchLight
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6fb9fad6d70f1439dbc8d485115b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minRadius: 1.5
   innerRadius: 3.5
   outerRadius: 5
   minIntensity: 2

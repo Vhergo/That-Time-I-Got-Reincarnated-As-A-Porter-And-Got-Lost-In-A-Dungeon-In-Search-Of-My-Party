@@ -21,6 +21,8 @@ TagManager:
   - Critter
   - TwoWayPlatform
   - Stairs
+  - Light
+  - SafeZone
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,17 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public Archetype archetype;
+    [Serializable] public enum Tier { Normal, King }
+    [SerializeField] protected Tier tier;
+
     public float moveSpeed;
     [Range(0, 1)] public float fearFactor;
-    private float attackRate;
+    [SerializeField] protected float attackRate;
     protected bool movingRight;
+    protected Animator anim;
 
     [SerializeField] protected LayerMask groundLayer;
+    [SerializeField] protected LayerMask lightLayer;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected Transform wallCheck;
     protected Rigidbody2D rb;
@@ -29,6 +35,7 @@ public class Monster : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     public virtual void TurnAround()
@@ -40,7 +47,7 @@ public class Monster : MonoBehaviour
         transform.localScale = scale;
     }
 
-    public virtual void MonsterAttack()
+    protected virtual void MonsterAttack()
     {
         FearManager.Instance.AddFear(fearFactor);
     }

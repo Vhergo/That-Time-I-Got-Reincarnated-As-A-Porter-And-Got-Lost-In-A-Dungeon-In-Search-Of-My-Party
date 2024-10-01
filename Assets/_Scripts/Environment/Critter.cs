@@ -9,14 +9,12 @@ public class Critter : Monster
 {
     [SerializeField] private List<CritterInfo> critterAnimations;
     [SerializeField] private float runAwayTimer;
-    private Animator anim;
     private bool sawPlayer;
     private bool isRunningAway;
 
     protected override void Start()
     {
         base.Start();
-        anim = GetComponent<Animator>();
         ChooseCritter();
     }
 

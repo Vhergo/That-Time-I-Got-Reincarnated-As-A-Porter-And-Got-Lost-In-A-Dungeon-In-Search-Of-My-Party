@@ -8,9 +8,11 @@ public class GlobalLight : MonoBehaviour
     [SerializeField] private float dimLightFloat;
 
     public static GlobalLight Instance;
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     public void ChangeGlobalLight(bool torch)

@@ -52,6 +52,7 @@ public class TorchManager : MonoBehaviour, IInteractable
         torchIsPlaced = true;
         activeTorch.PlaceTorch();
         burnFuelCoroutine = StartCoroutine(BurnFuel());
+        ShowTorchUI();
 
         GlobalLight.Instance.ChangeGlobalLight(true);
     }
@@ -62,6 +63,7 @@ public class TorchManager : MonoBehaviour, IInteractable
         activeTorch.RemoveTorch();
         activeTorch = null;
         if (burnFuelCoroutine != null) StopCoroutine(burnFuelCoroutine);
+        HideTorchUI();
 
         GlobalLight.Instance.ChangeGlobalLight(false);
     }
@@ -100,10 +102,14 @@ public class TorchManager : MonoBehaviour, IInteractable
         torchIsPlaced = false;
     }
 
+    public void ShowTorchUI() => torchUI.transform.parent.gameObject.SetActive(true);
+    public void HideTorchUI() => torchUI.transform.parent.gameObject.SetActive(false);
+
     public float GetTorchPlaceRange() => torchPlaceRange;
     public bool GetTorchState() => torchIsPlaced;
     public float GetTorchFuel() => currentTorchFuel;
     public float GetTorchStrength() => torchStrength;
+    public TorchHolder GetActiveTorch() => activeTorch;
     private bool OutOfTorchFuel() => currentTorchFuel <= 0;
     private void UpdateTorchUI() => torchUI.fillAmount = currentTorchFuel / maxTorchFuel;
 
@@ -111,5 +117,7 @@ public class TorchManager : MonoBehaviour, IInteractable
     {
         torches.Clear();
         torches = FindObjectsOfType<TorchHolder>(false).ToList();
+
+        HideTorchUI();
     }
 }

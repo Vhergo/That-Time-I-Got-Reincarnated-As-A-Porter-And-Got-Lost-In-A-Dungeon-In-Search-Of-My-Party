@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class TorchLight : MonoBehaviour
 {
     [Header("Light")]
+    [SerializeField] private float minRadius;
     [SerializeField] private float innerRadius;
     [SerializeField] private float outerRadius;
 
@@ -62,9 +63,9 @@ public class TorchLight : MonoBehaviour
 
     public void UpdateTorchLightRadius(float torchFuelPercentage)
     {
-        torchCollider.radius = Mathf.Lerp(0, colliderRadius, torchFuelPercentage);
-        torchLight.pointLightInnerRadius = Mathf.Lerp(0, innerRadius, torchFuelPercentage);
-        torchLight.pointLightOuterRadius = Mathf.Lerp(0, outerRadius, torchFuelPercentage);
+        torchCollider.radius = Mathf.Max(minRadius, Mathf.Lerp(0, colliderRadius, torchFuelPercentage));
+        torchLight.pointLightInnerRadius = Mathf.Max(minRadius, Mathf.Lerp(0, innerRadius, torchFuelPercentage));
+        torchLight.pointLightOuterRadius = Mathf.Max(minRadius, Mathf.Lerp(0, outerRadius, torchFuelPercentage));
     }
 
     private IEnumerator Flicker()
@@ -79,22 +80,12 @@ public class TorchLight : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player")) {
-            FearManager.Instance.inRange = true;
-        }
-
         if (col.CompareTag("Monster") && isLit) {
             if (col.TryGetComponent(out Monster monster)) {
                 monster.MonsterDie();
             }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player")) FearManager.Instance.inRange = false;
     }
 }

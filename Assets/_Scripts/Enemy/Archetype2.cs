@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class Archetype2 : Monster
 {
+    #region VARIABLES
     [Header("Pathfinding")]
     [SerializeField] private Transform target;
     [SerializeField] private float aggroRange = 10f;
@@ -15,28 +17,34 @@ public class Archetype2 : Monster
 
     [Header("Physics")]
     [SerializeField] private float speed = 200f;
+    [SerializeField] private float acceleration = 0.5f;
     [SerializeField] private float nextWaypoint = 3f;
     [SerializeField] private float jumpNodeHeightReq = 0.8f;
     [SerializeField] private float jumpHeight = 0.3f;
     [SerializeField] private float jumpCheckOffset = 0.1f;
 
     [Header("Behavior")]
-    [SerializeField] private float attackCooldown = 4;
-    //[SerializeField] private float attackRange = 3;
+    [SerializeField] private Transform attackArea;
+    [SerializeField] private float attackRadius;
+    [SerializeField] private float attackCooldown = 3;
+    [SerializeField] private float attackDelay = .5f;
     [SerializeField] private bool followEnabled = true;
     [SerializeField] private bool jumpEnabled = true;
-    [SerializeField] private int moveRange;
     private bool canAttack = true;
+    public bool isAttacking = false;
 
     [Header("Animation")]
-    [SerializeField] private Animator anim;
+    [SerializeField] private AnimationClip idleAnimation;
+    [SerializeField] private AnimationClip walkAnimation;
+    [SerializeField] private AnimationClip attackAnimation;
 
     [Space(10)]
     private Path path;
     private int currentWaypoint = 0;
-    [SerializeField] private bool isJumping, isInAir, onCooldown;
+    private bool isJumping, isInAir, onCooldown;
     [SerializeField] private RaycastHit2D isGrounded;
     Seeker seeker;
+    #endregion
 
     protected override void Start()
     {
@@ -53,35 +61,62 @@ public class Archetype2 : Monster
 
     private void FixedUpdate()
     {
+        if (!canAttack) return;
+
         if (TargetInAttackDistance()) {
-            if (canAttack) StartCoroutine(Attack());
-            else PathFollow(); // probably check for followEnabled here unless we swap this to idle
-        }else if(TargetInDistance() && followEnabled) {
+            StartCoroutine(AttackSequence());
+        }else if(TargetInDistance() && followEnabled && canAttack) {
             PathFollow();
         }else {
-            IdleMove();
+            Move();
         }
     }
 
-    private IEnumerator Attack()
+    private IEnumerator AttackSequence()
     {
-        Debug.Log("Attacking");
         canAttack = false;
-        anim.SetTrigger("Attack");
 
+        anim.Play(idleAnimation.name);
+
+        // Slight delay before attack (give player a chance to react)
+        yield return new WaitForSeconds(attackDelay);
+        anim.Play(attackAnimation.name);
+        FacePlayer();
+        isAttacking = true;
+
+        // Swap to idle animation after delay
+        yield return null;
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+        anim.Play(idleAnimation.name);
+
+        // Start moving after your attack cooldown
         yield return new WaitForSeconds(attackCooldown);
+
+        if (TargetInAttackDistance()) anim.Play(idleAnimation.name);
+        else anim.Play(walkAnimation.name);
+
         canAttack = true;
     }
 
-    private void UpdatePath()
+    public void Attack() => StartCoroutine(RegisterAttack());
+    public void StopAttack() => isAttacking = false;
+    private IEnumerator RegisterAttack()
     {
-        if (followEnabled && TargetInDistance() && seeker.IsDone())
-        {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        while (isAttacking) {
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackArea.position, attackRadius);
+            if (hitObjects.Any(obj => obj.CompareTag("Player"))) {
+                Debug.Log("Checking");
+                Player.Instance.TakeDamage(fearFactor);
+                Inventory.Instance.DestroyRandomItem();
+                yield break;
+            }
+
+            yield return null;
         }
+        
     }
 
-    private void IdleMove()
+    private void Move()
     {
         if (!GroundAhead() || WallAhead()) {
             TurnAround();
@@ -94,6 +129,13 @@ public class Archetype2 : Monster
     private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
 
+    private void UpdatePath()
+    {
+        if (followEnabled && TargetInDistance() && seeker.IsDone()) {
+            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        }
+    }
+
     private void PathFollow()
     {
         if (path == null)
@@ -101,7 +143,11 @@ public class Archetype2 : Monster
         if (currentWaypoint >= path.vectorPath.Count)
             return;
 
-        Jump();
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed;
+        Vector2 currentVelocity = rb.velocity;
+
+        Jump(direction);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
@@ -109,22 +155,17 @@ public class Archetype2 : Monster
 
         if (rb.velocity.x > 0f && !movingRight) TurnAround();
         else if (rb.velocity.x < 0f && movingRight) TurnAround();
+
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, force, ref currentVelocity, acceleration);
     }
 
-    private void Jump()
+    private void Jump(Vector2 direction)
     {
         Vector3 startOffest = transform.position - new Vector3(0f, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset, transform.position.z);
         isGrounded = Physics2D.Raycast(startOffest, -Vector3.up, 0.05f);
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed;
-        Vector2 currentVelocity = rb.velocity;
-
         if (jumpEnabled && isGrounded && !isInAir && !onCooldown) {
             if (direction.y > jumpNodeHeightReq) {
-                if (isInAir)
-                    return;
-
                 isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
                 StartCoroutine(JumpCoolDown());
@@ -137,8 +178,6 @@ public class Archetype2 : Monster
         } else {
             isInAir = true;
         }
-
-        rb.velocity = Vector2.SmoothDamp(rb.velocity, force, ref currentVelocity, 0.5f);
     }
 
     public override void MonsterDie()
@@ -153,17 +192,21 @@ public class Archetype2 : Monster
     private bool TargetInDistance()
     {
         if (isAggroed) {
-            isAggroed = false;
-            return Vector2.Distance(transform.position, target.transform.position) < disengageRange;
+            return isAggroed = Vector2.Distance(transform.position, target.transform.position) < disengageRange;
         } else {
-            isAggroed = true;
-            return Vector2.Distance(transform.position, target.transform.position) < aggroRange;
+            return isAggroed = Vector2.Distance(transform.position, target.transform.position) < aggroRange;
         }  
     }
 
     private bool TargetInAttackDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position) < nextWaypoint;
+    }
+
+    private void FacePlayer()
+    {
+        if (target.position.x < transform.position.x && movingRight) TurnAround();
+        else if (target.position.x > transform.position.x && !movingRight) TurnAround();
     }
 
     private void OnPathComplete(Path p)
@@ -180,5 +223,14 @@ public class Archetype2 : Monster
         onCooldown = true;
         yield return new WaitForSeconds(1f);
         onCooldown = false;
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        if (isAttacking) {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(attackArea.position, attackRadius);
+        }
     }
 }

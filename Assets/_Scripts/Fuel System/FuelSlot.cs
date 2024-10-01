@@ -78,4 +78,6 @@ public class FuelSlot : MonoBehaviour
             fuelSlotOpen = false;
         }
     }
+
+
 }

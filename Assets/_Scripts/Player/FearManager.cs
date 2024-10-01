@@ -100,6 +100,18 @@ public class FearManager : MonoBehaviour
     {
         Debug.Log("GAME OVER! GAME OVER! GAME OVER! GAME OVER! GAME OVER!");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light")) inRange = true;
+        if (collision.CompareTag("SafeZone")) inRange = isLit = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light")) inRange = false;
+        if (collision.CompareTag("SafeZone")) inRange = isLit = false;
+    }
 }
 
 [Serializable]
