@@ -85,5 +85,9 @@ public class Archetype5 : Monster
         foreach(Transform waypoint in waypoints) {
             Gizmos.DrawWireSphere(waypoint.position, 0.2f);
         }
+
+        for (int i = 0; i < waypoints.Count - 1; i++) {
+            Gizmos.DrawLine(waypoints[i].position, waypoints[i + 1].position);
+        }
     }
 }

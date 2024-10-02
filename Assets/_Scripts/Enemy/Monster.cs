@@ -6,12 +6,10 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public Archetype archetype;
-    [Serializable] public enum Tier { Normal, King }
-    [SerializeField] protected Tier tier;
 
     public float moveSpeed;
     [Range(0, 1)] public float fearFactor;
-    [SerializeField] protected float attackRate;
+    [SerializeField] protected float attackCooldown;
     protected bool movingRight;
     protected Animator anim;
 

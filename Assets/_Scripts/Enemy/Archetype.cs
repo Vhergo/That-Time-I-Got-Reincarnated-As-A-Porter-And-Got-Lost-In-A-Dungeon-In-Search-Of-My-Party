@@ -7,5 +7,7 @@ public enum Archetype
     Archetype2,
     Archetype3,
     Archetype4,
+    Archetype5,
+    Archetype6,
     Critter
 }

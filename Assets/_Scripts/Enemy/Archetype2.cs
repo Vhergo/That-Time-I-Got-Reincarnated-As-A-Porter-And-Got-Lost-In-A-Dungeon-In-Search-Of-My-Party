@@ -26,7 +26,6 @@ public class Archetype2 : Monster
     [Header("Behavior")]
     [SerializeField] private Transform attackArea;
     [SerializeField] private float attackRadius;
-    [SerializeField] private float attackCooldown = 3;
     [SerializeField] private float attackDelay = .5f;
     [SerializeField] private bool followEnabled = true;
     [SerializeField] private bool jumpEnabled = true;
