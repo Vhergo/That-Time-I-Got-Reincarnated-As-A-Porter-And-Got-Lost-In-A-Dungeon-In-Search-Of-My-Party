@@ -15,6 +15,6 @@ MonoBehaviour:
   itemID: 0
   itemName: Knife
   itemDescription: 
-  itemFuelValue: 5
+  itemFuelValue: 10
   itemSprite: {fileID: 21300000, guid: 294c54930897fc342a32acca101c80c4, type: 3}
   itemPrefab: {fileID: 900826445187745436, guid: 19bb4b30e4b61fb47918ffc7ed2bb5ef, type: 3}
