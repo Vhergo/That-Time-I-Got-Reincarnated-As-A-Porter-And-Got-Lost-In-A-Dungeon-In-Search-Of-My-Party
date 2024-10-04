@@ -17,6 +17,8 @@ public class Player2DPlatformerMovement : MonoBehaviour
     private InputAction jump;
     private InputAction dash;
 
+    private PlayerAnimation playerAnim;
+
     #region VARIABLES
     [Header("Available Controls")]
     [Tooltip("This is a test description for myVariable.")][SerializeField] private bool toggleJumpOff;
@@ -138,6 +140,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerControls();
+        playerAnim = PlayerAnimation.Instance;
         ValidateAndInitialize();
     }
 
@@ -183,6 +186,8 @@ public class Player2DPlatformerMovement : MonoBehaviour
         ProccessInput();
         Timers();
         Turn();
+
+        UpdateAnimation();
     }
 
     void FixedUpdate()
@@ -191,6 +196,12 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
         if (!IsDead) Move();
         ControlToggles();
+    }
+
+    private void UpdateAnimation()
+    {
+        if (Mathf.Approximately(moveDirection.x, 0)) playerAnim.PlayIdleAnim();
+        else playerAnim.PlayWalkAnim();
     }
 
     void JumpInput(InputAction.CallbackContext context) => jumpInput = true;

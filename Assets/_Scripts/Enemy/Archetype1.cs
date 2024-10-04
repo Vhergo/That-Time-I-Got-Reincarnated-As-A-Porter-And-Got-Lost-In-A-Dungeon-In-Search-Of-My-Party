@@ -9,9 +9,13 @@ public class Archetype1 : Monster
     [Space(10)]
     [SerializeField] private Animator swordAnim;
     [SerializeField] private bool startOnCeiling;
+    private bool hasDropped;
 
     [Space(10)]
     [SerializeField] private List<Color> slimeColors = new List<Color>();
+
+    [Space(10)]
+    [SerializeField] private CircleCollider2D dropdownDetection;
 
     private Transform player;
     private bool canMove = true;
@@ -25,7 +29,10 @@ public class Archetype1 : Monster
 
         SetRandomColor();
 
+        dropdownDetection.enabled = false;
+
         if (startOnCeiling) {
+            dropdownDetection.enabled = true;
             rb.isKinematic = true;
             canMove = false;
 
@@ -54,6 +61,7 @@ public class Archetype1 : Monster
 
     private IEnumerator DropDownSequence()
     {
+        hasDropped = true;
         rb.isKinematic = false;
         yield return new WaitForSeconds(0.1f);
 
@@ -94,10 +102,29 @@ public class Archetype1 : Monster
             Instantiate(droppedLoot, transform.position, Quaternion.identity);
     }
 
+    private bool IsCollidingWithAnotherSlime(Collider2D other) => other.GetComponent<Archetype1>() != null;
+
+    private bool IsGoingTowardsPlayer()
+    {
+        float playerDir = player.position.x - transform.position.x;
+        return (playerDir > 0 && movingRight) || (playerDir < 0 && !movingRight);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (collision.gameObject.CompareTag("Player") && IsGoingTowardsPlayer()) {
             TurnAround();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && startOnCeiling && !hasDropped) {
+            TriggerDropDown();
+        }
+
+        if (collision.CompareTag("Monster") && IsCollidingWithAnotherSlime(collision)) {
+            Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
         }
     }
 }

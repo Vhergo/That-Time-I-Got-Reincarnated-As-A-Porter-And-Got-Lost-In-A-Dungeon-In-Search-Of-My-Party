@@ -27,10 +27,13 @@ public class Archetype2 : Monster
     [SerializeField] private Transform attackArea;
     [SerializeField] private float attackRadius;
     [SerializeField] private float attackDelay = .5f;
+    [SerializeField] private bool avoidLight;
+    [SerializeField] private float avoidLightDuration = 5f;
     [SerializeField] private bool followEnabled = true;
     [SerializeField] private bool jumpEnabled = true;
     private bool canAttack = true;
     private bool isAttacking;
+    private bool ignorePlayer;
 
     [Header("Animation")]
     [SerializeField] private AnimationClip idleAnimation;
@@ -64,7 +67,11 @@ public class Archetype2 : Monster
 
         if (TargetInAttackDistance()) {
             StartCoroutine(AttackSequence());
-        }else if(TargetInDistance() && followEnabled && canAttack) {
+        }else if(TargetInDistance() && followEnabled && canAttack && !ignorePlayer) {
+            if (LightAhead() && avoidLight) {
+                StartCoroutine(AvoidPlayerSequence());
+                return;
+            }
             PathFollow();
         }else {
             Move();
@@ -104,20 +111,26 @@ public class Archetype2 : Monster
         while (isAttacking) {
             Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackArea.position, attackRadius);
             if (hitObjects.Any(obj => obj.CompareTag("Player"))) {
-                Debug.Log("Checking");
                 Player.Instance.TakeDamage(fearFactor);
                 Inventory.Instance.DestroyRandomItem();
                 yield break;
             }
-
             yield return null;
         }
-        
+    }
+
+    private IEnumerator AvoidPlayerSequence()
+    {
+        ignorePlayer = true;
+        TurnAround();
+
+        yield return new WaitForSeconds(avoidLightDuration);
+        ignorePlayer = false;
     }
 
     private void Move()
     {
-        if (!GroundAhead() || WallAhead()) {
+        if (!GroundAhead() || WallAhead() || LightAhead()) {
             TurnAround();
         }
 
@@ -127,20 +140,19 @@ public class Archetype2 : Monster
 
     private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
+    private bool LightAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, lightLayer);
 
     private void UpdatePath()
     {
-        if (followEnabled && TargetInDistance() && seeker.IsDone()) {
+        if (followEnabled && TargetInDistance() && seeker.IsDone() && !ignorePlayer) {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
     }
 
     private void PathFollow()
     {
-        if (path == null)
-            return;
-        if (currentWaypoint >= path.vectorPath.Count)
-            return;
+        if (path == null) return;
+        if (currentWaypoint >= path.vectorPath.Count) return;
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed;

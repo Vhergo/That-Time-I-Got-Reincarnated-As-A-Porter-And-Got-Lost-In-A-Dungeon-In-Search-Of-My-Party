@@ -9,6 +9,7 @@ public class Critter : Monster
 {
     [SerializeField] private List<CritterInfo> critterAnimations;
     [SerializeField] private float runAwayTimer;
+    [SerializeField] private float checkRadius;
     private bool sawPlayer;
     private bool isRunningAway;
 
@@ -16,12 +17,11 @@ public class Critter : Monster
     {
         base.Start();
         ChooseCritter();
+
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Player.Instance.GetComponent<Collider2D>());
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
+    private void FixedUpdate() => Move();
 
     private void ChooseCritter()
     {
@@ -50,8 +50,8 @@ public class Critter : Monster
         Destroy(gameObject);
     }
 
-    private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
+    private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+    private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, checkRadius, groundLayer);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -59,6 +59,19 @@ public class Critter : Monster
             TurnAround();
             sawPlayer = true;
             if (!isRunningAway) StartCoroutine(RunAway());
+        }
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        if (groundCheck != null) {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+        }
+
+        if (wallCheck != null) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(wallCheck.position, checkRadius);
         }
     }
 }

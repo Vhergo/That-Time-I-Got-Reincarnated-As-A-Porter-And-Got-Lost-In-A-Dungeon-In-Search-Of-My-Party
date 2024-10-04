@@ -66,6 +66,7 @@ public class Archetype6 : Monster
     //    if (player.position.x < transform.position.x && movingRight)  TurnAround();
     //    else if (player.position.x > transform.position.x && !movingRight) TurnAround();
     //}
+
     private void SetRendereres()
     {
         lightRenderer.lightCookieSprite = slimeRenderer.sprite;

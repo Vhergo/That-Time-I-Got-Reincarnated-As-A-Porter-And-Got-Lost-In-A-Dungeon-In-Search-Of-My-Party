@@ -23,6 +23,7 @@ TagManager:
   - Stairs
   - Light
   - SafeZone
+  - Party Member
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,8 @@ public class FearManager : MonoBehaviour
     public bool inRange;
 
     [SerializeField] private float fearMeter;
-    [SerializeField] private int lives;
+    [SerializeField] private int respawns;
+
     [SerializeField] private Image fearMeterFill;
     [SerializeField] ColorVector fearMeterColor;
     [SerializeField] private Image dangerIndicator;
@@ -21,7 +22,7 @@ public class FearManager : MonoBehaviour
 
     private float monsterFear;
 
-    private Vector3? lastCheckpoint; // Nullable Vector3
+    [SerializeField] private Transform lastCheckpoint;
 
     private void Awake()
     {
@@ -64,19 +65,18 @@ public class FearManager : MonoBehaviour
 
     private void ResetToCheckPoint()
     {
-        if (lastCheckpoint.HasValue && lives != 1) {
-            Revive();
-        } else {
-            EndGame();
-        }
+        if (lastCheckpoint != null && respawns != 1) Respawn();
+        else EndGame();
     }
 
-    public void SetCheckPointPos(Vector3 newCheckPointPos) => lastCheckpoint = newCheckPointPos;
+    public void SetCheckPointPos(Transform newCheckPointPos) => lastCheckpoint = newCheckPointPos;
 
     public void AddFear(float fearStrength)
     {
         fearMeter = Mathf.Clamp(fearMeter += fearStrength, 0, 100);
         StartCoroutine(DangerIndicator());
+
+        if (fearMeter >= 100) ResetToCheckPoint();
     }
 
     private IEnumerator DangerIndicator()
@@ -89,16 +89,16 @@ public class FearManager : MonoBehaviour
     public void IncreaseFear(float fearFactor) => monsterFear = fearFactor;
     public void DecreaseFear() => monsterFear = 1;
 
-    private void Revive()
+    private void Respawn()
     {
-        transform.position = (Vector3)lastCheckpoint;
-        lives--;
+        transform.position = lastCheckpoint.position;
+        respawns--;
         fearMeter = 0;
     }
 
     private void EndGame()
     {
-        Debug.Log("GAME OVER! GAME OVER! GAME OVER! GAME OVER! GAME OVER!");
+        GameManager.Instance.GameOver();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
