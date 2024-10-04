@@ -8,16 +8,9 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private KeyCode grabKey;
     private Item lootWithinRange;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(grabKey)) {
-            GrabItem();
-        }
+        if (Input.GetKeyDown(grabKey)) GrabItem();
     }
 
     private void GrabItem()

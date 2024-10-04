@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -9,9 +10,11 @@ public class Archetype6 : Monster
     [SerializeField] private bool canMove;
     [SerializeField] private float attackDelay;
     [SerializeField] private float chaseDelay;
-
+    [SerializeField] private Transform attackArea;
+    [SerializeField] private float attackRadius;
     private Transform player;
     private bool canChase = true;
+    private bool isAttacking;
 
     [Header("Animation")]
     [SerializeField] private AnimationClip idleAnimation;
@@ -69,27 +72,6 @@ public class Archetype6 : Monster
         lastSprite = slimeRenderer.sprite;
     }
 
-    private void TriggerAttack()
-    {
-        if (!canChase) StartCoroutine(Attack());
-    }
-
-    private IEnumerator Attack()
-    {
-        canMove = false;
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(attackDelay);
-        anim.Play(attackAnimation.name);
-
-        yield return null;
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
-        anim.Play(idleAnimation.name);
-
-        yield return new WaitForSeconds(attackCooldown);
-        anim.Play(walkAnimation.name);
-        canMove = true;
-    }
-
     public void TriggerChase()
     {
         if (canChase) {
@@ -105,6 +87,40 @@ public class Archetype6 : Monster
         yield return new WaitForSeconds(chaseDelay);
         anim.Play(walkAnimation.name);
         canMove = true;
+    }
+
+    private IEnumerator AttackSequence()
+    {
+        canMove = false;
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(attackDelay);
+        anim.Play(attackAnimation.name);
+        isAttacking = true;
+
+        yield return null;
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+        anim.Play(idleAnimation.name);
+
+        yield return new WaitForSeconds(attackCooldown);
+        anim.Play(walkAnimation.name);
+        canMove = true;
+    }
+
+    public void Attack() => StartCoroutine(RegisterAttack());
+    public void StopAttack() => isAttacking = false;
+    private IEnumerator RegisterAttack()
+    {
+        while (isAttacking) {
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackArea.position, attackRadius);
+            if (hitObjects.Any(obj => obj.CompareTag("Player"))) {
+                Debug.Log("Checking");
+                Player.Instance.TakeDamage(fearFactor);
+                yield break;
+            }
+
+            yield return null;
+        }
+
     }
 
     private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -124,7 +140,7 @@ public class Archetype6 : Monster
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-            TriggerAttack();
+            StartCoroutine(AttackSequence());
         }
     }
 
@@ -133,6 +149,15 @@ public class Archetype6 : Monster
         if (collision.gameObject.CompareTag("Player")) {
             if (transform.position.y < collision.gameObject.transform.position.y)
                 TriggerChase();
+        }
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        if (isAttacking) {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(attackArea.position, attackRadius);
         }
     }
 }

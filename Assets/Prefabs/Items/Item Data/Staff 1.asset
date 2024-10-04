@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Staff 1
+  m_EditorClassIdentifier: 
+  itemName: Emberbranch
+  itemDescription: "A staff that channels the raw fury of nature\u2019s flame, grown
+    from enchanted wood."
+  itemFuelValue: 15
+  itemSprite: {fileID: 21300000, guid: 7b6cc1f268e934940bbeb093c9e9cd8f, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: d84887e55ee987747bb7decb16d61e97, type: 3}

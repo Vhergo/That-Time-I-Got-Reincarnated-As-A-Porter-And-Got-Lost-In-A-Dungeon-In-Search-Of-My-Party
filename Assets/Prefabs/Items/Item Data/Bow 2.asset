@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Bow 2
+  m_EditorClassIdentifier: 
+  itemName: Nightslinger's Bow
+  itemDescription: Its string hums a melody only the night creatures can hear, guiding
+    its arrows in the dark.
+  itemFuelValue: 10
+  itemSprite: {fileID: 21300000, guid: 9329cdc98bd1e5b4e88966b798f1fee4, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: 58a55859664e1e24f8c5ed975bcbe902, type: 3}

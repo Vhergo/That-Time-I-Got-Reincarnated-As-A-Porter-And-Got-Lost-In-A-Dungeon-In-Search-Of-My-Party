@@ -30,7 +30,7 @@ public class Archetype2 : Monster
     [SerializeField] private bool followEnabled = true;
     [SerializeField] private bool jumpEnabled = true;
     private bool canAttack = true;
-    public bool isAttacking = false;
+    private bool isAttacking;
 
     [Header("Animation")]
     [SerializeField] private AnimationClip idleAnimation;

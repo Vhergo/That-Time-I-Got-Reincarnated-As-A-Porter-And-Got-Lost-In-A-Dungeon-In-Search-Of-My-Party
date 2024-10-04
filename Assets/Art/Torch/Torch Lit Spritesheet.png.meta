@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,12 +126,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1920
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1920
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1920
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1920
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,11 +211,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1280
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1280
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1280
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1280
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,11 +295,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 640
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_9
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,12 +336,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_10
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 640
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_11
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 640
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,10 +380,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_13
       rect:
         serializedVersion: 2
-        x: 640
+        x: 64
         y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,12 +420,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_14
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 128
         y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +441,12 @@ TextureImporter:
       name: Torch Lit Spritesheet_15
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 192
         y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

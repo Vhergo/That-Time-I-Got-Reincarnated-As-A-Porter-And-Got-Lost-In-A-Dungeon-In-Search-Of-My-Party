@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SpriteRenderer), typeof(CircleCollider2D))]
 public class Item : MonoBehaviour, ICollectable
 {
     [SerializeField] private ItemData itemData;
+    private CircleCollider2D lootCollider;
+
     public ItemData ItemData => itemData;
 
     public static event Action<ItemData> OnItemCollected;
+
+    private void Start() => lootCollider = GetComponent<CircleCollider2D>();
 
     public void Collect()
     {
@@ -19,10 +23,21 @@ public class Item : MonoBehaviour, ICollectable
         }
     }
 
+    private bool IsInCollectRange(Transform player)
+    {
+        if (player == null) return false;
+
+        float offset = lootCollider.radius + (player.GetComponent<Collider2D>().bounds.extents.x / 2);
+        if (Vector2.Distance(transform.position, player.position) <= offset) return true;
+        else return false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
+            if (IsInCollectRange(collision.transform)) {
+                Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
+            }
         }
     }
 

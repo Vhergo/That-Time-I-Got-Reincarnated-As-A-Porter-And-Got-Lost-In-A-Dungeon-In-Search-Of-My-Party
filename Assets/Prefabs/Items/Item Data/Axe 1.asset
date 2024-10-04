@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Axe 1
+  m_EditorClassIdentifier: 
+  itemName: Phantom Edge
+  itemDescription: An ethereal axe forged from void energy that cleaves through both
+    body and soul.
+  itemFuelValue: 10
+  itemSprite: {fileID: 21300000, guid: 39bc48baa54aee54b930e31cb7bd99b4, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: fc5a38b9d34f61a4ab859546b3afbee4, type: 3}
