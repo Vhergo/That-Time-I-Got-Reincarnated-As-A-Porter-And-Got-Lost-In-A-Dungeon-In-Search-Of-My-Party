@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Goblin Ear 1
+  m_EditorClassIdentifier: 
+  itemName: Bob's Ear
+  itemDescription: Ear of the goblin named Bob. Bob was slain falling down stairs.
+  itemFuelValue: 5
+  itemSprite: {fileID: 21300000, guid: 1652272f06c1ad346a72c11d857affae, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: 991ba024715dccd49ae4743dcc0519d4, type: 3}
