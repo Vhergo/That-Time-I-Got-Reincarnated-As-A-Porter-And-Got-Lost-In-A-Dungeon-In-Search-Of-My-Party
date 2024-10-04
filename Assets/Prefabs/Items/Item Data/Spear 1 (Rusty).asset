@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Spear 1 (Rusty)
+  m_EditorClassIdentifier: 
+  itemName: Torn Gale
+  itemDescription: Once a fearsome weapon, now rusted and frayed by the winds of
+    time.
+  itemFuelValue: 5
+  itemSprite: {fileID: 21300000, guid: deb443bc7912798498ce399833c4167e, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: 8994c76265f855943b681bd349b45768, type: 3}

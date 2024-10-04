@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5379aa71eae5874ab0b0802e7c0f0d9, type: 3}
+  m_Name: Axe 2
+  m_EditorClassIdentifier: 
+  itemName: Dawncleaver
+  itemDescription: A holy axe wielded by the paladins of Eldraheim, blessed by the
+    morning sun.
+  itemFuelValue: 10
+  itemSprite: {fileID: 21300000, guid: 3fd06985d7b4b8e49b0b0c184d097b49, type: 3}
+  itemPrefab: {fileID: 5449508522651541791, guid: 6b9965e6e0ff17849abc6877493f9c7c, type: 3}
