@@ -29,11 +29,12 @@ public class Archetype1 : Monster
         player = Player.Instance.transform;
 
         SetRandomColor();
+        RandomTurn();
 
-        dropdownDetection.enabled = false;
+        if (dropdownDetection != null) dropdownDetection.enabled = false;
 
         if (startOnCeiling) {
-            dropdownDetection.enabled = true;
+            if (dropdownDetection != null) dropdownDetection.enabled = true;
 
             rb.isKinematic = true;
             canMove = false;
@@ -41,6 +42,11 @@ public class Archetype1 : Monster
             anim.SetBool("Idle", true);
             swordAnim.SetBool("Idle", true);
         }
+    }
+
+    private void RandomTurn()
+    {
+        if (UnityEngine.Random.Range(0, 1) > 0.5f) TurnAround();
     }
 
     private void FixedUpdate()
@@ -73,7 +79,7 @@ public class Archetype1 : Monster
         anim.SetBool("Idle", false);
         swordAnim.SetBool("Idle", false);
         canMove = true;
-        dropdownDetection.enabled = false;
+        if (dropdownDetection != null) dropdownDetection.enabled = false;
     }
 
     private void Flip()
@@ -117,6 +123,11 @@ public class Archetype1 : Monster
     {
         if (collision.gameObject.CompareTag("Player") && IsGoingTowardsPlayer()) {
             TurnAround();
+        }
+
+        Collider2D collider = collision.gameObject.GetComponent<Collider2D>();
+        if (collision.gameObject.CompareTag("Monster") && IsCollidingWithAnotherSlime(collider)) {
+            Physics2D.IgnoreCollision(collider, GetComponent<Collider2D>());
         }
     }
 

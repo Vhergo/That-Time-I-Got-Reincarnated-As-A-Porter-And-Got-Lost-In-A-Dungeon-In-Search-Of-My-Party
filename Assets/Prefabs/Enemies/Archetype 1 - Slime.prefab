@@ -146,7 +146,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994089760049057902}
-  - component: {fileID: 2056625555490047076}
   m_Layer: 0
   m_Name: Dropdown Check
   m_TagString: Untagged
@@ -169,41 +168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6729383428308682014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2056625555490047076
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6434919030328353994}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
 --- !u!1 &7198161114720982682
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6869278, y: 0.46646333}
+  m_Size: {x: 0.60004294, y: 0.46646333}
   m_EdgeRadius: 0
 --- !u!50 &5918925586015735195
 Rigidbody2D:
@@ -424,8 +388,7 @@ MonoBehaviour:
   - {r: 0.7058824, g: 0.42352942, b: 0.9843137, a: 1}
   - {r: 0.25882354, g: 0.54509807, b: 0.9254902, a: 1}
   - {r: 0.2901961, g: 0.75686276, b: 0.74509805, a: 1}
-  dropdownDetection: {fileID: 2056625555490047076}
-  playerRayObject: {fileID: 6434919030328353994}
+  dropdownDetection: {fileID: 0}
 --- !u!1 &8638638552004325785
 GameObject:
   m_ObjectHideFlags: 0

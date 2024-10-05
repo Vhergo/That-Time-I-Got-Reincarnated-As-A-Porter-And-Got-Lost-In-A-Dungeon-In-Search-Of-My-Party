@@ -44,7 +44,6 @@ public class Archetype2 : Monster
     private Path path;
     private int currentWaypoint = 0;
     private bool isJumping, isInAir, onCooldown;
-    [SerializeField] private RaycastHit2D isGrounded;
     Seeker seeker;
     #endregion
 
@@ -121,6 +120,7 @@ public class Archetype2 : Monster
 
     private IEnumerator AvoidPlayerSequence()
     {
+        Debug.Log("Avoiding Player??");
         ignorePlayer = true;
         TurnAround();
 
@@ -141,6 +141,7 @@ public class Archetype2 : Monster
     private bool GroundAhead() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     private bool WallAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
     private bool LightAhead() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, lightLayer);
+    private bool IsGrounded() => Physics2D.OverlapCircle(transform.position, 0.2f, groundLayer);
 
     private void UpdatePath()
     {
@@ -172,10 +173,7 @@ public class Archetype2 : Monster
 
     private void Jump(Vector2 direction)
     {
-        Vector3 startOffest = transform.position - new Vector3(0f, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset, transform.position.z);
-        isGrounded = Physics2D.Raycast(startOffest, -Vector3.up, 0.05f);
-
-        if (jumpEnabled && isGrounded && !isInAir && !onCooldown) {
+        if (jumpEnabled && IsGrounded() && !isInAir && !onCooldown) {
             if (direction.y > jumpNodeHeightReq) {
                 isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -183,7 +181,7 @@ public class Archetype2 : Monster
             }
         }
 
-        if (isGrounded) {
+        if (IsGrounded()) {
             isJumping = false;
             isInAir = false;
         } else {
@@ -243,5 +241,17 @@ public class Archetype2 : Monster
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(attackArea.position, attackRadius);
         }
+
+        Color newColor = Color.yellow;
+        newColor.a = 0.1f;
+
+        Gizmos.color = newColor;
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
+
+        Color newColor2 = Color.red;
+        newColor2.a = 0.1f;
+
+        Gizmos.color = newColor2;
+        Gizmos.DrawWireSphere(transform.position, disengageRange);
     }
 }

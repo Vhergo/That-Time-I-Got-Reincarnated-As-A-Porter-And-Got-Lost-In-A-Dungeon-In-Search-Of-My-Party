@@ -50,6 +50,8 @@ public class Archetype4 : Monster
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        target = Player.Instance.transform;
+
         SetBaitLightInfo(baitInfo);
 
         InvokeRepeating("UpdatePath", 0f, pathUpdateSec);
@@ -189,10 +191,14 @@ public class Archetype4 : Monster
     {
         base.OnDrawGizmos();
 
-        Gizmos.color = Color.yellow;
+        Color newColor = Color.yellow;
+        newColor.a = 0.1f;
+        Gizmos.color = newColor;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
 
-        Gizmos.color = Color.red;
+        Color newColor2 = Color.yellow;
+        newColor2.a = 0.1f;
+        Gizmos.color = newColor2;
         Gizmos.DrawWireSphere(transform.position, disengageRange);
 
         if (isAttacking) {

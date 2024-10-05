@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <Summary>
-    ///     <param name = "complete" > Set to true if the game was actually completed </param>
-    /// </Summary>
     public void GameOver(bool complete = false)
     {
         Debug.Log("Game Over");
+    }
+
+    public void DungeonCleared()
+    {
+        Debug.Log("Dungeon Cleared!");
     }
 }
