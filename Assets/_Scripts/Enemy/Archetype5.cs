@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Archetype5 : Monster
@@ -15,6 +16,8 @@ public class Archetype5 : Monster
     [SerializeField] private Transform currentWaypoint;
     [SerializeField] private int waypointIndex;
 
+    [SerializeField] private SpriteRenderer sprite;
+
     protected override void Start()
     {
         Initialize();
@@ -24,6 +27,13 @@ public class Archetype5 : Monster
     {
         // Always moving towards the next waypoint
         monster.position = Vector2.MoveTowards(monster.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
+        Flip();
+    }
+
+    private void Flip()
+    {
+        if (monster.position.x < currentWaypoint.position.x) sprite.flipX = true;
+        else sprite.flipX = false;
     }
 
     private IEnumerator FollowPath()
