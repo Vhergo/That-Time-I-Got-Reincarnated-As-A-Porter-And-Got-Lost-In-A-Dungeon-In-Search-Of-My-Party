@@ -9,7 +9,10 @@ public class Archetype3 : Monster
     #region VARIABLES
     [Header("Tentacle Stats")]
     [SerializeField] private int length;
+    [SerializeField] private float deathDuration;
     [SerializeField] private TentacleStats reachStats;
+    [SerializeField] private TentacleStats deathStats;
+    [SerializeField] private TentacleStats deathStats2;
 
     [Header("Tentacle Control")]
     [SerializeField] private Transform targetDirection;
@@ -28,6 +31,9 @@ public class Archetype3 : Monster
     [SerializeField] private float reachStrength;
     [SerializeField] private float rotationSpeed;
 
+    [Space(20)]
+    [SerializeField] private bool isForShow;
+
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private Vector3[] segmentPoses;
@@ -37,6 +43,9 @@ public class Archetype3 : Monster
     private bool canReach;
     private bool isReaching;
     private bool startReach;
+    private bool isDying;
+    private bool canAttack = true;
+
 
     [Space(15)]
     [SerializeField] private float finalTargetDistance;
@@ -47,8 +56,11 @@ public class Archetype3 : Monster
     private Rigidbody2D playerRB;
     #endregion
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        archetype = Archetype.Archetype3;
+
         InitializeTentacleData();
         SetDefaultPosition();
     }
@@ -61,8 +73,9 @@ public class Archetype3 : Monster
         IdleWiggle();
 
         if (canReach) {
-            ReachForPlayer();
+            if (!isDying) ReachForPlayer();
             RotateToPlayer();
+            
         } else {
             ResetTentacleStats();
             startReach = false;
@@ -164,8 +177,54 @@ public class Archetype3 : Monster
 
     public override void MonsterDie()
     {
-        base.MonsterDie();
-        playerRB.isKinematic = false;
+        StartCoroutine(MonsterDeathSequence());
+    }
+
+    private IEnumerator MonsterDeathSequence()
+    {
+        isDying = true;
+        rotationSpeed *= 1.5f;
+        UpdateTentacleStats(deathStats);
+        yield return new WaitForSeconds(deathDuration);
+
+        UpdateTentacleStats(deathStats2);
+        yield return new WaitForSeconds(deathDuration / 4);
+
+        Destroy(gameObject);
+    }
+
+    private void Attack() => StartCoroutine(AttackSequence());
+    private IEnumerator AttackSequence()
+    {
+        canAttack = false;
+        Player.Instance.TakeDamage(fearFactor);
+        yield return new WaitForSeconds(attackCooldown);
+
+        canAttack = true;
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Color newColor = Color.magenta;
+        newColor.a = 0.1f;
+
+        Gizmos.color = newColor;
+        Gizmos.DrawWireSphere(transform.position, reachRange);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, finalTargetDistance);
+
+        Gizmos.color = Color.cyan;
+
+        // Get the direction based on the object's rotation (using down as the default direction)
+        Vector3 rotatedDirection = transform.rotation * Vector3.down;
+
+        // Draw the line in the rotated direction
+        Gizmos.DrawLine(transform.position, transform.position + rotatedDirection * 10f);
+
+
     }
 
     #region HELPER METHODS
@@ -188,7 +247,9 @@ public class Archetype3 : Monster
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if (col.CompareTag("Player") && !isForShow) {
+            Attack();
+        }
     }
 }
 

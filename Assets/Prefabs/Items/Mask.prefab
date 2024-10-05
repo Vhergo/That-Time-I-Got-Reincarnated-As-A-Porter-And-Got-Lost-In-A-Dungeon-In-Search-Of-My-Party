@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0cc05e7472a13ff4582b00e378523091, type: 3}
     - target: {fileID: 8459897688656845920, guid: 37570cff639c01a44b8e23e55d2d0d3e, type: 3}
       propertyPath: m_Name
-      value: Mask
+      value: Mask of the Forgotten Sage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

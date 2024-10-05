@@ -10,6 +10,8 @@ public class TorchHolder : MonoBehaviour
     private Light2D areaLight;
     private bool interacted;
 
+    private FearManager fearManager;
+
     private void Start()
     {
         torchAnim = GetComponent<Animator>();
@@ -17,6 +19,8 @@ public class TorchHolder : MonoBehaviour
 
         areaLight = transform.GetChild(0).GetComponent<Light2D>();
         areaLight.enabled = false;
+
+        fearManager = FearManager.Instance;
     }
 
     public void PlaceTorch()
@@ -24,6 +28,8 @@ public class TorchHolder : MonoBehaviour
         torchAnim.SetTrigger("On");
         torchLight.EnableLight();
         areaLight.enabled = true;
+
+        fearManager.SetCheckPointPos(transform);
     }
 
     public void RemoveTorch()
