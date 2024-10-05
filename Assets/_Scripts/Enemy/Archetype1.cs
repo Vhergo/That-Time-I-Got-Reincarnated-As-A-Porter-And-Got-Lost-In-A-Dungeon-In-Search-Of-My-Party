@@ -15,7 +15,8 @@ public class Archetype1 : Monster
     [SerializeField] private List<Color> slimeColors = new List<Color>();
 
     [Space(10)]
-    [SerializeField] private CircleCollider2D dropdownDetection;
+    [SerializeField] private BoxCollider2D dropdownDetection;
+
 
     private Transform player;
     private bool canMove = true;
@@ -33,6 +34,7 @@ public class Archetype1 : Monster
 
         if (startOnCeiling) {
             dropdownDetection.enabled = true;
+
             rb.isKinematic = true;
             canMove = false;
 
@@ -71,6 +73,7 @@ public class Archetype1 : Monster
         anim.SetBool("Idle", false);
         swordAnim.SetBool("Idle", false);
         canMove = true;
+        dropdownDetection.enabled = false;
     }
 
     private void Flip()

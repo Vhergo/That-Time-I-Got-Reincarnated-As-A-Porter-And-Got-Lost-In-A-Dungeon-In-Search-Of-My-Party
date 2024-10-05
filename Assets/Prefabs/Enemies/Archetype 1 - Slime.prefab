@@ -425,6 +425,7 @@ MonoBehaviour:
   - {r: 0.25882354, g: 0.54509807, b: 0.9254902, a: 1}
   - {r: 0.2901961, g: 0.75686276, b: 0.74509805, a: 1}
   dropdownDetection: {fileID: 2056625555490047076}
+  playerRayObject: {fileID: 6434919030328353994}
 --- !u!1 &8638638552004325785
 GameObject:
   m_ObjectHideFlags: 0

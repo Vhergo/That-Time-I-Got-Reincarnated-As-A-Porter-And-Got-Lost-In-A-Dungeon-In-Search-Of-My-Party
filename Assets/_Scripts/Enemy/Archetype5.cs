@@ -41,7 +41,7 @@ public class Archetype5 : Monster
         while (monster) {
             if (HasReachedWaypoint()) {
                 if (IsLastWaypoint()) {
-                    Debug.Log("LAST");
+                    // Debug.Log("LAST");
                     if (!loop) reversed = !reversed;
                 }
                 GetNextWaypoint();
