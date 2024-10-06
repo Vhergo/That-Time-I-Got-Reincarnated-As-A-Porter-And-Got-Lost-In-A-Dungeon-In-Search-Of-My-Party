@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 
 public class TorchHolder : MonoBehaviour
 {
+    [SerializeField] private bool respawnPoint;
+
     private Animator torchAnim;
     private TorchLight torchLight;
     private Light2D areaLight;
@@ -29,7 +31,7 @@ public class TorchHolder : MonoBehaviour
         torchLight.EnableLight();
         areaLight.enabled = true;
 
-        fearManager.SetCheckPointPos(transform);
+        if (respawnPoint) fearManager.SetCheckPointPos(transform);
     }
 
     public void RemoveTorch()
@@ -44,10 +46,15 @@ public class TorchHolder : MonoBehaviour
         torchLight.UpdateTorchLightRadius(torchFuelPercentage);
     }
 
+    private bool PlayerIsInRange()
+    {
+        return Vector2.Distance(transform.position, Player.Instance.transform.position) < torchLight.GetTorchLightRadius();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            if (!interacted) {
+            if (!interacted & PlayerIsInRange()) {
                 Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
                 interacted = true;
             }

@@ -16,6 +16,9 @@ public class Archetype6 : Monster
     private bool canChase = true;
     private bool isAttacking;
 
+    private Vector3 originalPosition;
+    private Vector3 originalScale;
+
     [Header("Animation")]
     [SerializeField] private AnimationClip idleAnimation;
     [SerializeField] private AnimationClip walkAnimation;
@@ -26,12 +29,17 @@ public class Archetype6 : Monster
     [SerializeField] private Light2D lightRenderer;
     private Sprite lastSprite;
 
+    private void OnEnabled() => FearManager.OnPlayerRespawn += Respawn;
+    private void OnDisabled() => FearManager.OnPlayerRespawn -= Respawn;
+
+
     protected override void Start()
     {
         base.Start();
         archetype = Archetype.Archetype6;
         player = Player.Instance.transform;
-
+        originalPosition = transform.position;
+        originalScale = transform.localScale;
 
         slimeRenderer = GetComponent<SpriteRenderer>();
         lightRenderer.enabled = false;
@@ -49,6 +57,17 @@ public class Archetype6 : Monster
     {
         if (canMove) Move();
         if (!GroundAhead()) rb.velocity += Vector2.down * 2f;
+    }
+
+    private void Respawn()
+    {
+        transform.position = originalPosition;
+        transform.localScale = originalScale;
+
+        canChase = true;
+        isAttacking = false;
+
+        lightRenderer.enabled = false;
     }
 
     private void Move()

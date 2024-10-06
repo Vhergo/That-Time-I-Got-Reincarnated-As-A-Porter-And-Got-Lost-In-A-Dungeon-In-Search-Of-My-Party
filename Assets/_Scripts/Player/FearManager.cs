@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class FearManager : MonoBehaviour
@@ -23,6 +24,8 @@ public class FearManager : MonoBehaviour
     private float monsterFear;
 
     [SerializeField] private Transform lastCheckpoint;
+
+    public static Action OnPlayerRespawn;
 
     private void Awake()
     {
@@ -91,6 +94,8 @@ public class FearManager : MonoBehaviour
 
     private void Respawn()
     {
+        OnPlayerRespawn?.Invoke();
+
         transform.position = lastCheckpoint.position;
         respawns--;
         fearMeter = 0;
@@ -98,9 +103,17 @@ public class FearManager : MonoBehaviour
 
     private void EndGame() => GameManager.Instance.GameOver();
 
+    private bool IsTorchLit(Collider2D collider)
+    {
+        return collider.GetComponent<TorchLight>().IsLit();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Light")) inRange = true;
+        if (collision.CompareTag("Light")) {
+            inRange = true;
+            isLit = IsTorchLit(collision);
+        }
         if (collision.CompareTag("SafeZone")) inRange = isLit = true;
     }
 

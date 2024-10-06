@@ -13,7 +13,7 @@ public class TorchManager : MonoBehaviour, IInteractable
     [SerializeField] private TorchHolder activeTorch;
     [SerializeField] private float maxTorchFuel;
     [SerializeField] private float currentTorchFuel;
-    [SerializeField] private float torchStrength;
+    [SerializeField] private float torchBurnRate;
     [SerializeField] private int torchPlaceRange;
     [SerializeField] private bool torchIsPlaced;
 
@@ -66,8 +66,8 @@ public class TorchManager : MonoBehaviour, IInteractable
 
     public IEnumerator BurnFuel()
     {
-        while (currentTorchFuel > 0) {
-            currentTorchFuel -= Time.deltaTime;
+        while (currentTorchFuel > 0 && activeTorch != null) {
+            currentTorchFuel -= torchBurnRate * Time.deltaTime;
             float torchFuelPercentage = currentTorchFuel / maxTorchFuel;
             UpdateTorchUI();
             activeTorch.UpdateTorchLightRadius(torchFuelPercentage);
@@ -94,6 +94,7 @@ public class TorchManager : MonoBehaviour, IInteractable
 
     private void SetAnotherTorch()
     {
+        Debug.Log("OTHER TORCH");
         activeTorch.RemoveTorch();
         torchIsPlaced = false;
     }
@@ -104,7 +105,7 @@ public class TorchManager : MonoBehaviour, IInteractable
     public float GetTorchPlaceRange() => torchPlaceRange;
     public bool GetTorchState() => torchIsPlaced;
     public float GetTorchFuel() => currentTorchFuel;
-    public float GetTorchStrength() => torchStrength;
+    public float GetTorchBurnRate() => torchBurnRate;
     public TorchHolder GetActiveTorch() => activeTorch;
     private bool OutOfTorchFuel() => currentTorchFuel <= 0;
     private void UpdateTorchUI() => torchUI.fillAmount = currentTorchFuel / maxTorchFuel;

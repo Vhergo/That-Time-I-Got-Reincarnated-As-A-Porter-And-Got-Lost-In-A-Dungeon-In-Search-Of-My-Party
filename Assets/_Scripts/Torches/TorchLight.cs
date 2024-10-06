@@ -25,7 +25,7 @@ public class TorchLight : MonoBehaviour
     private float torchReach;
     private bool isLit;
 
-    private float torchStrength;
+    private float torchBurnRate;
     private float interval = 1;
     private float timer;
 
@@ -35,7 +35,7 @@ public class TorchLight : MonoBehaviour
     {
         torchManager = TorchManager.Instance;
 
-        torchStrength = torchManager.GetTorchStrength();
+        torchBurnRate = torchManager.GetTorchBurnRate();
         torchLight = gameObject.GetComponent<Light2D>();
         torchCollider = gameObject.GetComponent<CircleCollider2D>();
 
@@ -79,6 +79,10 @@ public class TorchLight : MonoBehaviour
             yield return new WaitForSeconds(frequency);
         }
     }
+
+    public float GetTorchLightRadius() => torchLight.pointLightOuterRadius;
+    public bool IsLit() => isLit;
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {

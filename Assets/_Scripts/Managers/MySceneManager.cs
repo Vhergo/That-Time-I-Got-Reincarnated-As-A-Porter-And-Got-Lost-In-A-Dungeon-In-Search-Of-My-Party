@@ -85,11 +85,6 @@ public class MySceneManager : MonoBehaviour
         GameUIManager.Instance.TurnOnSettings();
         isPaused = true;
         gameState = GameState.Pause;
-
-        if (CursorManager.Instance != null) {
-            CursorManager.Instance.ToggleCursor(true);
-            Debug.Log("PAUSED");
-        }
     }
 
     public void UnpauseGame()
@@ -98,11 +93,6 @@ public class MySceneManager : MonoBehaviour
         GameUIManager.Instance.TurnOffSettings();
         isPaused = false;
         gameState = GameState.Play;
-
-        if (CursorManager.Instance != null) {
-            CursorManager.Instance.ToggleCursor(false);
-            Debug.Log("UNPAUSED");
-        }
     }
 
     public void QuitGame()
