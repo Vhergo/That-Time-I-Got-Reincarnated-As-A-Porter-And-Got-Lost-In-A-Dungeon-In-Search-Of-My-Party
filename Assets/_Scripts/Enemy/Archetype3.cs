@@ -169,6 +169,8 @@ public class Archetype3 : Monster
     [ContextMenu("Update Tentacle Stats")]
     private void ResetTentacleStats()
     {
+        if (isDying) return;
+
         finalTargetDistance = targetDistance;
         finalGrabRange = grabRange;
         finalWiggleSpeed = wiggleSpeed;

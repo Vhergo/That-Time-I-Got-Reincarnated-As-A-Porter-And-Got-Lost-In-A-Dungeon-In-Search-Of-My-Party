@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AnimationClip inventoryGuide;
     [SerializeField] private AnimationClip interactGuide;
     [SerializeField] private KeyCode guideKey;
+    [SerializeField] private int guideActivationLimit;
+    private int guideActivationCount;
     private Coroutine guideCoroutine;
 
     public static Player Instance { get; private set; }
@@ -35,6 +37,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         guideRenderer.enabled = false;
+
+        if (CursorManager.Instance != null) CursorManager.Instance.ToggleCursor(false);
     }
 
     private void Update()
@@ -59,9 +63,9 @@ public class Player : MonoBehaviour
     #endregion
 
     #region PLAYER GUIDE
-    public void PlayGuide(GuideType guideType, KeyCode guideKey = KeyCode.None)
+    public void PlayGuide(GuideType guideType, KeyCode guideKey = KeyCode.None, bool alwaysShow = false)
     {
-        if (!showGuide) return;
+        if (!showGuide && !alwaysShow) return;
 
         this.guideKey = guideKey;
 
@@ -75,6 +79,9 @@ public class Player : MonoBehaviour
                 guideCoroutine = StartCoroutine(TriggerGuide(interactGuide));
                 break;
         }
+
+        guideActivationCount++;
+        if (guideActivationCount >= guideActivationLimit) showGuide = false;
     }
 
     public IEnumerator TriggerGuide(AnimationClip guide)

@@ -65,7 +65,7 @@ public class FearManager : MonoBehaviour
 
     private void ResetToCheckPoint()
     {
-        if (lastCheckpoint != null && respawns != 1) Respawn();
+        if (lastCheckpoint != null && respawns > 0) Respawn();
         else EndGame();
     }
 
@@ -96,10 +96,7 @@ public class FearManager : MonoBehaviour
         fearMeter = 0;
     }
 
-    private void EndGame()
-    {
-        GameManager.Instance.GameOver();
-    }
+    private void EndGame() => GameManager.Instance.GameOver();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

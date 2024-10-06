@@ -41,6 +41,13 @@ public class Item : MonoBehaviour, ICollectable
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) {
+            Player.Instance.StopActiveGuide();
+        }
+    }
+
     private void OnValidate()
     {
         if (itemData != null) {

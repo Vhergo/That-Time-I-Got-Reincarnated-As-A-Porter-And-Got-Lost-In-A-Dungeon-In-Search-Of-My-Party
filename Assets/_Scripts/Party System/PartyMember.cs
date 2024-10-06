@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class PartyMember : MonoBehaviour
 {
+    private GameObject cage;
     private bool canBeSaved;
+
+    private void Start() => cage = transform.GetChild(0).gameObject;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canBeSaved) {
-            SavePartyMember();
+            StartCoroutine(SavePartyMember());
         }
     }
 
-    private void SavePartyMember()
+    private IEnumerator SavePartyMember()
     {
         canBeSaved = false;
+        cage.SetActive(false);
+        yield return new WaitForSeconds(1f);
+
         transform.position = PartyManager.Instance.AddPartyMember(this).position;
         GetComponent<Collider2D>().enabled = false;
     }
@@ -24,7 +30,7 @@ public class PartyMember : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             canBeSaved = true;
-            Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
+            Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E, true);
         }
     }
 

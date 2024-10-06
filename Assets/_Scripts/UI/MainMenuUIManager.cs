@@ -28,7 +28,7 @@ public class MainMenuUIManager : MonoBehaviour
     }
 
     private void OnPlayButtonClick() {
-        MySceneManager.Instance.SwitchScene(SceneEnum.GameScene, true);
+        MySceneManager.Instance.SwitchScene(SceneEnum.GameScene, false);
     }
 
     private void OnQuitButtonClick() {
@@ -42,5 +42,4 @@ public class MainMenuUIManager : MonoBehaviour
     public void CloseSettingsPanel() {
         settingsPanel.SetActive(false);
     }
-
 }

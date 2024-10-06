@@ -37,4 +37,15 @@ public class CursorManager : MonoBehaviour
     {
         Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
     }
+
+    public void ToggleCursor(bool showCursor)
+    {
+        if (showCursor) {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        } else {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 }

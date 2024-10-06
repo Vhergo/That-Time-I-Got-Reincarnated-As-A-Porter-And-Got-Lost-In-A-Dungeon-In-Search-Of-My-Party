@@ -145,20 +145,27 @@ public class SoundManager : MonoBehaviour
     // Get a reference to the current scene's needed UI elements
     private void GetUIObjectReferences()
     {
+        SettingsDataManager settingsManager = SettingsDataManager.Instance;
+
         sliders = GameObject.FindGameObjectWithTag("Sliders");
+        if (sliders == null && settingsManager != null) sliders = settingsManager.GetSliderUI();
+
         if (sliders != null) {
             masterSlider = sliders.transform.GetChild(0).GetComponent<Slider>();
             musicSlider = sliders.transform.GetChild(1).GetComponent<Slider>();
             effectsSlider = sliders.transform.GetChild(2).GetComponent<Slider>();
-        } else {
+        }else {
             LogError("Sliders not properly referenced!");
         }
 
         settings = GameObject.FindGameObjectWithTag("Settings");
+        if (settings == null && settingsManager != null) settings = settingsManager.GetSettingsUI();
         if (settings == null)
             LogError("Settings not properly referenced!");
 
         toggles = GameObject.FindGameObjectWithTag("Audio Toggles");
+        if (toggles == null && settingsManager != null) toggles = settingsManager.GetToggleUI();
+
         if (toggles != null) {
             toggleMusicButton = toggles.transform.GetChild(0).GetComponent<Button>();
             toggleEffectsButton = toggles.transform.GetChild(1).GetComponent<Button>();

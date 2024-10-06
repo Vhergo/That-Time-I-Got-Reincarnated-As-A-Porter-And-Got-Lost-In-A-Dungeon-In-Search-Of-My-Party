@@ -53,4 +53,12 @@ public class TorchHolder : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) {
+            Player.Instance.StopActiveGuide();
+            interacted = false;
+        }
+    }
 }

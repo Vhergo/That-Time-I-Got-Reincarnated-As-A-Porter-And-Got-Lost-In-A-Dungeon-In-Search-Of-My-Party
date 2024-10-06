@@ -8,6 +8,6 @@ public class PlaySceneMainMenu : MonoBehaviour
     void Start()
     {
         if (MySceneManager.Instance != null)
-            MySceneManager.Instance.UnpauseGame();
+            Time.timeScale = 1;
     }
 }

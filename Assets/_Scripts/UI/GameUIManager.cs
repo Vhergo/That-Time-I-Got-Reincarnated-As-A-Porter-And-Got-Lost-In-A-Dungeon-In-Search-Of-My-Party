@@ -16,8 +16,29 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private Button exitToMenuButton;
 
+    [Header("Win Screen")]
+    [SerializeField] private GameObject winScreen;
+
+    [Header("Lose Screen")]
+    [SerializeField] private GameObject loseScreen;
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += TurnOnLoseScreen;
+        GameManager.OnDungeonCleared += TurnOnWinScreen;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= TurnOnLoseScreen;
+        GameManager.OnDungeonCleared -= TurnOnWinScreen;
+    }
+
     private void Start() {
         if (exitToMenuButton != null) exitToMenuButton.onClick.AddListener(OnExitToMenuButtonClick);
+
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
     }
 
     public void TurnOnSettings() {
@@ -32,4 +53,6 @@ public class GameUIManager : MonoBehaviour
         MySceneManager.Instance.SwitchScene(SceneEnum.MainMenuScene);
     }
 
+    private void TurnOnWinScreen() => winScreen.SetActive(true);
+    private void TurnOnLoseScreen() => loseScreen.SetActive(true);
 }

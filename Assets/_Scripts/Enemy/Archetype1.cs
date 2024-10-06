@@ -121,8 +121,10 @@ public class Archetype1 : Monster
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && IsGoingTowardsPlayer()) {
-            TurnAround();
+        if (collision.gameObject.CompareTag("Player")) {
+            Player.Instance.TakeDamage(fearFactor);
+
+            if (IsGoingTowardsPlayer()) TurnAround();
         }
 
         Collider2D collider = collision.gameObject.GetComponent<Collider2D>();
