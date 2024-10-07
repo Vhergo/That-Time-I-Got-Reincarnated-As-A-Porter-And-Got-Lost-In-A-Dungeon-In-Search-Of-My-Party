@@ -183,11 +183,11 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     void Update()
     {
+        UpdateAnimation();
+
         ProccessInput();
         Timers();
         Turn();
-
-        UpdateAnimation();
     }
 
     void FixedUpdate()
@@ -201,7 +201,10 @@ public class Player2DPlatformerMovement : MonoBehaviour
     private void UpdateAnimation()
     {
         if (Mathf.Approximately(moveDirection.x, 0)) playerAnim.PlayIdleAnim();
-        else playerAnim.PlayWalkAnim();
+        else if (moveDirection.x > 0) playerAnim.PlayWalkRightAnim();
+        else if (moveDirection.x < 0) playerAnim.PlayWalkLeftAnim();
+
+        if (isJumping && IsGrounded()) playerAnim.PlayJumpDownAnim();
     }
 
     void JumpInput(InputAction.CallbackContext context) => jumpInput = true;
@@ -270,6 +273,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playerAnim.PlayJumpUpAnim();
 
             if (SoundManager.Instance != null) SoundManager.Instance.PlaySound(jumpSound);
 

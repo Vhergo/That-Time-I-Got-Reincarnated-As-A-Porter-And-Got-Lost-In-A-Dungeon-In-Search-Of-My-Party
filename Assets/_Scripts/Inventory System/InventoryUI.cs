@@ -13,7 +13,9 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] private KeyCode inventoryKey = KeyCode.Tab;
     [SerializeField] private Animator inventoryAnim;
+    [SerializeField] private InventoryUseGuide inventoryUseGuide;
     private bool inventoryOpen = false;
+    private bool firstOpen = false;
 
     private void Awake()
     {
@@ -33,6 +35,11 @@ public class InventoryUI : MonoBehaviour
             else CloseInventory();
 
             inventoryOpen = !inventoryOpen;
+
+            if (!firstOpen) {
+                inventoryUseGuide.ShowInventoryUseGuide();
+                firstOpen = true;
+            }
         }
     }
 

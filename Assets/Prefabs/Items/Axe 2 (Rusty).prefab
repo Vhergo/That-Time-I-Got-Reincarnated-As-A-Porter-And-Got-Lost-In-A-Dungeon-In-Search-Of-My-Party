@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 89b0753806dfbd94385637125cdf3278, type: 3}
+    - target: {fileID: 6103306411093144370, guid: 37570cff639c01a44b8e23e55d2d0d3e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8459897688656845920, guid: 37570cff639c01a44b8e23e55d2d0d3e, type: 3}
       propertyPath: m_Name
       value: Witherstrike
