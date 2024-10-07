@@ -5,24 +5,22 @@ using UnityEngine;
 public class AbominationEye : MonoBehaviour
 {
     [SerializeField] private float maxDistance = 0.5f;
-    [SerializeField][Range(0, 0.5f)] private float followFactor = 0.05f;
-    [SerializeField][Range(0, 1)] private float scaleFactor = 0.05f;
-    private Transform player;
+    [SerializeField][Range(0, 1f)] private float followFactor = 0.05f;
+    [SerializeField][Range(0, 1f)] private float scaleFactor = 0.05f;
+
+    [SerializeField] private Transform player;
     private Transform iris;
 
     private Vector3 irisStart;
     private Vector3 irisOriginalScale;
 
-    private Vector3 playerStart;
-
     void Start()
     {
-        player = Player.Instance.transform;
+        if (player == null) player = Player.Instance.transform;
         iris = transform.GetChild(0);
 
         irisStart = iris.localPosition;
         irisOriginalScale = iris.localScale;
-        playerStart = player.position;
     }
 
     void Update()
@@ -34,9 +32,8 @@ public class AbominationEye : MonoBehaviour
 
     private void FollowPlayerMovement()
     {
-        Vector3 playerMovement = player.position - playerStart;
-        Vector3 targetIrisPosition = irisStart + playerMovement * followFactor;
-
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        Vector3 targetIrisPosition = irisStart + directionToPlayer * followFactor * Vector3.Distance(transform.position, player.position);
         Vector3 clampedPosition = Vector3.ClampMagnitude(targetIrisPosition - irisStart, maxDistance) + irisStart;
         iris.localPosition = Vector3.Lerp(iris.localPosition, clampedPosition, Time.deltaTime * 5f);
 

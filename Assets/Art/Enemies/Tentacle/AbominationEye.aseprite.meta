@@ -141,6 +141,346 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: AbominationEye_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1292
+      width: 1024
+      height: 1280
+    spriteID: 90390c800562b4743aebdaba8c38e779
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1292}
+  - name: AbominationEye_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2580
+      width: 1024
+      height: 1280
+    spriteID: ee13521512e1611459ed8e5eb71d92fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2580}
+  - name: AbominationEye_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3868
+      width: 1024
+      height: 1280
+    spriteID: 4740a4c6853284247913dc571ead2f56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3868}
+  - name: AbominationEye_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5156
+      width: 1024
+      height: 1280
+    spriteID: 86917469a5d83684d8ab48cf13029e57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5156}
+  - name: AbominationEye_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6444
+      width: 1024
+      height: 1280
+    spriteID: 61d2c42c53156654e958e350fb8081ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6444}
+  - name: AbominationEye_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 4
+      width: 1024
+      height: 1280
+    spriteID: 05bae2842c4f8b14fbd05eeeb6757a64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 4}
+  - name: AbominationEye_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 1292
+      width: 1024
+      height: 1280
+    spriteID: 66fc081ebbcecc54bb2e788037ab8a15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 1292}
+  - name: AbominationEye_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 2580
+      width: 1024
+      height: 1280
+    spriteID: 51c728d162982504fa671c87581dddc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 2580}
+  - name: AbominationEye_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 3868
+      width: 1024
+      height: 1280
+    spriteID: 023e8a3bad2a9994d86b1235b2e34a7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 3868}
+  - name: AbominationEye_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 5156
+      width: 1024
+      height: 1280
+    spriteID: 4bd0ff8f732172f4987aaa0df46e6e29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 5156}
+  - name: AbominationEye_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 6444
+      width: 1024
+      height: 1280
+    spriteID: b0b3de3c96685c8449520143443359af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1036, y: 6444}
+  - name: AbominationEye_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 4
+      width: 1024
+      height: 1280
+    spriteID: 1ed5a43da8cd63540bff154b9638cdc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 4}
+  - name: AbominationEye_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 1292
+      width: 1024
+      height: 1280
+    spriteID: 91de9c9f4d973f546aa76eecd6657dbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 1292}
+  - name: AbominationEye_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 2580
+      width: 1024
+      height: 1280
+    spriteID: 211691c1df7df1a418a095da5759152c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 2580}
+  - name: AbominationEye_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 3868
+      width: 1024
+      height: 1280
+    spriteID: 482a695ed8a85cf4d95bb1a2bd205f2e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 3868}
+  - name: AbominationEye_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 5156
+      width: 1024
+      height: 1280
+    spriteID: a8484182c0e7ae443af8ffec34ae2c06
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 5156}
+  - name: AbominationEye_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2068
+      y: 6444
+      width: 1024
+      height: 1280
+    spriteID: 8ccac18ba8251e047ad0adb2bc9c715c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2068, y: 6444}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,7 +490,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: AbominationEye
+    - name: AbominationEye_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
@@ -158,6 +498,142 @@ ScriptedImporter:
         width: 1024
         height: 1280
       spriteId: d0685118441811f46aebca5434c82d63
+    - name: AbominationEye_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 90390c800562b4743aebdaba8c38e779
+    - name: AbominationEye_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: ee13521512e1611459ed8e5eb71d92fe
+    - name: AbominationEye_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 4740a4c6853284247913dc571ead2f56
+    - name: AbominationEye_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 86917469a5d83684d8ab48cf13029e57
+    - name: AbominationEye_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 61d2c42c53156654e958e350fb8081ab
+    - name: AbominationEye_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 05bae2842c4f8b14fbd05eeeb6757a64
+    - name: AbominationEye_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 66fc081ebbcecc54bb2e788037ab8a15
+    - name: AbominationEye_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 51c728d162982504fa671c87581dddc8
+    - name: AbominationEye_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 023e8a3bad2a9994d86b1235b2e34a7e
+    - name: AbominationEye_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 4bd0ff8f732172f4987aaa0df46e6e29
+    - name: AbominationEye_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: b0b3de3c96685c8449520143443359af
+    - name: AbominationEye_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 1ed5a43da8cd63540bff154b9638cdc3
+    - name: AbominationEye_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 91de9c9f4d973f546aa76eecd6657dbd
+    - name: AbominationEye_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 211691c1df7df1a418a095da5759152c
+    - name: AbominationEye_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 482a695ed8a85cf4d95bb1a2bd205f2e
+    - name: AbominationEye_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: a8484182c0e7ae443af8ffec34ae2c06
+    - name: AbominationEye_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 0
+        width: 1024
+        height: 1280
+      spriteId: 8ccac18ba8251e047ad0adb2bc9c715c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
