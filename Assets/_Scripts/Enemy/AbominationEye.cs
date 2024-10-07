@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbominationEye : MonoBehaviour
 {
     [SerializeField] private float maxDistance = 0.5f;
-    [SerializeField][Range(0, 0.25f)] private float followFactor = 0.05f;
+    [SerializeField][Range(0, 0.5f)] private float followFactor = 0.05f;
     [SerializeField][Range(0, 1)] private float scaleFactor = 0.05f;
     private Transform player;
     private Transform iris;
