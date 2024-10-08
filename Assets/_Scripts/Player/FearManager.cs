@@ -15,6 +15,9 @@ public class FearManager : MonoBehaviour
 
     [SerializeField] private float fearMeter;
     [SerializeField] private int respawns;
+    [SerializeField] private float fearMeterReductionRate;
+    [SerializeField] private float saveZoneFearMeterReductionRate;
+    private float currentFearMeterReductionRate;
 
     [SerializeField] private Image fearMeterFill;
     [SerializeField] ColorVector fearMeterColor;
@@ -37,13 +40,15 @@ public class FearManager : MonoBehaviour
     {
         dangerIndicator.enabled = false;
         dangerIndicatorRect = dangerIndicator.GetComponent<RectTransform>();
+
+        currentFearMeterReductionRate = fearMeterReductionRate;
     }
 
     private void Update() => AdjustFearMeter();
 
     private void AdjustFearMeter()
     {
-        if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= Time.deltaTime, 0, 100);
+        if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= currentFearMeterReductionRate * Time.deltaTime, 0, 100);
         else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * (1 + monsterFear), 0, 100);
 
         float fearFillAmount = fearMeter / 100;
@@ -114,13 +119,19 @@ public class FearManager : MonoBehaviour
             inRange = true;
             isLit = IsTorchLit(collision);
         }
-        if (collision.CompareTag("SafeZone")) inRange = isLit = true;
+        if (collision.CompareTag("SafeZone")) {
+            inRange = isLit = true;
+            currentFearMeterReductionRate = saveZoneFearMeterReductionRate;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Light")) inRange = false;
-        if (collision.CompareTag("SafeZone")) inRange = isLit = false;
+        if (collision.CompareTag("SafeZone")) {
+            inRange = isLit = false;
+            currentFearMeterReductionRate = fearMeterReductionRate;
+        }
     }
 }
 
