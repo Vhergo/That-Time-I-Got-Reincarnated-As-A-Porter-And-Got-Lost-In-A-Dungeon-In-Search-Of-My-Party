@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Critter : Monster
@@ -79,6 +77,6 @@ public class Critter : Monster
 [Serializable]
 public class  CritterInfo
 {
-    public AnimatorController controller;
+    public AnimatorOverrideController controller;
     public float scale;
 }

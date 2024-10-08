@@ -8,11 +8,15 @@ public class PlayerAnimation : MonoBehaviour
 
     private Animator anim;
     private AnimationState currentState;
+    private bool onPause;
 
     public enum AnimationState
     {
         PorterIdle,
-        PorterWalk
+        PorterWalkRight,
+        PorterWalkLeft,
+        PorterJumpUp,
+        PorterJumpDown
     }
 
     void Awake()
@@ -21,10 +25,7 @@ public class PlayerAnimation : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    void Start() => anim = GetComponent<Animator>();
 
     public void ChangeAnimationState(AnimationState newState)
     {
@@ -35,13 +36,11 @@ public class PlayerAnimation : MonoBehaviour
         currentState = newState;
     }
 
-    public void PlayIdleAnim()
-    {
-        ChangeAnimationState(AnimationState.PorterIdle);
-    }
+    public void PlayIdleAnim() => ChangeAnimationState(AnimationState.PorterIdle);
+    public void PlayWalkRightAnim() => ChangeAnimationState(AnimationState.PorterWalkRight);
+    public void PlayWalkLeftAnim() => ChangeAnimationState(AnimationState.PorterWalkLeft);
+    public void PlayJumpUpAnim() => ChangeAnimationState(AnimationState.PorterJumpUp);
+    public void PlayJumpDownAnim() => ChangeAnimationState(AnimationState.PorterJumpDown);
 
-    public void PlayWalkAnim()
-    {
-        ChangeAnimationState(AnimationState.PorterWalk);
-    }
+    void Unpause() => onPause = false;
 }
