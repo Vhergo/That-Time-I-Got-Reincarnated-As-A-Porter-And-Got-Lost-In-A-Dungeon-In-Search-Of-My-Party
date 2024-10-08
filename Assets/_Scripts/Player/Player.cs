@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     [Header("Player Light")]
     [SerializeField] private Light2D playerLight;
     [SerializeField] private List<PlayerLightStage> playerLightStages;
-    [SerializeField] private LayerMask lightLayer;
     private int currentLightStage = 0;
 
     [Header("Guide Settings")]
@@ -46,10 +45,6 @@ public class Player : MonoBehaviour
         if (guideKey != KeyCode.None && Input.GetKeyDown(guideKey)) {
             StopActiveGuide();
             guideKey = KeyCode.None;
-        }
-
-        if (InTorchLight()) {
-
         }
     }
 
@@ -112,8 +107,6 @@ public class Player : MonoBehaviour
         FearManager.Instance.AddFear(fearFactor);
         // Potential hit animation trigger
     }
-
-    private Collider2D InTorchLight() => Physics2D.OverlapCircle(transform.position, 0.5f, lightLayer);
 }
 
 [Serializable]
