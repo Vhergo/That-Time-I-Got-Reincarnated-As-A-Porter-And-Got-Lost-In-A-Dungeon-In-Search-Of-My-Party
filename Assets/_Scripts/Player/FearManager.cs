@@ -113,6 +113,8 @@ public class FearManager : MonoBehaviour
         return collider.GetComponent<TorchLight>().IsLit();
     }
 
+    public int GetRespawnCount() => respawns;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Light")) {

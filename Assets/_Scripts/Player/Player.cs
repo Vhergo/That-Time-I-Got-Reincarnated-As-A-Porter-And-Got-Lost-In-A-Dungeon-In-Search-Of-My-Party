@@ -3,9 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player Health")]
+    [SerializeField] private Transform healthBar;
+    [SerializeField] private GameObject healthIconPrefab;
+    [SerializeField] private AnimationClip healthLossAnimation;
+    [SerializeField] private float respawnHealthAnimationDelay;
+    [SerializeField] private List<Animator> healthIcons;
+
     [Header("Player Light")]
     [SerializeField] private Light2D playerLight;
     [SerializeField] private List<PlayerLightStage> playerLightStages;
@@ -31,13 +39,23 @@ public class Player : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void OnEnable() => PartyManager.OnPartyMemberFound += SetPlayerLightStage;
-    private void OnDisable() => PartyManager.OnPartyMemberFound -= SetPlayerLightStage;
+    private void OnEnable()
+    {
+        PartyManager.OnPartyMemberFound += SetPlayerLightStage;
+        FearManager.OnPlayerRespawn += PlayerRespawn;
+    }
+    private void OnDisable()
+    {
+        PartyManager.OnPartyMemberFound -= SetPlayerLightStage;
+        FearManager.OnPlayerRespawn -= PlayerRespawn;
+    }
 
     private void Start()
     {
         guideRenderer.enabled = false;
         SetPlayerLightStage(currentLightStage);
+
+        SetupHealthBar();
     }
 
     private void Update()
@@ -106,6 +124,44 @@ public class Player : MonoBehaviour
     {
         FearManager.Instance.AddFear(fearFactor);
         // Potential hit animation trigger
+    }
+
+    private void SetupHealthBar()
+    {
+        foreach (Transform child in healthBar) {
+            Destroy(child.gameObject);
+        }
+
+        int respawnCount = FearManager.Instance.GetRespawnCount();
+        for (int i = 0; i < respawnCount; i++) {
+            GameObject newHealthIcon = Instantiate(healthIconPrefab, healthBar);
+            healthIcons.Add(newHealthIcon.GetComponent<Animator>());
+        }
+
+        healthBar.gameObject.SetActive(false);
+    }
+
+    private void PlayerRespawn()
+    {
+        StartCoroutine(RespawnAnimation());
+    }
+
+    private IEnumerator RespawnAnimation()
+    {
+        healthBar.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(respawnHealthAnimationDelay);
+        Animator lastHealthIcon = healthIcons[healthIcons.Count - 1];
+        healthIcons.Remove(lastHealthIcon);
+
+        lastHealthIcon.Play(healthLossAnimation.name);
+        yield return new WaitForSeconds(healthLossAnimation.length);
+
+        lastHealthIcon.GetComponent<Image>().enabled = false;
+        yield return new WaitForSeconds(1f);
+
+        healthBar.gameObject.SetActive(false);
+        lastHealthIcon.transform.GetChild(0).GetComponent<Image>().enabled = true;
     }
 }
 
