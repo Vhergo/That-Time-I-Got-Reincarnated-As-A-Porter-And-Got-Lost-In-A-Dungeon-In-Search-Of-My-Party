@@ -77,6 +77,14 @@ public class Archetype2 : Monster
         }
     }
 
+    public void CutsceneStarted()
+    {
+        canAttack = false;
+        anim.Play(idleAnimation.name);
+    }
+
+    public void CutsceneFinished() => canAttack = true;
+
     private IEnumerator AttackSequence()
     {
         canAttack = false;

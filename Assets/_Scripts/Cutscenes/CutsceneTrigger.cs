@@ -16,6 +16,7 @@ public class CutsceneTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             TriggerCutscene();
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 }
