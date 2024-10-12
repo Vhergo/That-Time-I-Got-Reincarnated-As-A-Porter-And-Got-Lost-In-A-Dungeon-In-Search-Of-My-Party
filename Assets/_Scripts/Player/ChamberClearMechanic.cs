@@ -7,6 +7,7 @@ public class ChamberClearMechanic : MonoBehaviour
     public static ChamberClearMechanic Instance { get; private set; }
 
     [SerializeField] private List<ChamberTentacle> chamberTentacles;
+    private bool dungeonCleared;
 
     private void Awake()
     {
@@ -33,8 +34,13 @@ public class ChamberClearMechanic : MonoBehaviour
         if (chamberTentacles.Count == 0) {
             // All chamber tentacles have been destroyed
             // Win condition met (add logic here)
-            GameManager.Instance.DungeonCleared();
+            dungeonCleared = true;
         }
+    }
+
+    public void FinalCutsceneOver()
+    {
+        GameManager.Instance.DungeonCleared();
     }
 
 }

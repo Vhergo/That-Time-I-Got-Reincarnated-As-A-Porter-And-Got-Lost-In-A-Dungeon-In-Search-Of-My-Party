@@ -19,6 +19,19 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     private PlayerAnimation playerAnim;
 
+    private bool cutscenePlaying;
+    public void CutscenePlaying(bool cutscenePlaying)
+    {
+        this.cutscenePlaying = cutscenePlaying;
+        if (cutscenePlaying) {
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            playerAnim.PlayIdleAnim();
+        } else {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
     #region VARIABLES
     [Header("Available Controls")]
     [Tooltip("This is a test description for myVariable.")][SerializeField] private bool toggleJumpOff;
@@ -183,6 +196,8 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     void Update()
     {
+        if (cutscenePlaying) return;
+
         UpdateAnimation();
 
         ProccessInput();
