@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: The Forbidden Grimoire
   itemDescription: A cursed book, sealed away by the Elder Council. Those who open
     it rarely stay sane.
-  itemFuelValue: 20
+  itemFuelValue: 30
   itemSprite: {fileID: 21300000, guid: e2d667f40b6c05244b9209b568dba60d, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 2ffb73073369249498d9e0a568631d6a, type: 3}

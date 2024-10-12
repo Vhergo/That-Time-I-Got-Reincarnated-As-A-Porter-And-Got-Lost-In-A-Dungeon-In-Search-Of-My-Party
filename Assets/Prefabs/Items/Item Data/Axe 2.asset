@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Dawncleaver
   itemDescription: A holy axe wielded by the paladins of Eldraheim, blessed by the
     morning sun.
-  itemFuelValue: 10
+  itemFuelValue: 25
   itemSprite: {fileID: 21300000, guid: 3fd06985d7b4b8e49b0b0c184d097b49, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 6b9965e6e0ff17849abc6877493f9c7c, type: 3}

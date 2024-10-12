@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Rustclaw Axe
   itemDescription: Once a mighty tool of battle, now claimed by rust. It yearns for
     the glory of its past.
-  itemFuelValue: 5
+  itemFuelValue: 10
   itemSprite: {fileID: 21300000, guid: fe0ddf7629863de47b60c36742fc89a1, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: e1de70c127e3c9b498c18615817d83b0, type: 3}

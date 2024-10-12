@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Torn Gale
   itemDescription: Once a fearsome weapon, now rusted and frayed by the winds of
     time.
-  itemFuelValue: 5
+  itemFuelValue: 10
   itemSprite: {fileID: 21300000, guid: deb443bc7912798498ce399833c4167e, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 8994c76265f855943b681bd349b45768, type: 3}

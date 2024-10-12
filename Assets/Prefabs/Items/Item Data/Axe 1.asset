@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Phantom Edge
   itemDescription: An ethereal axe forged from void energy that cleaves through both
     body and soul.
-  itemFuelValue: 10
+  itemFuelValue: 20
   itemSprite: {fileID: 21300000, guid: 39bc48baa54aee54b930e31cb7bd99b4, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: fc5a38b9d34f61a4ab859546b3afbee4, type: 3}
