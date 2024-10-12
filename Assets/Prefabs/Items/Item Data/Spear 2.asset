@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Talon of the Skylord
   itemDescription: Forged from the talon of the legendary Skylord. None can outrun
     it.
-  itemFuelValue: 15
+  itemFuelValue: 25
   itemSprite: {fileID: 21300000, guid: a9909a8e1a61fd04a90fb8e8d2315839, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 995b4f7366569524d850a6fb6398915f, type: 3}

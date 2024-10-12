@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Witherstrike
   itemDescription: A once-mighty axe, now faded, yet still capable of striking with
     relentless decay.
-  itemFuelValue: 5
+  itemFuelValue: 10
   itemSprite: {fileID: 21300000, guid: 89b0753806dfbd94385637125cdf3278, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 83f60c05ef2aeb54b854b344b4425a02, type: 3}

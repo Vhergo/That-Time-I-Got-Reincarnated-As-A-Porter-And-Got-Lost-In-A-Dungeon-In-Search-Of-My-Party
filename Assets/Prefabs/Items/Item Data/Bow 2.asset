@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Nightslinger's Bow
   itemDescription: Its string hums a melody only the night creatures can hear, guiding
     its arrows in the dark.
-  itemFuelValue: 10
+  itemFuelValue: 25
   itemSprite: {fileID: 21300000, guid: 9329cdc98bd1e5b4e88966b798f1fee4, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 58a55859664e1e24f8c5ed975bcbe902, type: 3}

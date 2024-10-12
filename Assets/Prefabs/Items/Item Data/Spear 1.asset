@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Crimson Gale
   itemDescription: A spear that cuts through the wind, its crimson banner a symbol
     of fallen warriors.
-  itemFuelValue: 10
+  itemFuelValue: 20
   itemSprite: {fileID: 21300000, guid: e7b1ebb1b6c8950418e71084488e570e, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: e8ade10d4970a814f8c22ff47645c2be, type: 3}

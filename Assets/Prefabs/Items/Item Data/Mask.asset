@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Mask of the Forgotten Sage
   itemDescription: "This mask hides more than just a face, it obscures the wearer\u2019s
     past."
-  itemFuelValue: 5
+  itemFuelValue: 15
   itemSprite: {fileID: 21300000, guid: 0cc05e7472a13ff4582b00e378523091, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 15d1ae128aa48ca469fae9d0d01cd76b, type: 3}

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: "Fallen King\u2019s Crown"
   itemDescription: "The crown of Eldraheim\u2019s last monarch, long believed to
     carry a curse of betrayal."
-  itemFuelValue: 15
+  itemFuelValue: 30
   itemSprite: {fileID: 21300000, guid: 6b290fc679f3bc441adb46f3a2358a58, type: 3}
   itemPrefab: {fileID: 5449508522651541791, guid: 760c0ad7c98bbd34aa15f2ffc889735b, type: 3}
