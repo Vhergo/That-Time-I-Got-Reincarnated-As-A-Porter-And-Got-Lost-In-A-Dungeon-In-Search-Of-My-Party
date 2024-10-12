@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer), typeof(CircleCollider2D))]
 public class Item : MonoBehaviour, ICollectable
 {
-    [SerializeField] private ItemData itemData;
+    [SerializeField] public ItemData itemData;
     private CircleCollider2D lootCollider;
 
     public ItemData ItemData => itemData;

@@ -24,6 +24,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
     {
         this.cutscenePlaying = cutscenePlaying;
         if (cutscenePlaying) {
+            Debug.Log("CUTSCENE PLAYING");
             rb.velocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             playerAnim.PlayIdleAnim();
