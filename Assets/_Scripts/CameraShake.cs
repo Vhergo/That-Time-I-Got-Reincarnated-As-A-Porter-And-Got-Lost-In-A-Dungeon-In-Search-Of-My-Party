@@ -47,6 +47,11 @@ public class CameraShake : MonoBehaviour
         TriggerCameraShake(defaultShakeIntensity, defaultShakeFrequency, defaultShakeDuration);
     }
 
+    public void TriggerCameraShake(float shakeDuration)
+    {
+        TriggerCameraShake(defaultShakeIntensity, defaultShakeFrequency, shakeDuration);
+    }
+
     private void ShakeCamera(float shakeIntensity, float shakeFrequency) {
         noise.m_AmplitudeGain = shakeIntensity;
         noise.m_FrequencyGain = shakeFrequency;

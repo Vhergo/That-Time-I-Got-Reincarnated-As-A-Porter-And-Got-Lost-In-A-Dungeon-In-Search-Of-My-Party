@@ -25,6 +25,7 @@ public class FearManager : MonoBehaviour
     private RectTransform dangerIndicatorRect;
 
     private float monsterFear;
+    private bool fearCanIncrease;
 
     [SerializeField] private Transform lastCheckpoint;
 
@@ -48,6 +49,8 @@ public class FearManager : MonoBehaviour
 
     private void AdjustFearMeter()
     {
+        if (!fearCanIncrease) return;
+
         if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= currentFearMeterReductionRate * Time.deltaTime, 0, 100);
         else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * (1 + monsterFear), 0, 100);
 
@@ -114,6 +117,16 @@ public class FearManager : MonoBehaviour
     }
 
     public int GetRespawnCount() => respawns;
+    public void SetSpawned() => fearCanIncrease = true;
+
+    public void CutscenePlaying(bool cutscenePlaying)
+    {
+        if (cutscenePlaying) {
+            fearCanIncrease = false;
+        }else {
+            fearCanIncrease = true;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

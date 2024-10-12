@@ -207,6 +207,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (cutscenePlaying) return;
         if (isDashing) return;
 
         if (!IsDead) Move();

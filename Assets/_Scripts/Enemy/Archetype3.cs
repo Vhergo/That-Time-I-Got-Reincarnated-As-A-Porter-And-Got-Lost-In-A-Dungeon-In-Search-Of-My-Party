@@ -67,6 +67,8 @@ public class Archetype3 : Monster
 
     private void Update()
     {
+        if (player == null) return;
+
         canReach = PlayerInRange();
         if (!isReaching) isReaching = PlayerInGrabRange();
 

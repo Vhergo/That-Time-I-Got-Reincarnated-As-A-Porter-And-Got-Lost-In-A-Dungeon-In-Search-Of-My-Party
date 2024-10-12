@@ -30,7 +30,6 @@ public class Chain : MonoBehaviour
             Vector3 newPos = previousLink.position;
             if (i != 0) newPos.y += linkOffset;
             newPos.z -= ((i + 1)/ 100f);
-            Debug.Log("New Pos: " + newPos);
 
             GameObject newLink = Instantiate(chainLinkPrefab, newPos, Quaternion.identity, transform);
             HingeJoint2D hinge = newLink.GetComponent<HingeJoint2D>();

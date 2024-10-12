@@ -67,11 +67,13 @@ public class Archetype4 : Monster
 
     private void Update()
     {
+        if (target == null) return;
         if (isAggroed) RotateToFaceTarget(target);
     }
 
     private void FixedUpdate()
     {
+        if (target == null) return;
         if (!canAttack) return;
 
         if (TargetInAttackDistance()) {

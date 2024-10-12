@@ -28,23 +28,22 @@ public class CutsceneManager : MonoBehaviour
     public void PlayCutscene(PlayableAsset cutscene)
     {
         if (cutscene == null) return;
-
-        LoadCutsceneHasPlayed(cutscene.name);
+        //LoadCutsceneHasPlayed(cutscene.name);
 
         playableDirector.playableAsset = cutscene;
         playableDirector.Play();
 
-        SaveCutsceneHasPlayed(cutscene.name);
+        //SaveCutsceneHasPlayed(cutscene.name);
     }
 
-    public void SaveCutsceneHasPlayed(string cutsceneName)
-    {
-        PlayerPrefs.SetInt(cutsceneName, 1);
-    }
+    //public void SaveCutsceneHasPlayed(string cutsceneName)
+    //{
+    //    PlayerPrefs.SetInt(cutsceneName, 1);
+    //}
 
-    public void LoadCutsceneHasPlayed(string cutsceneName)
-    {
-        if (PlayerPrefs.GetInt(cutsceneName, 0) == 1) canSkipCutscene = true;
-        else canSkipCutscene = false;
-    }
+    //public void LoadCutsceneHasPlayed(string cutsceneName)
+    //{
+    //    if (PlayerPrefs.GetInt(cutsceneName, 0) == 1) canSkipCutscene = true;
+    //    else canSkipCutscene = false;
+    //}
 }
