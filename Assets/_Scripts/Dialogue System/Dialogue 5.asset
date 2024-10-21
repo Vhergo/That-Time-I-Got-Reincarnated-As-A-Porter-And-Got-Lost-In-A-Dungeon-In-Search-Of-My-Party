@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: 
   dialogueText: "Seriously? Your party\u2019s already in there! Get a move on, who
-    else is going to carry all the loot?"
+    else is going to carry all the loot? You are a porter, are you not?"
   speaker: 1
+  speakerColor: {r: 0.8490566, g: 0.39456603, b: 0.35644355, a: 1}
   dialogueDuration: 1.5
   cutscene: {fileID: 0}

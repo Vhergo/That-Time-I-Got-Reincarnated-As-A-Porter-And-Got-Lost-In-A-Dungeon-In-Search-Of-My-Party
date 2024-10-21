@@ -15,6 +15,7 @@ public class FearManager : MonoBehaviour
 
     [SerializeField] private float fearMeter;
     [SerializeField] private int respawns;
+    [SerializeField] private float fearMeterIncreaseRate;
     [SerializeField] private float fearMeterReductionRate;
     [SerializeField] private float saveZoneFearMeterReductionRate;
     private float currentFearMeterReductionRate;
@@ -25,7 +26,7 @@ public class FearManager : MonoBehaviour
     private RectTransform dangerIndicatorRect;
 
     private float monsterFear;
-    private bool fearCanIncrease;
+    public bool fearCannotIncrease;
 
     [SerializeField] private Transform lastCheckpoint;
 
@@ -49,10 +50,10 @@ public class FearManager : MonoBehaviour
 
     private void AdjustFearMeter()
     {
-        if (!fearCanIncrease) return;
+        if (fearCannotIncrease) return;
 
         if (isLit && inRange) fearMeter = Mathf.Clamp(fearMeter -= currentFearMeterReductionRate * Time.deltaTime, 0, 100);
-        else fearMeter = Mathf.Clamp(fearMeter += Time.deltaTime * (1 + monsterFear), 0, 100);
+        else fearMeter = Mathf.Clamp(fearMeter += fearMeterIncreaseRate * Time.deltaTime * (1 + monsterFear), 0, 100);
 
         float fearFillAmount = fearMeter / 100;
         fearMeterFill.fillAmount = fearFillAmount;
@@ -117,17 +118,15 @@ public class FearManager : MonoBehaviour
     }
 
     public int GetRespawnCount() => respawns;
-    public void SetSpawned() => fearCanIncrease = true;
+    public void SetSpawned() => fearCannotIncrease = true;
 
     public void CutscenePlaying(bool cutscenePlaying)
     {
-        if (cutscenePlaying) {
-            fearCanIncrease = false;
-        }else {
-            fearCanIncrease = true;
-        }
+        fearCannotIncrease = cutscenePlaying;
+
     }
 
+    public void RemoveRespawnLimit() =>respawns = 999;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Light")) {

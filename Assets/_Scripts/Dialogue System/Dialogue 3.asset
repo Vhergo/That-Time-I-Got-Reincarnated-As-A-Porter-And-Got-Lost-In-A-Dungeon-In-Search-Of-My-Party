@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueName: 
   dialogueText: Hey! You finally awake? Hurry up and get moving!
   speaker: 1
+  speakerColor: {r: 0.8490566, g: 0.39456603, b: 0.35644355, a: 1}
   dialogueDuration: 1.5
   cutscene: {fileID: 0}

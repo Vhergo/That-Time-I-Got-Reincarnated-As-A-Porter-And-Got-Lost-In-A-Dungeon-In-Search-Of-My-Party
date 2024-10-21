@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueName: 
   dialogueText: What in this new world was that?!?!
   speaker: 0
+  speakerColor: {r: 1, g: 0.8235294, b: 0.4392157, a: 1}
   dialogueDuration: 1.5
   cutscene: {fileID: 11400000, guid: 754d386d82506ed4fb889f326c6c35e3, type: 2}

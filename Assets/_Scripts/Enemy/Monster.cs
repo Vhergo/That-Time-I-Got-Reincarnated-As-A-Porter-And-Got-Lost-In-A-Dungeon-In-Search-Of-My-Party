@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
     public Archetype archetype;
 
     public float moveSpeed;
-    [Range(0, 1)] public float fearFactor;
+    public float fearFactor;
     [SerializeField] protected float attackCooldown;
     protected bool movingRight;
     protected Animator anim;

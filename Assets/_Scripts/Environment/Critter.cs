@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Critter : Monster
 {
-    [SerializeField] private List<CritterInfo> critterAnimations;
+    [SerializeField] private Vector2 scaleRange;
     [SerializeField] private float runAwayTimer;
     [SerializeField] private float checkRadius;
     private bool sawPlayer;
@@ -23,9 +23,8 @@ public class Critter : Monster
 
     private void ChooseCritter()
     {
-        var critter = critterAnimations[UnityEngine.Random.Range(0, critterAnimations.Count)];
-        anim.runtimeAnimatorController = critter.controller;
-        transform.localScale = new Vector3(critter.scale, critter.scale, critter.scale);
+        float randomRange = UnityEngine.Random.Range(scaleRange.x, scaleRange.y);
+        transform.localScale = new Vector3(randomRange, randomRange, randomRange);
     }
 
     private void Move()
@@ -72,11 +71,4 @@ public class Critter : Monster
             Gizmos.DrawWireSphere(wallCheck.position, checkRadius);
         }
     }
-}
-
-[Serializable]
-public class  CritterInfo
-{
-    public AnimatorOverrideController controller;
-    public float scale;
 }

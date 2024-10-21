@@ -54,6 +54,6 @@ public class PlayerSummon : MonoBehaviour
     public void SpawnPlayer()
     {
         player.enabled = true;
-        FearManager.Instance.SetSpawned();
+        // FearManager.Instance.SetSpawned();
     }
 }

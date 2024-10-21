@@ -11,6 +11,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip landSound;
+    [SerializeField] private AudioClip footstepSound;
 
     [SerializeField] private PlayerControls playerControls;
     private InputAction move;
@@ -18,20 +19,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
     private InputAction dash;
 
     private PlayerAnimation playerAnim;
-
     private bool cutscenePlaying;
-    public void CutscenePlaying(bool cutscenePlaying)
-    {
-        this.cutscenePlaying = cutscenePlaying;
-        if (cutscenePlaying) {
-            Debug.Log("CUTSCENE PLAYING");
-            rb.velocity = Vector2.zero;
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            playerAnim.PlayIdleAnim();
-        } else {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
-    }
 
     #region VARIABLES
     [Header("Available Controls")]
@@ -213,6 +201,26 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
         if (!IsDead) Move();
         ControlToggles();
+    }
+
+    public void CutscenePlaying(bool cutscenePlaying)
+    {
+        this.cutscenePlaying = cutscenePlaying;
+        if (cutscenePlaying) {
+            Debug.Log("CUTSCENE PLAYING");
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            playerAnim.PlayIdleAnim();
+        } else {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
+    public void PlayFootstepSound()
+    {
+        if (IsGrounded()) {
+            if (SoundManager.Instance != null) SoundManager.Instance.PlaySound(footstepSound);
+        }
     }
 
     private void UpdateAnimation()

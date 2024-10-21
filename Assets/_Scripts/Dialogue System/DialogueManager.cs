@@ -71,6 +71,8 @@ public class DialogueManager : MonoBehaviour
     private void UpdateUI()
     {
         speakerName.text = currentDialogue.speaker.ToString();
+        speakerName.color = currentDialogue.speakerColor;
+
         dialogueText.text = currentDialogue.dialogueText;
     }
 

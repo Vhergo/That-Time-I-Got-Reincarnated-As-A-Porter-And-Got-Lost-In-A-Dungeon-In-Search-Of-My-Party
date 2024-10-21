@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -18,9 +19,12 @@ public class GameUIManager : MonoBehaviour
 
     [Header("Win Screen")]
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private TMP_Text dungeonClearText;
 
     [Header("Lose Screen")]
     [SerializeField] private GameObject loseScreen;
+
+    private PartyManager partyManager => PartyManager.Instance;
 
     private void OnEnable()
     {
@@ -53,6 +57,24 @@ public class GameUIManager : MonoBehaviour
         MySceneManager.Instance.SwitchScene(SceneEnum.MainMenuScene);
     }
 
-    private void TurnOnWinScreen() => winScreen.SetActive(true);
+    private void TurnOnWinScreen()
+    {
+        winScreen.SetActive(true);
+
+        switch (partyManager.GetCurrentPartyMemberCount()) {
+            case 0:
+                dungeonClearText.text = partyManager.GetDungeonClearText(0);
+                break;
+            case 1:
+                dungeonClearText.text = partyManager.GetDungeonClearText(1);
+                break;
+            case 2:
+                dungeonClearText.text = partyManager.GetDungeonClearText(2);
+                break;
+            case 3:
+                dungeonClearText.text = partyManager.GetDungeonClearText(3);
+                break;
+        }
+    }
     private void TurnOnLoseScreen() => loseScreen.SetActive(true);
 }

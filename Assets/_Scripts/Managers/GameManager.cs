@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private MySceneManager mySceneManager;
+    private PartyManager partyManager;
 
     public static Action OnGameOver;
     public static Action OnDungeonCleared;
@@ -17,7 +18,11 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start() => mySceneManager = MySceneManager.Instance;
+    private void Start()
+    {
+        mySceneManager = MySceneManager.Instance;
+        partyManager = PartyManager.Instance;
+    }
 
     public void GameOver()
     {
@@ -32,4 +37,5 @@ public class GameManager : MonoBehaviour
         MySceneManager.Instance.PauseGame();
         OnDungeonCleared?.Invoke();
     }
+
 }

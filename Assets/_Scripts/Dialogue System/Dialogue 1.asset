@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueName: 
   dialogueText: Where...where am I?
   speaker: 0
+  speakerColor: {r: 1, g: 0.8235294, b: 0.4392157, a: 1}
   dialogueDuration: 1.5
   cutscene: {fileID: 0}

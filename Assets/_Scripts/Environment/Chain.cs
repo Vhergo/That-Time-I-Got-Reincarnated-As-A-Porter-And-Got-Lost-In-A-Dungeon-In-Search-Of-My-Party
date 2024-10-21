@@ -9,7 +9,6 @@ public class Chain : MonoBehaviour
     [SerializeField] private GameObject chainEndingPrefab;
     [SerializeField] private int chainLength;
     [SerializeField] private float linkOffset = -0.35f;
-    [SerializeField] private bool doubleEnded;
 
     [Space(10)]
     [SerializeField] private List<GameObject> chain;
@@ -40,7 +39,6 @@ public class Chain : MonoBehaviour
         }
 
         if (chainEndingPrefab != null) CreateChainEnding();
-        if (doubleEnded) CreateDoubleEnding();
 
         // Need to set this to false to avoid some jank
         chain[0].GetComponent<HingeJoint2D>().autoConfigureConnectedAnchor = false;
@@ -60,11 +58,5 @@ public class Chain : MonoBehaviour
         chain.Add(chainEnding);
 
         SpriteRenderer sprite = chainEnding.GetComponent<SpriteRenderer>();
-
-    }
-
-    private void CreateDoubleEnding()
-    {
-
     }
 }

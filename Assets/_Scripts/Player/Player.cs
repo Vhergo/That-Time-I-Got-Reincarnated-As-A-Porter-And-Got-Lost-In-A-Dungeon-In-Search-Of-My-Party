@@ -163,6 +163,12 @@ public class Player : MonoBehaviour
         healthBar.gameObject.SetActive(false);
         lastHealthIcon.transform.GetChild(0).GetComponent<Image>().enabled = true;
     }
+
+    public void MovePlayerToSafezone()
+    {
+        Transform movePos = GameObject.FindGameObjectWithTag("DungeonClearPosition").transform;
+        transform.position = movePos.position;
+    }
 }
 
 [Serializable]

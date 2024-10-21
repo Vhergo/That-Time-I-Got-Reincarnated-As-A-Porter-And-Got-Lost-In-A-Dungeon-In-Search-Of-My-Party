@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7661485328734114875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -166.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70712924
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7070844
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984735670749237911, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 89.996
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791208254629557473, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_Name
+      value: Archetype 3 - Chase Tentacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: length
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: isForShow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: reachRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: trailSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: smoothSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: wiggleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: finalGrabRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: targetDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: wiggleMagnitude
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: finalWiggleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: finalTargetDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: finalWiggleMagnitude
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039023873841248995, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}

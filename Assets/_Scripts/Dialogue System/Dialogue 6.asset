@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogueName: 
   dialogueText: My party? I don't even know where I am...
   speaker: 0
+  speakerColor: {r: 1, g: 0.8235294, b: 0.4392157, a: 1}
   dialogueDuration: 1.5
   cutscene: {fileID: 0}

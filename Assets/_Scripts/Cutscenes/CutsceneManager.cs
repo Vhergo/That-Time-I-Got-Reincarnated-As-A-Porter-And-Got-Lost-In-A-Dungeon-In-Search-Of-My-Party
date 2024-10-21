@@ -25,25 +25,37 @@ public class CutsceneManager : MonoBehaviour
         playableDirector = GetComponent<PlayableDirector>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H)) PlayCutscene(introCutscene);
+    }
+
     public void PlayCutscene(PlayableAsset cutscene)
     {
         if (cutscene == null) return;
-        //LoadCutsceneHasPlayed(cutscene.name);
+        LoadCutsceneHasPlayed(cutscene.name);
 
         playableDirector.playableAsset = cutscene;
         playableDirector.Play();
 
-        //SaveCutsceneHasPlayed(cutscene.name);
+        SaveCutsceneHasPlayed(cutscene.name);
     }
 
-    //public void SaveCutsceneHasPlayed(string cutsceneName)
-    //{
-    //    PlayerPrefs.SetInt(cutsceneName, 1);
-    //}
+    public void SkipCutscene()
+    {
+        playableDirector.time = playableDirector.duration;
+        playableDirector.Evaluate();
+        playableDirector.Stop();
+    }
 
-    //public void LoadCutsceneHasPlayed(string cutsceneName)
-    //{
-    //    if (PlayerPrefs.GetInt(cutsceneName, 0) == 1) canSkipCutscene = true;
-    //    else canSkipCutscene = false;
-    //}
+    public void SaveCutsceneHasPlayed(string cutsceneName)
+    {
+        PlayerPrefs.SetInt(cutsceneName, 1);
+    }
+
+    public void LoadCutsceneHasPlayed(string cutsceneName)
+    {
+        if (PlayerPrefs.GetInt(cutsceneName, 0) == 1) canSkipCutscene = true;
+        else canSkipCutscene = false;
+    }
 }

@@ -13,6 +13,7 @@ public class ItemRandomizer : MonoBehaviour
         placedCollectables = FindObjectsOfType<Item>().ToList();
         foreach(Item item in placedCollectables) {
             item.itemData = allCollectableItems[Random.Range(0, allCollectableItems.Count)];
+            item.GetComponent<SpriteRenderer>().sprite = item.itemData.itemSprite;
         }
     }
 }

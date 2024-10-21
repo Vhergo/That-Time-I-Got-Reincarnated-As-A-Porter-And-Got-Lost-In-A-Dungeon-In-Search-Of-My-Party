@@ -3409,7 +3409,7 @@ MonoBehaviour:
   musicSource: {fileID: 566940276}
   effectsSource: {fileID: 829949439}
   mainMenuMusic: {fileID: 8300000, guid: ee8cd1ae55573a74383a7d40cf53e1be, type: 3}
-  inGameMusic: {fileID: 8300000, guid: dbe56e10c7ac4ef4c9e6666887f7ed0d, type: 3}
+  inGameMusic: {fileID: 8300000, guid: 84dda055490d2d94ca8d3cfbd972ccd8, type: 3}
   pitchRange: {x: 0.8, y: 1.2}
 --- !u!4 &1353709093
 Transform:

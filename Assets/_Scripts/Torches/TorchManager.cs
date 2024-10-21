@@ -70,7 +70,7 @@ public class TorchManager : MonoBehaviour, IInteractable
             currentTorchFuel -= torchBurnRate * Time.deltaTime;
             float torchFuelPercentage = currentTorchFuel / maxTorchFuel;
             UpdateTorchUI();
-            activeTorch.UpdateTorchLightRadius(torchFuelPercentage);
+            //activeTorch.UpdateTorchLightRadius(torchFuelPercentage);
 
             // Automatically remove torch if fuel runs out
             if (currentTorchFuel <= 0) RemoveTorch();

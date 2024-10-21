@@ -14,6 +14,7 @@ public class PartyManager : MonoBehaviour
     [SerializeField] private List<GameObject> partyMembers;
     [SerializeField] private List<PartyMember> foundMembers;
     [SerializeField] private List<Transform> partyGroupSpots;
+    [SerializeField] private List<string> dungeonClearText;
     private Player player;
 
     public static Action<int> OnPartyMemberFound;
@@ -54,10 +55,9 @@ public class PartyManager : MonoBehaviour
         partyMemberCountText.text = "Found: " + currentMemberCount + " of " + partyMembers.Count;
     }
 
-    public int GetMaxPartyMemberCount()
-    {
-        return partyMembers.Count;
-    }
+    public int GetMaxPartyMemberCount() => partyMembers.Count;
+    public int GetCurrentPartyMemberCount() => currentMemberCount;
+    public string GetDungeonClearText(int index) => dungeonClearText[index];
 
     private void OnDrawGizmos()
     {

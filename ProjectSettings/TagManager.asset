@@ -24,6 +24,8 @@ TagManager:
   - Light
   - SafeZone
   - Party Member
+  - DungeonClearPosition
+  - Abomination
   layers:
   - Default
   - TransparentFX

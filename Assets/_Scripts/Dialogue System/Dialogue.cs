@@ -10,6 +10,7 @@ public class Dialogue : ScriptableObject
     public string dialogueName;
     public string dialogueText;
     public Speaker speaker;
+    public Color speakerColor;
     public float dialogueDuration;
     public PlayableAsset cutscene;
 }
