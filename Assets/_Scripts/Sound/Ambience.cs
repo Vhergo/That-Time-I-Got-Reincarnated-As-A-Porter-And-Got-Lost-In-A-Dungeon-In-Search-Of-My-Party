@@ -15,7 +15,6 @@ public class Ambience : MonoBehaviour
 
     private IEnumerator ToggleAmbience(bool on)
     {
-        Debug.Log("Toggling Ambience");
         if (!source.isPlaying) source.Play();
         float targetVolume = on ? maxVolume : 0;
         float startVolume = on ? 0 : maxVolume;

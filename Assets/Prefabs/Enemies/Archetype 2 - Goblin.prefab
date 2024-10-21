@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archetype: 1
   moveSpeed: 2
-  fearFactor: 0.5
+  fearFactor: 3
   attackCooldown: 3
   groundLayer:
     serializedVersion: 2

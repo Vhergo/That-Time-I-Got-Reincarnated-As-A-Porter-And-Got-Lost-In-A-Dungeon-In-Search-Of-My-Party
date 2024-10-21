@@ -33,12 +33,12 @@ public class CutsceneManager : MonoBehaviour
     public void PlayCutscene(PlayableAsset cutscene)
     {
         if (cutscene == null) return;
-        LoadCutsceneHasPlayed(cutscene.name);
+        //LoadCutsceneHasPlayed(cutscene.name);
 
         playableDirector.playableAsset = cutscene;
         playableDirector.Play();
 
-        SaveCutsceneHasPlayed(cutscene.name);
+        //SaveCutsceneHasPlayed(cutscene.name);
     }
 
     public void SkipCutscene()

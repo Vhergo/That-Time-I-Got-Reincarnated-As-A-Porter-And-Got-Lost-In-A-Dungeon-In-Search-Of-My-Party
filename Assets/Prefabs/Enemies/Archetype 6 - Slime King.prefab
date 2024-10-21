@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archetype: 5
   moveSpeed: 16
-  fearFactor: 1
+  fearFactor: 8
   attackCooldown: 0
   groundLayer:
     serializedVersion: 2

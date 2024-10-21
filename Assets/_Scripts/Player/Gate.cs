@@ -7,6 +7,6 @@ public class Gate : MonoBehaviour
     public void Open()
     {
         GetComponent<Animator>().SetTrigger("Open");
-        // Play Audio
+        GetComponent<AudioSource>().Play();
     }
 }

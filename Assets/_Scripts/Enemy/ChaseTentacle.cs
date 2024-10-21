@@ -7,5 +7,5 @@ public class ChaseTentacle : MonoBehaviour
 {
     public static Action OnChaseTentacleDeath;
 
-    private void OnDisable() => OnChaseTentacleDeath?.Invoke();
+    private void OnDestroy() => OnChaseTentacleDeath?.Invoke();
 }

@@ -4928,8 +4928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ba3e60640468f45be55f6f217667bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: 8f4966d2d9b6c584abcf6c992a6e46b6, type: 3}
-  defaultHotspot: {x: 0, y: 0}
+  defaultCursor: {fileID: 2800000, guid: a0a8defbd1715c64a9464ab6e8c17a27, type: 3}
+  defaultHotspot: {x: 16, y: 16}
   ItemCursor: {fileID: 0}
   itemHotspot: {x: 0, y: 0}
   enemyCursor: {fileID: 0}

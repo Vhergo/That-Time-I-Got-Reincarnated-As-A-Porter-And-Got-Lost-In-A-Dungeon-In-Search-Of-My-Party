@@ -61,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
+      propertyPath: fearFactor
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710440864426271234, guid: ed5b31a7016e41a4fa779263a4da666a, type: 3}
       propertyPath: reachRange
       value: 50
       objectReference: {fileID: 0}

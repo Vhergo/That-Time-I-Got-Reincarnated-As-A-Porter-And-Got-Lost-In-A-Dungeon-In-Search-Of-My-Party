@@ -86,7 +86,7 @@ public class TorchLight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Monster") && isLit) {
+        if ((col.CompareTag("Monster") || col.CompareTag("Abomination")) && isLit) {
             if (col.TryGetComponent(out Monster monster)) {
                 monster.MonsterDie();
             }

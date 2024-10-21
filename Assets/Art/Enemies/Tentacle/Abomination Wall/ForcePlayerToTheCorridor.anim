@@ -21,17 +21,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: {x: -55, y: -120, z: 0}
-        inSlope: {x: 2.725, y: -2.4125, z: 0}
-        outSlope: {x: 2.725, y: -2.4125, z: 0}
+        inSlope: {x: 4.5416665, y: -4.0208335, z: 0}
+        outSlope: {x: 4.5416665, y: -4.0208335, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 20
+        time: 12
         value: {x: -0.5, y: -168.25, z: 0}
-        inSlope: {x: 2.725, y: -2.4125, z: 0}
-        outSlope: {x: 2.725, y: -2.4125, z: 0}
+        inSlope: {x: 4.5416665, y: -4.0208335, z: 0}
+        outSlope: {x: 4.5416665, y: -4.0208335, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 20
+    m_StopTime: 12
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -88,17 +88,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -55
-        inSlope: 2.725
-        outSlope: 2.725
+        inSlope: 4.5416665
+        outSlope: 4.5416665
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 20
+        time: 12
         value: -0.5
-        inSlope: 2.725
-        outSlope: 2.725
+        inSlope: 4.5416665
+        outSlope: 4.5416665
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -118,17 +118,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -120
-        inSlope: -2.4125
-        outSlope: -2.4125
+        inSlope: -4.0208335
+        outSlope: -4.0208335
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 20
+        time: 12
         value: -168.25
-        inSlope: -2.4125
-        outSlope: -2.4125
+        inSlope: -4.0208335
+        outSlope: -4.0208335
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -155,7 +155,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 20
+        time: 12
         value: 0
         inSlope: 0
         outSlope: 0
@@ -175,7 +175,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 20
+  - time: 12
     functionName: DisableWall
     data: 
     objectReferenceParameter: {fileID: 0}

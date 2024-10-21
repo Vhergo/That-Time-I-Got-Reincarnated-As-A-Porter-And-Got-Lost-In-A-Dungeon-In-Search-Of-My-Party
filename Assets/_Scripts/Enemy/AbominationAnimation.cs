@@ -7,6 +7,7 @@ public class AbominationAnimation : MonoBehaviour
     [SerializeField] private AnimationClip eyelidAnimation;
     [SerializeField] private float openDelay;
     [SerializeField] private bool openOnStart;
+    [SerializeField] private AudioClip boomSound;
     private Animator anim;
 
     private void Start()
@@ -21,5 +22,11 @@ public class AbominationAnimation : MonoBehaviour
     {
         yield return new WaitForSeconds(openDelay);
         anim.Play(eyelidAnimation.name);
+    }
+
+    public void PlayBoomSound()
+    {
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySound(boomSound);
     }
 }

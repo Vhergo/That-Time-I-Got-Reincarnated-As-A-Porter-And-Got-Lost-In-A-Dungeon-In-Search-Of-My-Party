@@ -27,7 +27,9 @@ public class Item : MonoBehaviour, ICollectable
     {
         if (player == null) return false;
 
-        float offset = lootCollider.radius + (player.GetComponent<Collider2D>().bounds.extents.x / 2);
+        float offset = lootCollider.radius + (player.GetComponent<Collider2D>().bounds.extents.x);
+        Debug.Log("Offset: " + offset);
+        Debug.Log("Distance: " + Vector2.Distance(transform.position, player.position));
         if (Vector2.Distance(transform.position, player.position) <= offset) return true;
         else return false;
     }
@@ -35,9 +37,8 @@ public class Item : MonoBehaviour, ICollectable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            if (IsInCollectRange(collision.transform)) {
+            if (IsInCollectRange(collision.transform))
                 Player.Instance.PlayGuide(GuideType.Interact, KeyCode.E);
-            }
         }
     }
 

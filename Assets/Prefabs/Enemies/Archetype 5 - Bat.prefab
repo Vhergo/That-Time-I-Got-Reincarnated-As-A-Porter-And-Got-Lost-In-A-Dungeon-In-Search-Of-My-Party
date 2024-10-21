@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8709407039469294478}
   - {fileID: 5244053284434188173}
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cfbef439e85e24496196e8d47a955e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archetype: 0
+  archetype: 4
   moveSpeed: 3
-  fearFactor: 0.3
+  fearFactor: 4
   attackCooldown: 0
   groundLayer:
     serializedVersion: 2
@@ -100,8 +100,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1701228134285254609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
