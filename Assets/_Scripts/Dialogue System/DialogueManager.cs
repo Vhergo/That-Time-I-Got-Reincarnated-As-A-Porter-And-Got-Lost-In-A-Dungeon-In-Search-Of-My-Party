@@ -10,8 +10,11 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private List<Dialogue> dialogues;
     [SerializeField] private float typeSpeed = 0.05f;
+    [SerializeField] private float skipTypeSpeed = 0.005f;
+    private float currentTypeSpeed;
     private int currentDialogueIndex;
     private Dialogue currentDialogue;
+    private bool allTextVisible;
 
     [Header("UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -31,6 +34,15 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         currentDialogue = dialogues[currentDialogueIndex];
+        currentTypeSpeed = typeSpeed;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+            if (currentDialogue == null) return;
+            StartCoroutine(SkipDialogue());
+        }
     }
 
     public void TriggerDialogue() => StartCoroutine(PlayDialogue());
@@ -45,13 +57,15 @@ public class DialogueManager : MonoBehaviour
         int totalVisibleCharacters = currentDialogue.dialogueText.Length;
         int counter = 0;
 
+        allTextVisible = false;
         while (counter <= totalVisibleCharacters) {
             dialogueText.maxVisibleCharacters = counter;
             counter++;
 
             PlayTypingSound();
-            yield return new WaitForSeconds(typeSpeed);
+            yield return new WaitForSeconds(currentTypeSpeed);
         }
+        allTextVisible = true;
 
         yield return new WaitForSeconds(currentDialogue.dialogueDuration);
         currentDialogueIndex++;
@@ -66,6 +80,13 @@ public class DialogueManager : MonoBehaviour
         } else {
             HideDialogue();
         }
+    }
+
+    private IEnumerator SkipDialogue()
+    {
+        currentTypeSpeed = skipTypeSpeed;
+        yield return new WaitUntil(() => allTextVisible);
+        currentTypeSpeed = typeSpeed;
     }
 
     private void UpdateUI()

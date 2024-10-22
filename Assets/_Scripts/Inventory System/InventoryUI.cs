@@ -26,6 +26,7 @@ public class InventoryUI : MonoBehaviour
     private void Start()
     {
         InitializeInventoryUI();
+        CursorManager.Instance.ToggleCursor(false);
     }
 
     private void Update()
@@ -43,8 +44,16 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    public void OpenInventory() => inventoryAnim.SetTrigger("Open");
-    public void CloseInventory() => inventoryAnim.SetTrigger("Close");
+    public void OpenInventory()
+    {
+        CursorManager.Instance.ToggleCursor(true);
+        inventoryAnim.SetTrigger("Open");
+    }
+    public void CloseInventory()
+    {
+        CursorManager.Instance.ToggleCursor(false);
+        inventoryAnim.SetTrigger("Close");
+    }
 
     private void InitializeInventoryUI()
     {

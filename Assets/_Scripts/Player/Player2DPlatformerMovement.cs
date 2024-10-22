@@ -143,7 +143,6 @@ public class Player2DPlatformerMovement : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerAnim = PlayerAnimation.Instance;
-        ValidateAndInitialize();
     }
 
     private void OnEnable()
@@ -169,6 +168,8 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     void Start()
     {
+        ValidateAndInitialize();
+
         originalGravityScale = rb.gravityScale;
 
         originalCrouchScale = transform.localScale;
@@ -496,7 +497,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
     {
         if (isDashing) return;
         if (MySceneManager.Instance != null && MySceneManager.Instance.gameState == GameState.Pause) return;
-
+        Debug.Log("TURN");
         if (moveDirection.x > 0 && !isFacingRight) {
             isFacingRight = true;
             Flip();
@@ -508,6 +509,7 @@ public class Player2DPlatformerMovement : MonoBehaviour
 
     private void Flip()
     {
+        Debug.Log("FLIP");
         Vector3 playerScale = transform.localScale;
         playerScale.x *= -1;
         transform.localScale = playerScale;

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67cad184fa21ca24e9224d6294ab4e47, type: 3}
   m_Name: Obelisk - The Viscous Hollow
   m_EditorClassIdentifier: 
-  obeliskRegion: The Fluttering Grotto
-  obeliskLore: Echoes of flapping wings fill the cavern. The bats guard secrets that
-    have long been forgotten.
+  obeliskRegion: The Viscous Hollow
+  obeliskLore: A region of slime and decay. The ground itself oozes with unseen horrors.

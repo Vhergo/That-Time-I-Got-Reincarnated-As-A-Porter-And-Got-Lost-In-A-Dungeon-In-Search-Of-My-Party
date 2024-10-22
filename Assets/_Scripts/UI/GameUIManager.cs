@@ -47,10 +47,12 @@ public class GameUIManager : MonoBehaviour
 
     public void TurnOnSettings() {
         settingsPanel.SetActive(true);
+        CursorManager.Instance.ToggleCursor(true);
     }
 
     public void TurnOffSettings() {
         settingsPanel.SetActive(false);
+        CursorManager.Instance.ToggleCursor(false);
     }
 
     private void OnExitToMenuButtonClick() {

@@ -52,6 +52,10 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (MySceneManager.Instance != null) {
+            MySceneManager.Instance.UnpauseGame();
+        }
+
         guideRenderer.enabled = false;
         SetPlayerLightStage(currentLightStage);
 

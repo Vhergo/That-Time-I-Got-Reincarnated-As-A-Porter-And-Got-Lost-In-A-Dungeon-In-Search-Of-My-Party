@@ -11,16 +11,10 @@ public class CursorManager : MonoBehaviour
 
     public Texture2D defaultCursor;
     public Vector2 defaultHotspot;
-    public Texture2D ItemCursor;
-    public Vector2 itemHotspot;
-    public Texture2D enemyCursor;
-    public Vector2 enemyHotspot;
 
     public CursorManager(Texture2D cursorDefault, Texture2D cursorItem, Texture2D cursorEnemy)
     {
         this.defaultCursor = cursorDefault;
-        this.ItemCursor = cursorItem;
-        this.enemyCursor = cursorEnemy;
     }
 
     private void Awake()
@@ -31,7 +25,7 @@ public class CursorManager : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
-    }
+    }  
 
     public void SetCursor(Texture2D cursorTexture, Vector2 cursorHotspot)
     {
