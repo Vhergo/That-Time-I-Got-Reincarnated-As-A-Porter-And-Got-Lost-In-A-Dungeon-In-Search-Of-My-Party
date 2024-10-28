@@ -60888,6 +60888,7 @@ GameObject:
   - component: {fileID: 667711421}
   - component: {fileID: 667711423}
   - component: {fileID: 667711424}
+  - component: {fileID: 667711425}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -60957,6 +60958,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCursor: {fileID: 2800000, guid: 3a86c15ea41db894d878ea91ce534a25, type: 3}
   defaultHotspot: {x: 16, y: 16}
+--- !u!114 &667711425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667711420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67448f8872805f143933e61ebc8b60d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullscreenButton: {fileID: 1912307729}
+  turnOnIcon: {fileID: 1912307728}
+  turnOffIcon: {fileID: 1912307727}
+  isFullscreen: 0
 --- !u!1001 &668809808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494285,6 +494302,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5149f50ced501394da4b724644407fd9, type: 3}
+--- !u!1 &857231788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3031652052243174607, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
+  m_PrefabInstance: {fileID: 1912307722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &858887582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8602653736992864245, guid: 29ce44e63cb580c489a02d3b29beb12c, type: 3}
@@ -531498,7 +531520,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3288757480931450152, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1766094177}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3031652052243174607, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1912307730}
   m_SourcePrefab: {fileID: 100100000, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
 --- !u!224 &1912307723 stripped
 RectTransform:
@@ -531520,6 +531545,72 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 113998406708041360, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
   m_PrefabInstance: {fileID: 1912307722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912307727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2014212234217586056, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
+  m_PrefabInstance: {fileID: 1912307722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912307728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8525303304059137562, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
+  m_PrefabInstance: {fileID: 1912307722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1912307729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6854541283918865068, guid: 2730b95e3d7c06849ba983f9b64c6d24, type: 3}
+  m_PrefabInstance: {fileID: 1912307722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857231788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1912307730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857231788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 667711423}
+          m_TargetAssemblyTypeName: PlaySoundOnUIInteraction, Assembly-CSharp
+          m_MethodName: PlayOnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 667711423}
+          m_TargetAssemblyTypeName: PlaySoundOnUIInteraction, Assembly-CSharp
+          m_MethodName: PlayOnSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1913243011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1473181367767599617, guid: ef6dfb9a34e366547bc8912dc64d97b6, type: 3}

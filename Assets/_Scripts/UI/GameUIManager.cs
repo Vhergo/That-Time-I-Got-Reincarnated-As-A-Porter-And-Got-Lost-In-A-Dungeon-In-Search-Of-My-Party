@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class GameUIManager : MonoBehaviour
 
     [Header("Lose Screen")]
     [SerializeField] private GameObject loseScreen;
+
+    public static Action OnMenuOpen;
+    public static Action OnMenuClose;
 
     private PartyManager partyManager => PartyManager.Instance;
 
@@ -48,11 +52,13 @@ public class GameUIManager : MonoBehaviour
     public void TurnOnSettings() {
         settingsPanel.SetActive(true);
         CursorManager.Instance.ToggleCursor(true);
+        OnMenuOpen?.Invoke();
     }
 
     public void TurnOffSettings() {
         settingsPanel.SetActive(false);
         CursorManager.Instance.ToggleCursor(false);
+        OnMenuClose?.Invoke();
     }
 
     private void OnExitToMenuButtonClick() {

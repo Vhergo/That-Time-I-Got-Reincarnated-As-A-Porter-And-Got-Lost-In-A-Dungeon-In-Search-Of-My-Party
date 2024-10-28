@@ -94,28 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Border
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1618
-      y: 4092
-      width: 0
-      height: 0
-    spriteID: 9682c0a9869f5d640b17acd154710efb
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 1618, y: 4092}
-    spritePosition: {x: 0, y: 920}
-  - name: Spider Shadow
+  - name: Gradient Fill 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -124,6 +103,69 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
+      width: 1920
+      height: 920
+    spriteID: 8131c77a618afe5428b58eab79991c3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Gradient Fill 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 932
+      width: 1920
+      height: 920
+    spriteID: f646e1ceb73f6714abbed309f3e4a7f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 932}
+    spritePosition: {x: 0, y: 0}
+  - name: Lit Torch
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 850
+      y: 7225
+      width: 54
+      height: 150
+    spriteID: 40335b453a9911142a652737cb041b51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 850, y: 7225}
+    spritePosition: {x: 934, y: 0}
+  - name: Spider Shadow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1860
       width: 1920
       height: 920
     spriteID: aee9a6538e1a985448113b8abac402bf
@@ -134,7 +176,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 1860}
     spritePosition: {x: 0, y: 0}
   - name: Spider Shadow
     originalName: 
@@ -144,7 +186,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 932
+      y: 2788
       width: 1920
       height: 920
     spriteID: d17fd17fff1c54449ace4aec3bbb3f61
@@ -155,7 +197,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 932}
+    uvTransform: {x: 4, y: 2788}
     spritePosition: {x: 0, y: 0}
   - name: Gradient
     originalName: 
@@ -165,7 +207,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2788
+      y: 4644
       width: 1909
       height: 920
     spriteID: 4fa59969943587c4aa061c82c629fce2
@@ -176,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -1, y: 2788}
+    uvTransform: {x: -1, y: 4644}
     spritePosition: {x: 5, y: 0}
   - name: Spider 3
     originalName: 
@@ -185,8 +227,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 287
-      y: 3716
+      x: 1529
+      y: 7125
       width: 226
       height: 88
     spriteID: e46f30daf55bd3d4cbe5a36972cb887b
@@ -197,7 +239,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 287, y: 3716}
+    uvTransform: {x: 1529, y: 7125}
     spritePosition: {x: 105, y: 832}
   - name: Spider 3
     originalName: 
@@ -206,8 +248,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 521
-      y: 3716
+      x: 1529
+      y: 7221
       width: 226
       height: 88
     spriteID: 17b856d89365af04aa642626f7842a7a
@@ -218,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 521, y: 3716}
+    uvTransform: {x: 1529, y: 7221}
     spritePosition: {x: 1394, y: 832}
   - name: Spider 2
     originalName: 
@@ -227,8 +269,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 755
-      y: 3716
+      x: 1529
+      y: 7317
       width: 221
       height: 84
     spriteID: 216a8c592f07b7042a22d12228b6c72c
@@ -239,7 +281,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 755, y: 3716}
+    uvTransform: {x: 1529, y: 7317}
     spritePosition: {x: 1428, y: 0}
   - name: Spider 1
     originalName: 
@@ -248,8 +290,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 3716
+      x: 1529
+      y: 6994
       width: 275
       height: 123
     spriteID: b9640ee9812d28242b8718decb157aea
@@ -260,7 +302,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3716}
+    uvTransform: {x: 1529, y: 6994}
     spritePosition: {x: 25, y: 1}
   - name: Cocoon copy 7
     originalName: 
@@ -269,8 +311,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 3847
+      x: 1793
+      y: 7722
       width: 93
       height: 184
     spriteID: ec87f7520cf0488409f7f7031c8a6608
@@ -281,7 +323,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3847}
+    uvTransform: {x: 1793, y: 7722}
     spritePosition: {x: 1764, y: 563}
   - name: Cocoon copy 6
     originalName: 
@@ -290,8 +332,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1519
-      y: 3847
+      x: 1832
+      y: 7409
       width: 91
       height: 184
     spriteID: 671593144117a694cb747100a936d681
@@ -302,7 +344,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1519, y: 3847}
+    uvTransform: {x: 1832, y: 7409}
     spritePosition: {x: 1829, y: 23}
   - name: Cocoon copy 5
     originalName: 
@@ -311,8 +353,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 105
-      y: 3847
+      x: 1793
+      y: 7914
       width: 93
       height: 184
     spriteID: d77eeeeb21d3f3c4788c2608f2fd35d2
@@ -323,7 +365,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 105, y: 3847}
+    uvTransform: {x: 1793, y: 7914}
     spritePosition: {x: 1704, y: 331}
   - name: Cocoon copy 4
     originalName: 
@@ -332,8 +374,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 206
-      y: 3847
+      x: 1529
+      y: 7409
       width: 93
       height: 184
     spriteID: b8faa716201875e48aee5ea67270d7c3
@@ -344,7 +386,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 206, y: 3847}
+    uvTransform: {x: 1529, y: 7409}
     spritePosition: {x: 1598, y: 128}
   - name: Cocoon copy 3
     originalName: 
@@ -353,8 +395,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 307
-      y: 3847
+      x: 1630
+      y: 7409
       width: 93
       height: 184
     spriteID: daa7c91c349295042a7e71fe6dc19843
@@ -365,7 +407,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 307, y: 3847}
+    uvTransform: {x: 1630, y: 7409}
     spritePosition: {x: 3, y: 563}
   - name: Cocoon copy 2
     originalName: 
@@ -374,8 +416,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 408
-      y: 3847
+      x: 1731
+      y: 7409
       width: 93
       height: 184
     spriteID: 691a322d82b344e4fa9d773311a78a6f
@@ -386,7 +428,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 408, y: 3847}
+    uvTransform: {x: 1731, y: 7409}
     spritePosition: {x: 142, y: 391}
   - name: Cocoon copy
     originalName: 
@@ -395,8 +437,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 509
-      y: 3847
+      x: 749
+      y: 7225
       width: 93
       height: 184
     spriteID: be2012e052a19e64991a5824c54e54bb
@@ -407,7 +449,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 509, y: 3847}
+    uvTransform: {x: 749, y: 7225}
     spritePosition: {x: 68, y: 147}
   - name: Cocoon
     originalName: 
@@ -416,8 +458,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 610
-      y: 3847
+      x: 749
+      y: 7417
       width: 93
       height: 184
     spriteID: 993597c9b0784ae44a117d7def94b3c4
@@ -428,7 +470,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 610, y: 3847}
+    uvTransform: {x: 749, y: 7417}
     spritePosition: {x: 238, y: 36}
   - name: Spider Chain Link copy 3
     originalName: 
@@ -437,8 +479,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1950
-      y: 3773
+      x: 711
+      y: 7848
       width: 10
       height: 291
     spriteID: bf17d418aad941d4e9c5878623a789d7
@@ -449,7 +491,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1950, y: 3773}
+    uvTransform: {x: 711, y: 7848}
     spritePosition: {x: 44, y: 629}
   - name: Spider Chain Link copy 2
     originalName: 
@@ -458,8 +500,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1950
-      y: 3128
+      x: 1932
+      y: 5254
       width: 10
       height: 637
     spriteID: 96e28bcace101014784eb5f63d955e02
@@ -470,7 +512,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1950, y: 3128}
+    uvTransform: {x: 1932, y: 5254}
     spritePosition: {x: 109, y: 283}
   - name: Spider Chain Link copy
     originalName: 
@@ -479,8 +521,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 2082
+      x: 1892
+      y: 6500
       width: 10
       height: 423
     spriteID: a5e04b2bb95a0b64a9718e2eead7306b
@@ -491,7 +533,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 2082}
+    uvTransform: {x: 1892, y: 6500}
     spritePosition: {x: 178, y: 497}
   - name: Spider Chain Link copy 7
     originalName: 
@@ -501,7 +543,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1932
-      y: 932
+      y: 486
       width: 10
       height: 890
     spriteID: 34a970a5d28c0ef4eb74f3475d5e22f6
@@ -512,7 +554,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1932, y: 932}
+    uvTransform: {x: 1932, y: 486}
     spritePosition: {x: 1870, y: 30}
   - name: Spider Chain Link copy 6
     originalName: 
@@ -521,8 +563,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 3199
+      x: 1912
+      y: 7914
       width: 10
       height: 265
     spriteID: c8e130c9cac6d4044a5dd6f81671d4de
@@ -533,7 +575,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 3199}
+    uvTransform: {x: 1912, y: 7914}
     spritePosition: {x: 1805, y: 655}
   - name: Spider Chain Link copy 5
     originalName: 
@@ -543,7 +585,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1932
-      y: 3504
+      y: 6522
       width: 10
       height: 547
     spriteID: 44a85b4e3a26df5489d0e73f22e0fa28
@@ -554,7 +596,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1932, y: 3504}
+    uvTransform: {x: 1932, y: 6522}
     spritePosition: {x: 1740, y: 373}
   - name: Spider Chain Link copy 4
     originalName: 
@@ -563,8 +605,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1950
-      y: 1714
+      x: 1932
+      y: 3840
       width: 10
       height: 713
     spriteID: 5d98ab0fa645b47448b6ac677b1bc18f
@@ -575,7 +617,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1950, y: 1714}
+    uvTransform: {x: 1932, y: 3840}
     spritePosition: {x: 1639, y: 207}
   - name: Spider Chain Link
     originalName: 
@@ -585,7 +627,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1932
-      y: 2700
+      y: 2254
       width: 10
       height: 796
     spriteID: 9db3634ff2fe9f94992f4ebf31e2d0ff
@@ -596,7 +638,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1932, y: 2700}
+    uvTransform: {x: 1932, y: 2254}
     spritePosition: {x: 279, y: 124}
   - name: Cocoon copy 7
     originalName: 
@@ -605,8 +647,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 711
-      y: 3847
+      x: 749
+      y: 7609
       width: 93
       height: 184
     spriteID: 8778c7f66f37aee42abfead4e068f783
@@ -617,7 +659,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 711, y: 3847}
+    uvTransform: {x: 749, y: 7609}
     spritePosition: {x: 1730, y: 591}
   - name: Cocoon copy 6
     originalName: 
@@ -626,8 +668,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 812
-      y: 3847
+      x: 4
+      y: 7848
       width: 93
       height: 184
     spriteID: 2aab310fffd50d64e86d30729179a263
@@ -638,7 +680,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 812, y: 3847}
+    uvTransform: {x: 4, y: 7848}
     spritePosition: {x: 1795, y: 51}
   - name: Cocoon copy 5
     originalName: 
@@ -647,8 +689,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 913
-      y: 3847
+      x: 105
+      y: 7848
       width: 93
       height: 184
     spriteID: 4bb726142a051594ab7724003b0d3525
@@ -659,7 +701,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 913, y: 3847}
+    uvTransform: {x: 105, y: 7848}
     spritePosition: {x: 1670, y: 359}
   - name: Cocoon copy 4
     originalName: 
@@ -668,8 +710,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1014
-      y: 3847
+      x: 206
+      y: 7848
       width: 93
       height: 184
     spriteID: 3e7e7cc1880d18349a71ceff42e2da84
@@ -680,7 +722,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1014, y: 3847}
+    uvTransform: {x: 206, y: 7848}
     spritePosition: {x: 1564, y: 156}
   - name: Cocoon copy 3
     originalName: 
@@ -689,8 +731,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1115
-      y: 3847
+      x: 307
+      y: 7848
       width: 93
       height: 184
     spriteID: 8ede83b37ec8b6549a960390ca673ebd
@@ -701,7 +743,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1115, y: 3847}
+    uvTransform: {x: 307, y: 7848}
     spritePosition: {x: 35, y: 585}
   - name: Cocoon copy 2
     originalName: 
@@ -710,8 +752,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1216
-      y: 3847
+      x: 408
+      y: 7848
       width: 93
       height: 184
     spriteID: fa52a3a016ef0554e8b1594ac98be7ec
@@ -722,7 +764,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1216, y: 3847}
+    uvTransform: {x: 408, y: 7848}
     spritePosition: {x: 174, y: 413}
   - name: Cocoon copy
     originalName: 
@@ -731,8 +773,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1317
-      y: 3847
+      x: 509
+      y: 7848
       width: 93
       height: 184
     spriteID: 1ed4f93dab2a60e46be36f583fbfcf47
@@ -743,7 +785,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1317, y: 3847}
+    uvTransform: {x: 509, y: 7848}
     spritePosition: {x: 100, y: 169}
   - name: Cocoon
     originalName: 
@@ -752,8 +794,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1418
-      y: 3847
+      x: 610
+      y: 7848
       width: 93
       height: 184
     spriteID: e8e80f52b70bcc945b820a19c995e410
@@ -764,7 +806,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1418, y: 3847}
+    uvTransform: {x: 610, y: 7848}
     spritePosition: {x: 270, y: 58}
   - name: Spider Chain Link copy 7
     originalName: 
@@ -774,7 +816,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1932
-      y: 1830
+      y: 1384
       width: 10
       height: 862
     spriteID: 52a038ff2b640c54a8bbdaebcf5a5a19
@@ -785,7 +827,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1932, y: 1830}
+    uvTransform: {x: 1932, y: 1384}
     spritePosition: {x: 1836, y: 58}
   - name: Spider Chain Link copy 6
     originalName: 
@@ -794,8 +836,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1618
-      y: 3847
+      x: 729
+      y: 7848
       width: 10
       height: 237
     spriteID: 139c712d7b82f584ab0c6dfb92e5194b
@@ -806,7 +848,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1618, y: 3847}
+    uvTransform: {x: 729, y: 7848}
     spritePosition: {x: 1771, y: 683}
   - name: Spider Chain Link copy 5
     originalName: 
@@ -815,8 +857,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 1555
+      x: 1932
+      y: 7077
       width: 10
       height: 519
     spriteID: 0704bdf7a8478db4096e0b280afac77c
@@ -827,7 +869,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 1555}
+    uvTransform: {x: 1932, y: 7077}
     spritePosition: {x: 1706, y: 401}
   - name: Spider Chain Link copy 4
     originalName: 
@@ -836,8 +878,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1950
-      y: 2435
+      x: 1932
+      y: 4561
       width: 10
       height: 685
     spriteID: 8fdc2b1ed0b2a9543a3c9e1e535b1c58
@@ -848,7 +890,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1950, y: 2435}
+    uvTransform: {x: 1932, y: 4561}
     spritePosition: {x: 1605, y: 235}
   - name: Spider Chain Link copy 3
     originalName: 
@@ -857,8 +899,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 2922
+      x: 1894
+      y: 7914
       width: 10
       height: 269
     spriteID: 85ba06b01a9b4a74caebc813b3744d43
@@ -869,7 +911,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 2922}
+    uvTransform: {x: 1894, y: 7914}
     spritePosition: {x: 76, y: 651}
   - name: Spider Chain Link copy 2
     originalName: 
@@ -878,8 +920,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 932
+      x: 1932
+      y: 5899
       width: 10
       height: 615
     spriteID: 58119df3b4eecdf44b2cca9f5746ef52
@@ -890,7 +932,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 932}
+    uvTransform: {x: 1932, y: 5899}
     spritePosition: {x: 141, y: 305}
   - name: Spider Chain Link copy
     originalName: 
@@ -899,8 +941,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1968
-      y: 2513
+      x: 1910
+      y: 6500
       width: 10
       height: 401
     spriteID: e9eeaf7a48ef3d448b4f699f3e9fd211
@@ -911,7 +953,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1968, y: 2513}
+    uvTransform: {x: 1910, y: 6500}
     spritePosition: {x: 210, y: 519}
   - name: Spider Chain Link
     originalName: 
@@ -920,8 +962,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1950
-      y: 932
+      x: 1932
+      y: 3058
       width: 10
       height: 774
     spriteID: 99914b2bafc24c74f902465d99249de6
@@ -932,9 +974,72 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1950, y: 932}
+    uvTransform: {x: 1932, y: 3058}
     spritePosition: {x: 311, y: 146}
-  - name: Gradient
+  - name: Tentacle 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 945
+      y: 7722
+      width: 840
+      height: 458
+    spriteID: fee97196a7d69a441b1193e0e0bf3185
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 945, y: 7672}
+    spritePosition: {x: 1080, y: 338}
+  - name: Tentacle 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7225
+      width: 737
+      height: 615
+    spriteID: a1e109310ebe5254cbd21acf3c6580ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7225}
+    spritePosition: {x: 1084, y: 0}
+  - name: Tentacle 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 945
+      y: 6500
+      width: 939
+      height: 486
+    spriteID: 8d4f3784aea81fe479041ef3801591db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 900, y: 6500}
+    spritePosition: {x: 147, y: 0}
+  - name: Tentacle 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -943,6 +1048,90 @@ ScriptedImporter:
       serializedVersion: 2
       x: 1932
       y: 4
+      width: 857
+      height: 474
+    spriteID: cdc1530ad4b4e724db4e9bc65a2a4bf7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 4}
+    spritePosition: {x: 0, y: 446}
+  - name: Tentacle 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6500
+      width: 933
+      height: 717
+    spriteID: 4fcbe4c009f606d4cb15802b1cf529b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6500}
+    spritePosition: {x: 0, y: 109}
+  - name: AbominationIris
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 945
+      y: 6994
+      width: 576
+      height: 720
+    spriteID: 346db7a38e14c964d8a26a6565c4cffb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 945, y: 6994}
+    spritePosition: {x: 672, y: 170}
+  - name: Border
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1912
+      y: 8187
+      width: 0
+      height: 0
+    spriteID: 9682c0a9869f5d640b17acd154710efb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1912, y: 8187}
+    spritePosition: {x: 0, y: 920}
+  - name: Gradient
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5572
       width: 1909
       height: 920
     spriteID: ab28edfe9a8f2294aa1b1417d58a245e
@@ -953,7 +1142,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1927, y: 4}
+    uvTransform: {x: -1, y: 5572}
     spritePosition: {x: 5, y: 0}
   - name: Background Wall
     originalName: 
@@ -963,7 +1152,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1860
+      y: 3716
       width: 1920
       height: 880
     spriteID: e06e365114cbae64e8a4cca29a8fec00
@@ -974,7 +1163,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1860}
+    uvTransform: {x: 4, y: 3716}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
@@ -1012,6 +1201,706 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Torch
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: e90bee590e8f955478dc559ae6fdfa42
+    layerID: 139
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Light
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: e5995923033bc004582aae815b65ad44
+    layerID: 77
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Gradient Fill 1
+    spriteName: Gradient Fill 1
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 8131c77a618afe5428b58eab79991c3e
+    layerID: 141
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Gradient Fill 1
+    spriteName: Gradient Fill 1
+    isGroup: 0
+    parentIndex: 1
+    spriteID: f646e1ceb73f6714abbed309f3e4a7f2
+    layerID: 76
+    mosaicPosition: {x: 4, y: 932}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lit Torch
+    spriteName: Lit Torch
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 40335b453a9911142a652737cb041b51
+    layerID: 15
+    mosaicPosition: {x: 850, y: 7225}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spiders
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6be93ccea01bfc540b3b1e6829bfdbbc
+    layerID: 460
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spider Shadow
+    spriteName: Spider Shadow
+    isGroup: 0
+    parentIndex: 5
+    spriteID: aee9a6538e1a985448113b8abac402bf
+    layerID: 399
+    mosaicPosition: {x: 4, y: 1860}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Shadow
+    spriteName: Spider Shadow
+    isGroup: 0
+    parentIndex: 5
+    spriteID: d17fd17fff1c54449ace4aec3bbb3f61
+    layerID: 398
+    mosaicPosition: {x: 4, y: 2788}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Gradient
+    spriteName: Gradient
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 4fa59969943587c4aa061c82c629fce2
+    layerID: 397
+    mosaicPosition: {x: 4, y: 4644}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Assets
+    spriteName: 
+    isGroup: 1
+    parentIndex: 5
+    spriteID: 181b8cb89ac30e24e859e672f57fb3c4
+    layerID: 378
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spiders
+    spriteName: 
+    isGroup: 1
+    parentIndex: 9
+    spriteID: 8f1807956ecab1a4596b2dd9e546653a
+    layerID: 403
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spider 3
+    spriteName: Spider 3
+    isGroup: 0
+    parentIndex: 10
+    spriteID: e46f30daf55bd3d4cbe5a36972cb887b
+    layerID: 408
+    mosaicPosition: {x: 1529, y: 7125}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider 3
+    spriteName: Spider 3
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 17b856d89365af04aa642626f7842a7a
+    layerID: 406
+    mosaicPosition: {x: 1529, y: 7221}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider 2
+    spriteName: Spider 2
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 216a8c592f07b7042a22d12228b6c72c
+    layerID: 402
+    mosaicPosition: {x: 1529, y: 7317}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider 1
+    spriteName: Spider 1
+    isGroup: 0
+    parentIndex: 10
+    spriteID: b9640ee9812d28242b8718decb157aea
+    layerID: 401
+    mosaicPosition: {x: 1529, y: 6994}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hanging Cocoons
+    spriteName: 
+    isGroup: 1
+    parentIndex: 9
+    spriteID: ddde15f102459cd459d6072b25509f6e
+    layerID: 409
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Coccons
+    spriteName: 
+    isGroup: 1
+    parentIndex: 15
+    spriteID: ae7c12596367ac247801872110fc6217
+    layerID: 385
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Cocoon copy 7
+    spriteName: Cocoon copy 7
+    isGroup: 0
+    parentIndex: 16
+    spriteID: ec87f7520cf0488409f7f7031c8a6608
+    layerID: 395
+    mosaicPosition: {x: 1793, y: 7722}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 6
+    spriteName: Cocoon copy 6
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 671593144117a694cb747100a936d681
+    layerID: 394
+    mosaicPosition: {x: 1832, y: 7409}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 5
+    spriteName: Cocoon copy 5
+    isGroup: 0
+    parentIndex: 16
+    spriteID: d77eeeeb21d3f3c4788c2608f2fd35d2
+    layerID: 393
+    mosaicPosition: {x: 1793, y: 7914}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 4
+    spriteName: Cocoon copy 4
+    isGroup: 0
+    parentIndex: 16
+    spriteID: b8faa716201875e48aee5ea67270d7c3
+    layerID: 392
+    mosaicPosition: {x: 1529, y: 7409}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 3
+    spriteName: Cocoon copy 3
+    isGroup: 0
+    parentIndex: 16
+    spriteID: daa7c91c349295042a7e71fe6dc19843
+    layerID: 391
+    mosaicPosition: {x: 1630, y: 7409}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 2
+    spriteName: Cocoon copy 2
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 691a322d82b344e4fa9d773311a78a6f
+    layerID: 390
+    mosaicPosition: {x: 1731, y: 7409}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy
+    spriteName: Cocoon copy
+    isGroup: 0
+    parentIndex: 16
+    spriteID: be2012e052a19e64991a5824c54e54bb
+    layerID: 389
+    mosaicPosition: {x: 749, y: 7225}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon
+    spriteName: Cocoon
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 993597c9b0784ae44a117d7def94b3c4
+    layerID: 384
+    mosaicPosition: {x: 749, y: 7417}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon
+    spriteName: 
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 7f5cd444c227b40499411456efc1e81f
+    layerID: 381
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Chains
+    spriteName: 
+    isGroup: 1
+    parentIndex: 15
+    spriteID: 96261a55da3e93542a70d960d5776231
+    layerID: 382
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spider Chain Link copy 3
+    spriteName: Spider Chain Link copy 3
+    isGroup: 0
+    parentIndex: 26
+    spriteID: bf17d418aad941d4e9c5878623a789d7
+    layerID: 373
+    mosaicPosition: {x: 711, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 2
+    spriteName: Spider Chain Link copy 2
+    isGroup: 0
+    parentIndex: 26
+    spriteID: 96e28bcace101014784eb5f63d955e02
+    layerID: 372
+    mosaicPosition: {x: 1932, y: 5254}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy
+    spriteName: Spider Chain Link copy
+    isGroup: 0
+    parentIndex: 26
+    spriteID: a5e04b2bb95a0b64a9718e2eead7306b
+    layerID: 371
+    mosaicPosition: {x: 1892, y: 6500}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 7
+    spriteName: Spider Chain Link copy 7
+    isGroup: 0
+    parentIndex: 26
+    spriteID: 34a970a5d28c0ef4eb74f3475d5e22f6
+    layerID: 377
+    mosaicPosition: {x: 1932, y: 486}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 6
+    spriteName: Spider Chain Link copy 6
+    isGroup: 0
+    parentIndex: 26
+    spriteID: c8e130c9cac6d4044a5dd6f81671d4de
+    layerID: 376
+    mosaicPosition: {x: 1912, y: 7914}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 5
+    spriteName: Spider Chain Link copy 5
+    isGroup: 0
+    parentIndex: 26
+    spriteID: 44a85b4e3a26df5489d0e73f22e0fa28
+    layerID: 375
+    mosaicPosition: {x: 1932, y: 6522}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 4
+    spriteName: Spider Chain Link copy 4
+    isGroup: 0
+    parentIndex: 26
+    spriteID: 5d98ab0fa645b47448b6ac677b1bc18f
+    layerID: 374
+    mosaicPosition: {x: 1932, y: 3840}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link
+    spriteName: Spider Chain Link
+    isGroup: 0
+    parentIndex: 26
+    spriteID: 9db3634ff2fe9f94992f4ebf31e2d0ff
+    layerID: 369
+    mosaicPosition: {x: 1932, y: 2254}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link
+    spriteName: 
+    isGroup: 0
+    parentIndex: 26
+    spriteID: bfa1f9fd925ff6047a3aaaca68263699
+    layerID: 370
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Shadow
+    spriteName: 
+    isGroup: 1
+    parentIndex: 9
+    spriteID: 87d7290b749db964e92df9f4a8486551
+    layerID: 434
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Coccons
+    spriteName: 
+    isGroup: 1
+    parentIndex: 36
+    spriteID: b05aff8074122bf4497f2e5ea8f7af80
+    layerID: 433
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: 37
+    spriteID: c40d9dc3433b4e14c9e0a889a942f80c
+    layerID: 435
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Cocoon copy 7
+    spriteName: Cocoon copy 7
+    isGroup: 0
+    parentIndex: 38
+    spriteID: 8778c7f66f37aee42abfead4e068f783
+    layerID: 432
+    mosaicPosition: {x: 749, y: 7609}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 6
+    spriteName: Cocoon copy 6
+    isGroup: 0
+    parentIndex: 38
+    spriteID: 2aab310fffd50d64e86d30729179a263
+    layerID: 431
+    mosaicPosition: {x: 4, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 5
+    spriteName: Cocoon copy 5
+    isGroup: 0
+    parentIndex: 38
+    spriteID: 4bb726142a051594ab7724003b0d3525
+    layerID: 430
+    mosaicPosition: {x: 105, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 4
+    spriteName: Cocoon copy 4
+    isGroup: 0
+    parentIndex: 38
+    spriteID: 3e7e7cc1880d18349a71ceff42e2da84
+    layerID: 429
+    mosaicPosition: {x: 206, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: 37
+    spriteID: c4d768785de6a47459aec269a08e3879
+    layerID: 437
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Cocoon copy 3
+    spriteName: Cocoon copy 3
+    isGroup: 0
+    parentIndex: 43
+    spriteID: 8ede83b37ec8b6549a960390ca673ebd
+    layerID: 428
+    mosaicPosition: {x: 307, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy 2
+    spriteName: Cocoon copy 2
+    isGroup: 0
+    parentIndex: 43
+    spriteID: fa52a3a016ef0554e8b1594ac98be7ec
+    layerID: 427
+    mosaicPosition: {x: 408, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon copy
+    spriteName: Cocoon copy
+    isGroup: 0
+    parentIndex: 43
+    spriteID: 1ed4f93dab2a60e46be36f583fbfcf47
+    layerID: 426
+    mosaicPosition: {x: 509, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon
+    spriteName: Cocoon
+    isGroup: 0
+    parentIndex: 43
+    spriteID: e8e80f52b70bcc945b820a19c995e410
+    layerID: 425
+    mosaicPosition: {x: 610, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cocoon
+    spriteName: 
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 9c8a161bf59174946982910810996725
+    layerID: 424
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Chains
+    spriteName: 
+    isGroup: 1
+    parentIndex: 36
+    spriteID: 68d6835ea7c73ed4fbe91d9d9b2bc7b3
+    layerID: 422
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Right
+    spriteName: 
+    isGroup: 1
+    parentIndex: 49
+    spriteID: ed6d13f060c8abb4c92abf77559a262a
+    layerID: 440
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spider Chain Link copy 7
+    spriteName: Spider Chain Link copy 7
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 52a038ff2b640c54a8bbdaebcf5a5a19
+    layerID: 418
+    mosaicPosition: {x: 1932, y: 1384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 6
+    spriteName: Spider Chain Link copy 6
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 139c712d7b82f584ab0c6dfb92e5194b
+    layerID: 417
+    mosaicPosition: {x: 729, y: 7848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 5
+    spriteName: Spider Chain Link copy 5
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 0704bdf7a8478db4096e0b280afac77c
+    layerID: 416
+    mosaicPosition: {x: 1932, y: 7077}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 4
+    spriteName: Spider Chain Link copy 4
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 8fdc2b1ed0b2a9543a3c9e1e535b1c58
+    layerID: 415
+    mosaicPosition: {x: 1932, y: 4561}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Left
+    spriteName: 
+    isGroup: 1
+    parentIndex: 49
+    spriteID: ab0b37db7972f3f48adca3dafbc359a9
+    layerID: 442
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Spider Chain Link copy 3
+    spriteName: Spider Chain Link copy 3
+    isGroup: 0
+    parentIndex: 55
+    spriteID: 85ba06b01a9b4a74caebc813b3744d43
+    layerID: 421
+    mosaicPosition: {x: 1894, y: 7914}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy 2
+    spriteName: Spider Chain Link copy 2
+    isGroup: 0
+    parentIndex: 55
+    spriteID: 58119df3b4eecdf44b2cca9f5746ef52
+    layerID: 420
+    mosaicPosition: {x: 1932, y: 5899}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link copy
+    spriteName: Spider Chain Link copy
+    isGroup: 0
+    parentIndex: 55
+    spriteID: e9eeaf7a48ef3d448b4f699f3e9fd211
+    layerID: 419
+    mosaicPosition: {x: 1910, y: 6500}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link
+    spriteName: Spider Chain Link
+    isGroup: 0
+    parentIndex: 55
+    spriteID: 99914b2bafc24c74f902465d99249de6
+    layerID: 414
+    mosaicPosition: {x: 1932, y: 3058}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Spider Chain Link
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 31e66cb7d46be6840b691e467f2e60f1
+    layerID: 413
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Tentacles
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 1dd00b1d3b97c4b4884573fd605f9ce4
+    layerID: 459
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: Tentacle 2
+    isGroup: 0
+    parentIndex: 61
+    spriteID: fee97196a7d69a441b1193e0e0bf3185
+    layerID: 458
+    mosaicPosition: {x: 945, y: 7722}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: Tentacle 2
+    isGroup: 0
+    parentIndex: 61
+    spriteID: a1e109310ebe5254cbd21acf3c6580ed
+    layerID: 457
+    mosaicPosition: {x: 4, y: 7225}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: Tentacle 2
+    isGroup: 0
+    parentIndex: 61
+    spriteID: 8d4f3784aea81fe479041ef3801591db
+    layerID: 456
+    mosaicPosition: {x: 945, y: 6500}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: Tentacle 2
+    isGroup: 0
+    parentIndex: 61
+    spriteID: cdc1530ad4b4e724db4e9bc65a2a4bf7
+    layerID: 455
+    mosaicPosition: {x: 1932, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: Tentacle 2
+    isGroup: 0
+    parentIndex: 61
+    spriteID: 4fcbe4c009f606d4cb15802b1cf529b5
+    layerID: 454
+    mosaicPosition: {x: 4, y: 6500}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tentacle 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 61
+    spriteID: 136f5d92c6e8d9a4c84a7fd7dc8ce20f
+    layerID: 453
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Abomination
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 834354ac84f7bfa4e8ca58cfa0f84ae1
+    layerID: 144
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: AbominationIris
+    spriteName: AbominationIris
+    isGroup: 0
+    parentIndex: 68
+    spriteID: 346db7a38e14c964d8a26a6565c4cffb
+    layerID: 339
+    mosaicPosition: {x: 945, y: 6994}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: 1280x720
     spriteName: 
     isGroup: 1
@@ -1025,577 +1914,27 @@ ScriptedImporter:
   - name: Border
     spriteName: Border
     isGroup: 0
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 9682c0a9869f5d640b17acd154710efb
     layerID: 355
-    mosaicPosition: {x: 1618, y: 4092}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Shadow
-    spriteName: Spider Shadow
-    isGroup: 0
-    parentIndex: 0
-    spriteID: aee9a6538e1a985448113b8abac402bf
-    layerID: 399
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Shadow
-    spriteName: Spider Shadow
-    isGroup: 0
-    parentIndex: 0
-    spriteID: d17fd17fff1c54449ace4aec3bbb3f61
-    layerID: 398
-    mosaicPosition: {x: 4, y: 932}
+    mosaicPosition: {x: 1912, y: 8187}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Gradient
     spriteName: Gradient
     isGroup: 0
-    parentIndex: 0
-    spriteID: 4fa59969943587c4aa061c82c629fce2
-    layerID: 397
-    mosaicPosition: {x: 4, y: 2788}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Assets
-    spriteName: 
-    isGroup: 1
-    parentIndex: 0
-    spriteID: 181b8cb89ac30e24e859e672f57fb3c4
-    layerID: 378
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Spiders
-    spriteName: 
-    isGroup: 1
-    parentIndex: 5
-    spriteID: 8f1807956ecab1a4596b2dd9e546653a
-    layerID: 403
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Spider 3
-    spriteName: Spider 3
-    isGroup: 0
-    parentIndex: 6
-    spriteID: e46f30daf55bd3d4cbe5a36972cb887b
-    layerID: 408
-    mosaicPosition: {x: 287, y: 3716}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider 3
-    spriteName: Spider 3
-    isGroup: 0
-    parentIndex: 6
-    spriteID: 17b856d89365af04aa642626f7842a7a
-    layerID: 406
-    mosaicPosition: {x: 521, y: 3716}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider 2
-    spriteName: Spider 2
-    isGroup: 0
-    parentIndex: 6
-    spriteID: 216a8c592f07b7042a22d12228b6c72c
-    layerID: 402
-    mosaicPosition: {x: 755, y: 3716}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider 1
-    spriteName: Spider 1
-    isGroup: 0
-    parentIndex: 6
-    spriteID: b9640ee9812d28242b8718decb157aea
-    layerID: 401
-    mosaicPosition: {x: 4, y: 3716}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Hanging Cocoons
-    spriteName: 
-    isGroup: 1
-    parentIndex: 5
-    spriteID: ddde15f102459cd459d6072b25509f6e
-    layerID: 409
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Coccons
-    spriteName: 
-    isGroup: 1
-    parentIndex: 11
-    spriteID: ae7c12596367ac247801872110fc6217
-    layerID: 385
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Cocoon copy 7
-    spriteName: Cocoon copy 7
-    isGroup: 0
-    parentIndex: 12
-    spriteID: ec87f7520cf0488409f7f7031c8a6608
-    layerID: 395
-    mosaicPosition: {x: 4, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 6
-    spriteName: Cocoon copy 6
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 671593144117a694cb747100a936d681
-    layerID: 394
-    mosaicPosition: {x: 1519, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 5
-    spriteName: Cocoon copy 5
-    isGroup: 0
-    parentIndex: 12
-    spriteID: d77eeeeb21d3f3c4788c2608f2fd35d2
-    layerID: 393
-    mosaicPosition: {x: 105, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 4
-    spriteName: Cocoon copy 4
-    isGroup: 0
-    parentIndex: 12
-    spriteID: b8faa716201875e48aee5ea67270d7c3
-    layerID: 392
-    mosaicPosition: {x: 206, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 3
-    spriteName: Cocoon copy 3
-    isGroup: 0
-    parentIndex: 12
-    spriteID: daa7c91c349295042a7e71fe6dc19843
-    layerID: 391
-    mosaicPosition: {x: 307, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 2
-    spriteName: Cocoon copy 2
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 691a322d82b344e4fa9d773311a78a6f
-    layerID: 390
-    mosaicPosition: {x: 408, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy
-    spriteName: Cocoon copy
-    isGroup: 0
-    parentIndex: 12
-    spriteID: be2012e052a19e64991a5824c54e54bb
-    layerID: 389
-    mosaicPosition: {x: 509, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon
-    spriteName: Cocoon
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 993597c9b0784ae44a117d7def94b3c4
-    layerID: 384
-    mosaicPosition: {x: 610, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon
-    spriteName: 
-    isGroup: 0
-    parentIndex: 12
-    spriteID: 7f5cd444c227b40499411456efc1e81f
-    layerID: 381
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Chains
-    spriteName: 
-    isGroup: 1
-    parentIndex: 11
-    spriteID: 96261a55da3e93542a70d960d5776231
-    layerID: 382
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Spider Chain Link copy 3
-    spriteName: Spider Chain Link copy 3
-    isGroup: 0
-    parentIndex: 22
-    spriteID: bf17d418aad941d4e9c5878623a789d7
-    layerID: 373
-    mosaicPosition: {x: 1950, y: 3773}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 2
-    spriteName: Spider Chain Link copy 2
-    isGroup: 0
-    parentIndex: 22
-    spriteID: 96e28bcace101014784eb5f63d955e02
-    layerID: 372
-    mosaicPosition: {x: 1950, y: 3128}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy
-    spriteName: Spider Chain Link copy
-    isGroup: 0
-    parentIndex: 22
-    spriteID: a5e04b2bb95a0b64a9718e2eead7306b
-    layerID: 371
-    mosaicPosition: {x: 1968, y: 2082}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 7
-    spriteName: Spider Chain Link copy 7
-    isGroup: 0
-    parentIndex: 22
-    spriteID: 34a970a5d28c0ef4eb74f3475d5e22f6
-    layerID: 377
-    mosaicPosition: {x: 1932, y: 932}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 6
-    spriteName: Spider Chain Link copy 6
-    isGroup: 0
-    parentIndex: 22
-    spriteID: c8e130c9cac6d4044a5dd6f81671d4de
-    layerID: 376
-    mosaicPosition: {x: 1968, y: 3199}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 5
-    spriteName: Spider Chain Link copy 5
-    isGroup: 0
-    parentIndex: 22
-    spriteID: 44a85b4e3a26df5489d0e73f22e0fa28
-    layerID: 375
-    mosaicPosition: {x: 1932, y: 3504}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 4
-    spriteName: Spider Chain Link copy 4
-    isGroup: 0
-    parentIndex: 22
-    spriteID: 5d98ab0fa645b47448b6ac677b1bc18f
-    layerID: 374
-    mosaicPosition: {x: 1950, y: 1714}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link
-    spriteName: Spider Chain Link
-    isGroup: 0
-    parentIndex: 22
-    spriteID: 9db3634ff2fe9f94992f4ebf31e2d0ff
-    layerID: 369
-    mosaicPosition: {x: 1932, y: 2700}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link
-    spriteName: 
-    isGroup: 0
-    parentIndex: 22
-    spriteID: bfa1f9fd925ff6047a3aaaca68263699
-    layerID: 370
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Shadow
-    spriteName: 
-    isGroup: 1
-    parentIndex: 5
-    spriteID: 87d7290b749db964e92df9f4a8486551
-    layerID: 434
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Coccons
-    spriteName: 
-    isGroup: 1
-    parentIndex: 32
-    spriteID: b05aff8074122bf4497f2e5ea8f7af80
-    layerID: 433
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Right
-    spriteName: 
-    isGroup: 1
-    parentIndex: 33
-    spriteID: c40d9dc3433b4e14c9e0a889a942f80c
-    layerID: 435
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Cocoon copy 7
-    spriteName: Cocoon copy 7
-    isGroup: 0
-    parentIndex: 34
-    spriteID: 8778c7f66f37aee42abfead4e068f783
-    layerID: 432
-    mosaicPosition: {x: 711, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 6
-    spriteName: Cocoon copy 6
-    isGroup: 0
-    parentIndex: 34
-    spriteID: 2aab310fffd50d64e86d30729179a263
-    layerID: 431
-    mosaicPosition: {x: 812, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 5
-    spriteName: Cocoon copy 5
-    isGroup: 0
-    parentIndex: 34
-    spriteID: 4bb726142a051594ab7724003b0d3525
-    layerID: 430
-    mosaicPosition: {x: 913, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 4
-    spriteName: Cocoon copy 4
-    isGroup: 0
-    parentIndex: 34
-    spriteID: 3e7e7cc1880d18349a71ceff42e2da84
-    layerID: 429
-    mosaicPosition: {x: 1014, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Left
-    spriteName: 
-    isGroup: 1
-    parentIndex: 33
-    spriteID: c4d768785de6a47459aec269a08e3879
-    layerID: 437
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Cocoon copy 3
-    spriteName: Cocoon copy 3
-    isGroup: 0
-    parentIndex: 39
-    spriteID: 8ede83b37ec8b6549a960390ca673ebd
-    layerID: 428
-    mosaicPosition: {x: 1115, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy 2
-    spriteName: Cocoon copy 2
-    isGroup: 0
-    parentIndex: 39
-    spriteID: fa52a3a016ef0554e8b1594ac98be7ec
-    layerID: 427
-    mosaicPosition: {x: 1216, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon copy
-    spriteName: Cocoon copy
-    isGroup: 0
-    parentIndex: 39
-    spriteID: 1ed4f93dab2a60e46be36f583fbfcf47
-    layerID: 426
-    mosaicPosition: {x: 1317, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon
-    spriteName: Cocoon
-    isGroup: 0
-    parentIndex: 39
-    spriteID: e8e80f52b70bcc945b820a19c995e410
-    layerID: 425
-    mosaicPosition: {x: 1418, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cocoon
-    spriteName: 
-    isGroup: 0
-    parentIndex: 33
-    spriteID: 9c8a161bf59174946982910810996725
-    layerID: 424
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Chains
-    spriteName: 
-    isGroup: 1
-    parentIndex: 32
-    spriteID: 68d6835ea7c73ed4fbe91d9d9b2bc7b3
-    layerID: 422
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Right
-    spriteName: 
-    isGroup: 1
-    parentIndex: 45
-    spriteID: ed6d13f060c8abb4c92abf77559a262a
-    layerID: 440
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Spider Chain Link copy 7
-    spriteName: Spider Chain Link copy 7
-    isGroup: 0
-    parentIndex: 46
-    spriteID: 52a038ff2b640c54a8bbdaebcf5a5a19
-    layerID: 418
-    mosaicPosition: {x: 1932, y: 1830}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 6
-    spriteName: Spider Chain Link copy 6
-    isGroup: 0
-    parentIndex: 46
-    spriteID: 139c712d7b82f584ab0c6dfb92e5194b
-    layerID: 417
-    mosaicPosition: {x: 1618, y: 3847}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 5
-    spriteName: Spider Chain Link copy 5
-    isGroup: 0
-    parentIndex: 46
-    spriteID: 0704bdf7a8478db4096e0b280afac77c
-    layerID: 416
-    mosaicPosition: {x: 1968, y: 1555}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 4
-    spriteName: Spider Chain Link copy 4
-    isGroup: 0
-    parentIndex: 46
-    spriteID: 8fdc2b1ed0b2a9543a3c9e1e535b1c58
-    layerID: 415
-    mosaicPosition: {x: 1950, y: 2435}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Left
-    spriteName: 
-    isGroup: 1
-    parentIndex: 45
-    spriteID: ab0b37db7972f3f48adca3dafbc359a9
-    layerID: 442
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Spider Chain Link copy 3
-    spriteName: Spider Chain Link copy 3
-    isGroup: 0
-    parentIndex: 51
-    spriteID: 85ba06b01a9b4a74caebc813b3744d43
-    layerID: 421
-    mosaicPosition: {x: 1968, y: 2922}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy 2
-    spriteName: Spider Chain Link copy 2
-    isGroup: 0
-    parentIndex: 51
-    spriteID: 58119df3b4eecdf44b2cca9f5746ef52
-    layerID: 420
-    mosaicPosition: {x: 1968, y: 932}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link copy
-    spriteName: Spider Chain Link copy
-    isGroup: 0
-    parentIndex: 51
-    spriteID: e9eeaf7a48ef3d448b4f699f3e9fd211
-    layerID: 419
-    mosaicPosition: {x: 1968, y: 2513}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link
-    spriteName: Spider Chain Link
-    isGroup: 0
-    parentIndex: 51
-    spriteID: 99914b2bafc24c74f902465d99249de6
-    layerID: 414
-    mosaicPosition: {x: 1950, y: 932}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Spider Chain Link
-    spriteName: 
-    isGroup: 0
-    parentIndex: 45
-    spriteID: 31e66cb7d46be6840b691e467f2e60f1
-    layerID: 413
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Gradient
-    spriteName: Gradient
-    isGroup: 0
-    parentIndex: 0
+    parentIndex: 70
     spriteID: ab28edfe9a8f2294aa1b1417d58a245e
     layerID: 359
-    mosaicPosition: {x: 1932, y: 4}
+    mosaicPosition: {x: 4, y: 5572}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Background
     spriteName: 
     isGroup: 1
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 2a42753dc5073724b87bca3c20d6249c
     layerID: 122
     mosaicPosition: {x: 0, y: 0}
@@ -1605,7 +1944,7 @@ ScriptedImporter:
   - name: Layer 3
     spriteName: Layer 3
     isGroup: 0
-    parentIndex: 58
+    parentIndex: 73
     spriteID: c7edf53b9814b1c4a969f4aa97757e30
     layerID: 53
     mosaicPosition: {x: 4, y: 1780}
@@ -1615,67 +1954,17 @@ ScriptedImporter:
   - name: Background Wall
     spriteName: Background Wall
     isGroup: 0
-    parentIndex: 58
+    parentIndex: 73
     spriteID: e06e365114cbae64e8a4cca29a8fec00
     layerID: 51
-    mosaicPosition: {x: 4, y: 1860}
+    mosaicPosition: {x: 4, y: 3716}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Torch
-    spriteName: 
-    isGroup: 1
-    parentIndex: 0
-    spriteID: e90bee590e8f955478dc559ae6fdfa42
-    layerID: 139
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
   - name: Light
     spriteName: 
     isGroup: 1
-    parentIndex: 61
-    spriteID: e5995923033bc004582aae815b65ad44
-    layerID: 77
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Gradient Fill 1
-    spriteName: Gradient Fill 1
-    isGroup: 0
-    parentIndex: 62
-    spriteID: 8131c77a618afe5428b58eab79991c3e
-    layerID: 141
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Gradient Fill 1
-    spriteName: Gradient Fill 1
-    isGroup: 0
-    parentIndex: 62
-    spriteID: f646e1ceb73f6714abbed309f3e4a7f2
-    layerID: 76
-    mosaicPosition: {x: 4, y: 892}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Lit Torch
-    spriteName: Lit Torch
-    isGroup: 0
-    parentIndex: 61
-    spriteID: 40335b453a9911142a652737cb041b51
-    layerID: 15
-    mosaicPosition: {x: 1536, y: 3632}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Light
-    spriteName: 
-    isGroup: 1
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 8f7b4f1729706af40b9aef39972f4325
     layerID: 72
     mosaicPosition: {x: 0, y: 0}
@@ -1685,7 +1974,7 @@ ScriptedImporter:
   - name: Gradient Fill 1
     spriteName: 
     isGroup: 0
-    parentIndex: 66
+    parentIndex: 76
     spriteID: 63b943aba27d9c44199a92720de49617
     layerID: 71
     mosaicPosition: {x: 0, y: 0}
@@ -1695,7 +1984,7 @@ ScriptedImporter:
   - name: Gradient Fill 1
     spriteName: 
     isGroup: 0
-    parentIndex: 66
+    parentIndex: 76
     spriteID: 50853220fd0aaab42843a8d999ee0001
     layerID: 55
     mosaicPosition: {x: 0, y: 0}
@@ -1705,7 +1994,7 @@ ScriptedImporter:
   - name: Tiles
     spriteName: 
     isGroup: 1
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 87e33514de8d0604e92834649727fb1b
     layerID: 22
     mosaicPosition: {x: 0, y: 0}
@@ -1715,7 +2004,7 @@ ScriptedImporter:
   - name: Left Corner
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: fe9afa83408fafc47b01285910df8f5d
     layerID: 138
     mosaicPosition: {x: 0, y: 0}
@@ -1725,7 +2014,7 @@ ScriptedImporter:
   - name: Left
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: 88427ba5205f32f4f9bf55f9d91bbc2c
     layerID: 90
     mosaicPosition: {x: 0, y: 0}
@@ -1735,7 +2024,7 @@ ScriptedImporter:
   - name: Right COrner
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: 92585897528264647ae9d0be37fffb61
     layerID: 137
     mosaicPosition: {x: 0, y: 0}
@@ -1745,7 +2034,7 @@ ScriptedImporter:
   - name: Right
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: b1ee1dd0a293aed4093d3803f292fd54
     layerID: 99
     mosaicPosition: {x: 0, y: 0}
@@ -1755,7 +2044,7 @@ ScriptedImporter:
   - name: Corners
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: 9aba6942ea5cd3b49b6ed9a2436e363a
     layerID: 108
     mosaicPosition: {x: 0, y: 0}
@@ -1765,87 +2054,17 @@ ScriptedImporter:
   - name: Bottom
     spriteName: 
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 79
     spriteID: b5c79f253d84e8f478098c234f6f0483
     layerID: 45
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 1
-  - name: Tentacles
-    spriteName: 
-    isGroup: 1
-    parentIndex: 0
-    spriteID: d38861484ceec6749a3a9bf736f3121d
-    layerID: 340
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Tentacle 2
-    spriteName: Tentacle 2
-    isGroup: 0
-    parentIndex: 76
-    spriteID: 254f1f3a25e916d4c8215375cc5e6250
-    layerID: 344
-    mosaicPosition: {x: 2600, y: 670}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Tentacle 2
-    spriteName: Tentacle 2
-    isGroup: 0
-    parentIndex: 76
-    spriteID: 35dc5c40b2cf89445893a54811f16b07
-    layerID: 343
-    mosaicPosition: {x: 4, y: 3556}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Tentacle 2
-    spriteName: Tentacle 2
-    isGroup: 0
-    parentIndex: 76
-    spriteID: 33dbdb8a9b21b2140a5bd084b96c0f50
-    layerID: 342
-    mosaicPosition: {x: 2600, y: 296}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Tentacle 2
-    spriteName: Tentacle 2
-    isGroup: 0
-    parentIndex: 76
-    spriteID: eb6836c775eb9154b9932bd38497f405
-    layerID: 345
-    mosaicPosition: {x: 1932, y: 4}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Tentacle 2
-    spriteName: Tentacle 2
-    isGroup: 0
-    parentIndex: 76
-    spriteID: 92a6a6376e2ff9540863c4395e914c9e
-    layerID: 337
-    mosaicPosition: {x: 1932, y: 574}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Tentacle 2
-    spriteName: 
-    isGroup: 0
-    parentIndex: 76
-    spriteID: 83746438ec0e5b44895c7a64ffeb4fe6
-    layerID: 114
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
   - name: Title
     spriteName: 
     isGroup: 1
-    parentIndex: 0
+    parentIndex: 70
     spriteID: afde7b33f15519041a997506770f090b
     layerID: 9
     mosaicPosition: {x: 0, y: 0}
@@ -1855,7 +2074,7 @@ ScriptedImporter:
   - name: Dungeon
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: f5c412ab50490e6438c94bdc882be009
     layerID: 7
     mosaicPosition: {x: 0, y: 0}
@@ -1865,7 +2084,7 @@ ScriptedImporter:
   - name: Of My Party
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: 5c83a0d309ed9af41ae33e2f5f8023bb
     layerID: 8
     mosaicPosition: {x: 0, y: 0}
@@ -1875,7 +2094,7 @@ ScriptedImporter:
   - name: in search
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: 7f7f6c87840e08142934107aae18dc07
     layerID: 6
     mosaicPosition: {x: 0, y: 0}
@@ -1885,7 +2104,7 @@ ScriptedImporter:
   - name: As a porter and got lost in a
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: 7466854e9c2e74841b50299c0600d6d5
     layerID: 5
     mosaicPosition: {x: 0, y: 0}
@@ -1895,7 +2114,7 @@ ScriptedImporter:
   - name: Reincarnated
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: 8f7fa1e2d0170b34ba3aedff74ac844a
     layerID: 4
     mosaicPosition: {x: 0, y: 0}
@@ -1905,29 +2124,9 @@ ScriptedImporter:
   - name: That Time I Got
     spriteName: 
     isGroup: 0
-    parentIndex: 83
+    parentIndex: 86
     spriteID: a85f709654cc0f74cbb56276acb6f410
     layerID: 3
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Abomination
-    spriteName: 
-    isGroup: 1
-    parentIndex: 0
-    spriteID: 834354ac84f7bfa4e8ca58cfa0f84ae1
-    layerID: 144
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: AbominationIris
-    spriteName: 
-    isGroup: 0
-    parentIndex: 90
-    spriteID: 346db7a38e14c964d8a26a6565c4cffb
-    layerID: 339
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
@@ -1935,7 +2134,7 @@ ScriptedImporter:
   - name: All Tiles
     spriteName: 
     isGroup: 1
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 8b62a7fb57941e4478182edb10b96775
     layerID: 34
     mosaicPosition: {x: 0, y: 0}
@@ -1945,7 +2144,7 @@ ScriptedImporter:
   - name: BottomRightCorner
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: d4f812583715d994798524c7dd19cfa3
     layerID: 105
     mosaicPosition: {x: 0, y: 0}
@@ -1955,7 +2154,7 @@ ScriptedImporter:
   - name: BottomLeftCorner
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: bbec773dc5c551c4b8a4c8a987186d8c
     layerID: 103
     mosaicPosition: {x: 0, y: 0}
@@ -1965,7 +2164,7 @@ ScriptedImporter:
   - name: CornersAndStairs
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: cef0bac032a650545b1589c8185d63dc
     layerID: 102
     mosaicPosition: {x: 0, y: 0}
@@ -1975,7 +2174,7 @@ ScriptedImporter:
   - name: Center
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: c1cd124182c839740aa59d1ba0cb79f3
     layerID: 38
     mosaicPosition: {x: 0, y: 0}
@@ -1985,7 +2184,7 @@ ScriptedImporter:
   - name: Right
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 88b4c2d4f54b7424aa21f169d10e8deb
     layerID: 42
     mosaicPosition: {x: 0, y: 0}
@@ -1995,7 +2194,7 @@ ScriptedImporter:
   - name: Left
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 2c4a0611e74a31a4f8eb3c9c4a0a5216
     layerID: 40
     mosaicPosition: {x: 0, y: 0}
@@ -2005,7 +2204,7 @@ ScriptedImporter:
   - name: Top Left
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 973d9e5b2f230874580469dc40d28eec
     layerID: 18
     mosaicPosition: {x: 0, y: 0}
@@ -2015,7 +2214,7 @@ ScriptedImporter:
   - name: Top Right
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 621e705e4ddc19c4586fe03f1e834a02
     layerID: 36
     mosaicPosition: {x: 0, y: 0}
@@ -2025,7 +2224,7 @@ ScriptedImporter:
   - name: Top
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 13e0bb440d6d93940af0ada5de5d9e97
     layerID: 20
     mosaicPosition: {x: 0, y: 0}
@@ -2035,7 +2234,7 @@ ScriptedImporter:
   - name: Tileset
     spriteName: 
     isGroup: 0
-    parentIndex: 92
+    parentIndex: 93
     spriteID: 49f319652d033904d8e1f85af007d0f6
     layerID: 17
     mosaicPosition: {x: 0, y: 0}
@@ -2045,7 +2244,7 @@ ScriptedImporter:
   - name: Layer 1
     spriteName: 
     isGroup: 0
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 1306c1a802aeedb4693c4cebac297dfc
     layerID: 2
     mosaicPosition: {x: 0, y: 0}
@@ -2055,7 +2254,7 @@ ScriptedImporter:
   - name: Layer 2
     spriteName: 
     isGroup: 0
-    parentIndex: 0
+    parentIndex: 70
     spriteID: 14e855d85419620489a99ab7b9f457ee
     layerID: 11
     mosaicPosition: {x: 0, y: 0}
